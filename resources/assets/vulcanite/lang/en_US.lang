@@ -17,8 +17,8 @@ tile.vulcanite:vulcanite_ore.name=Vulcanite Ore
 
 tooltip.general.shift_for_more=§7Press SHIFT for more infos
 
-tooltip.weapon.base_info.more_damage=§6Deals more damage to fire immune mobs when Fire Aspect is present
-tooltip.weapon.adv_info.more_damage=§6Deals §c%f%%§6 more damage per level of Fire Aspect to fire immune mobs
+tooltip.weapon.base_info.more_damage=§6Deals more damage to fire immune mobs. Fire Aspect increases that bonus damage
+tooltip.weapon.adv_info.more_damage=§6Deals §c%f%%§6 more damage to fire immune mobs, increased by §c%f%%§6 for each level of Fire Aspect
 
 tooltip.tool.base_info.more_efficient=§6While in the nether the tool is more efficient
 tooltip.tool.adv_info.more_efficient=§6While in the nether the tool mines blocks §c%f%%§6 faster!

@@ -21,8 +21,9 @@ public class Properties {
 		public static float efficency;
 		public static float baseDamage;
 		public static int enchantability;
-		
-		public static float bonusDamagePerFALevel;
+
+		public static float bonusDamage;
+		public static float bonusDamageFireAspect;
 		public static float bonusEfficency;
 		
 		public static void Init() {
@@ -31,7 +32,8 @@ public class Properties {
 			efficency = Config.LoadFloatProperty("tools_and_weapon", "efficency", "Efficency for Vulcanite Tools", 7f);
 			baseDamage = Config.LoadFloatProperty("tools_and_weapon", "base_damage", "Base Damage for Vulcanite Tools and Sword", 2.5f);
 			enchantability = Config.LoadIntProperty("tools_and_weapon", "enchantability", "Enchantability for Vulcanite Tools and Sword", 16);
-			bonusDamagePerFALevel = Config.LoadFloatProperty("tools_and_weapon", "bonus_damage", "Bonus damage % dealt to Fire Immune mobs per Fire Aspect Level", 15f);
+			bonusDamage = Config.LoadFloatProperty("tools_and_weapon", "bonus_damage", "Bonus damage % dealt to Fire Immune mobs", 15f);
+			bonusDamageFireAspect = Config.LoadFloatProperty("tools_and_weapon", "bonus_damage_fire_aspect", "Bonus damage % dealt to Fire Immune mobs per Fire Aspect Level (to sum to 'bonus_damage')", 7.5f);
 			bonusEfficency = Config.LoadFloatProperty("tools_and_weapon", "bonus_efficency_in_nether", "Bonus Efficency % for tools when in the nether (100.0 means that the tool will be twice as fast in the nether)", 100f);
 		}
 	}
@@ -75,7 +77,7 @@ public class Properties {
 		
 		public static void Init() {			
 			orePerVein = Config.LoadIntProperty("ore_generation", "block_per_vein", "Number of ores generated per vein", 3);
-			veinPerChunk = Config.LoadIntProperty("ore_generation", "vein_per_chunk", "Number of veins that have to try to spawn per chunk", 40);
+			veinPerChunk = Config.LoadIntProperty("ore_generation", "vein_per_chunk", "Number of veins that have to try to spawn per chunk", 25);
 			minY = Config.LoadIntProperty("ore_generation", "min_Y", "The minimum height (Y) to try to generate Veins", 0);
 			maxY = Config.LoadIntProperty("ore_generation", "max_Y", "The maximum height (Y) to try to generate Veins", 32);
 		}

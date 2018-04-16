@@ -96,9 +96,6 @@ public class LivingHurt {
 				fireAspectLevel = enchantments.getCompoundTagAt(i).getShort("lvl");
 		}
 		
-		if (fireAspectLevel == 0)
-			return;
-		
 		Entity target = event.getEntity();
 		if (!(target instanceof EntityLivingBase))
 			return;
@@ -108,7 +105,9 @@ public class LivingHurt {
 			return;
 		
 		float damageDealth = event.getAmount();
-		float bonusDamageDealth = damageDealth * ((Properties.Tools.bonusDamagePerFALevel / 100f) * fireAspectLevel);
+		float baseBonus = Properties.Tools.bonusDamage / 100f;
+		float fireAspectBonus = Properties.Tools.bonusDamageFireAspect / 100f * fireAspectLevel;
+		float bonusDamageDealth = damageDealth * (baseBonus + fireAspectBonus);
 		
 		event.setAmount(damageDealth + bonusDamageDealth);
 	}

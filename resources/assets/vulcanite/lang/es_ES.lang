@@ -17,9 +17,6 @@ tile.vulcanite:vulcanite_ore.name=Mena de Vulcanita
 
 tooltip.general.shift_for_more=§7Presiona SHIFT para mas info.
 
-tooltip.weapon.base_info.more_damage=§6Ejerce más dano a mobs ignifugos con Aspecto Igneo.
-tooltip.weapon.adv_info.more_damage=§6Ejerce §c%f%%§6 más dano a mobs ignifugos con Aspecto Igneo por cada nivel.
-
 tooltip.tool.base_info.more_efficient=§6En el Nether la herramienta son más eficientes.
 tooltip.tool.adv_info.more_efficient=§6En el Nether la herramienta mina bloques §c%f%%§6 más rápido!
 

@@ -17,8 +17,8 @@ tile.vulcanite:vulcanite_ore.name=Vulcanite Grezza
 
 tooltip.general.shift_for_more=§7Premi MAIUSC per più informazioni
 
-tooltip.weapon.base_info.more_damage=§6Fa più danno ai mob immuni al fuoco quando Aspetto di Fuoco è presente
-tooltip.weapon.adv_info.more_damage=§6Fa il §c%f%%§6 in più di danno per livello di Aspetto di Fuoco ai mob immuni al fuoco
+tooltip.weapon.base_info.more_damage=§6Fa più danno ai mob immuni al fuoco. Aspetto di Fuoco aumenta questo danno bonus
+tooltip.weapon.adv_info.more_damage=§6Fa il §c%f%%§6 in più di danno, aumentato del §c%f%%§6 per livello di Aspetto di Fuoco
 
 tooltip.tool.base_info.more_efficient=§6Nel nether, l'attrezzo è più efficiente
 tooltip.tool.adv_info.more_efficient=§6Nel nether, l'attrezzo rompe i blocchi il §c%f%%§6 più velocemente!
