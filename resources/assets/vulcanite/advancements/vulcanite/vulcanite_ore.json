@@ -1,0 +1,26 @@
+{
+    "display": {
+        "icon": {
+            "item": "vulcanite:vulcanite_ore"
+        },
+        "title": {
+            "translate": "advancements.vulcanite.ore.title"
+        },
+        "description": {
+            "translate": "advancements.vulcanite.ore.description"
+        }
+    },
+	"parent": "vulcanite:vulcanite/root",
+    "criteria": {
+        "vulcanite_ore": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "vulcanite:vulcanite_ore"
+                    }
+                ]
+            }
+        }
+    }
+}

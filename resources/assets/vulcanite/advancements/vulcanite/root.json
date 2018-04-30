@@ -1,0 +1,24 @@
+{
+    "display": {
+        "icon": {
+            "item": "vulcanite:vulcanite_block"
+        },
+        "title": {
+            "translate": "advancements.vulcanite.root.title"
+        },
+        "description": {
+            "translate": "advancements.vulcanite.root.description"
+        },
+        "background": "vulcanite:textures/blocks/vulcanite_ore.png",
+		"show_toast": true,
+		"announce_to_chat": false
+    },
+    "criteria": {
+        "vulcanite_root": {
+            "trigger": "minecraft:changed_dimension",
+            "conditions": {
+                "to": "the_nether"
+            }
+        }
+    }
+}

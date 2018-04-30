@@ -1,0 +1,26 @@
+{
+    "display": {
+        "icon": {
+            "item": "vulcanite:vulcanite_sword"
+        },
+        "title": {
+            "translate": "advancements.vulcanite.sword.title"
+        },
+        "description": {
+            "translate": "advancements.vulcanite.sword.description"
+        }
+    },
+    "parent": "vulcanite:vulcanite/vulcanite",
+    "criteria": {
+        "vulcanite_sword": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "vulcanite:vulcanite_sword"
+                    }
+                ]
+            }
+        }
+    }
+}

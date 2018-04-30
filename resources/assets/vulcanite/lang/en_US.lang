@@ -32,3 +32,27 @@ tooltip.flint_and_vulcanite.adv_info.damage_on_use=§6When used on a mob the Fli
 
 tooltip.vulcanite_block.base_info.set_on_fire=§6Sets on fire mobs stading on it
 tooltip.vulcanite_block.adv_info.set_on_fire=§6Mobs stading on it will be ignited for §c%d§6 seconds
+
+advancements.vulcanite.root.title=Vulcanite Mod
+advancements.vulcanite.root.description=The beginning of anti-hotness
+
+advancements.vulcanite.ore.title=So Hot
+advancements.vulcanite.ore.description=Obtain a Vulcanite Ore. Can be found below the lava level
+
+advancements.vulcanite.vulcanite.title=Less Hot
+advancements.vulcanite.vulcanite.description=Smelt Vulcanite Ore to get a Vulcanite gem
+
+advancements.vulcanite.sword.title=The fire-immunes should run away
+advancements.vulcanite.sword.description=Get a Vulcanite Sword
+
+advancements.vulcanite.tools.title=Gotta go fast in the nether
+advancements.vulcanite.tools.description=Get every tool made of Vulcanite
+
+advancements.vulcanite.flint.title=Igniting mobs
+advancements.vulcanite.flint.description=Obtain a Flint and Vulcanite
+
+advancements.vulcanite.armor.title=Anti-Hotness
+advancements.vulcanite.armor.description=Obtain a full set of Vulcanite Armor
+
+advancements.vulcanite.block.title=Cooked farm
+advancements.vulcanite.block.description=Obtain a Vulcanite Block

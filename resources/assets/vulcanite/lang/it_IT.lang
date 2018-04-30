@@ -32,3 +32,27 @@ tooltip.flint_and_vulcanite.adv_info.damage_on_use=§6Quando usato su di un mob,
 
 tooltip.vulcanite_block.base_info.set_on_fire=§6Da' fuoco ai mob che ci sono sopra
 tooltip.vulcanite_block.adv_info.set_on_fire=§6Da' fuoco ai mob che ci sono sopra per §c%d§6 secondi
+
+advancements.vulcanite.root.title=Vulcanite Mod
+advancements.vulcanite.root.description=L'inizio dell'anti calore
+
+advancements.vulcanite.ore.title=Molto caldo
+advancements.vulcanite.ore.description=Ottieni una Vulcanite Grezza. Può essere trovata sotto il livello della lava.
+
+advancements.vulcanite.vulcanite.title=Meno caldo
+advancements.vulcanite.vulcanite.description=Fondi una Vulcanite grezza per ottenere una Vulcanite
+
+advancements.vulcanite.sword.title=Gli immuni al fuoco dovrebbero fuggire
+advancements.vulcanite.sword.description=Ottieni una spada di Vulcanite
+
+advancements.vulcanite.tools.title=Sonic il porcospino nel Nether
+advancements.vulcanite.tools.description=Ottieni ogni attrezzo fatto di Vulcanite
+
+advancements.vulcanite.flint.title=Dando fuoco ai Mob
+advancements.vulcanite.flint.description=Ottieni un Acciarino in Vulcanite
+
+advancements.vulcanite.armor.title=Anti Calore
+advancements.vulcanite.armor.description=Ottieni un set completo di armatura di Vulcanite
+
+advancements.vulcanite.block.title=Da vivi a cotti
+advancements.vulcanite.block.description=Ottieni un blocco di Vulcanite
