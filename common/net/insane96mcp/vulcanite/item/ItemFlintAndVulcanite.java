@@ -61,6 +61,7 @@ public class ItemFlintAndVulcanite extends ItemFlintAndSteel{
 	        }
             worldIn.setBlockState(pos, Blocks.AIR.getDefaultState(), 11);
             player.getHeldItem(hand).damageItem(1, player);
+            player.swingArm(hand);
 
             return EnumActionResult.SUCCESS;
 		}

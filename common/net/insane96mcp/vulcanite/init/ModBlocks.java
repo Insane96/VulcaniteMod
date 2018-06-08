@@ -26,7 +26,7 @@ public class ModBlocks {
 		vulcaniteBlock.setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
 		vulcaniteBlock.setHardness(10.0f);
 		vulcaniteBlock.setResistance(20f);
-		vulcaniteBlock.setHarvestLevel("pickaxe", 3);
+		vulcaniteBlock.setHarvestLevel("pickaxe", 2);
 		BLOCKS.add(vulcaniteBlock);
 
 		location = new ResourceLocation(Vulcanite.MOD_ID, Names.VULCANITE_ORE);
