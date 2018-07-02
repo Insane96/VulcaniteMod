@@ -17,6 +17,7 @@ import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.oredict.OreDictionary;
 
 public class ModItems {
 	public static ItemVulcanite vulcaniteItem;
@@ -36,7 +37,7 @@ public class ModItems {
 	
 	public static ArrayList<Item> ITEMS = new ArrayList<Item>();
 	
-	public static void Init() {
+	public static void PreInit() {
 		vulcaniteItem = new ItemVulcanite(Names.VULCANITE_ITEM, CreativeTabs.MATERIALS);
 		ITEMS.add(vulcaniteItem);
 
@@ -71,7 +72,9 @@ public class ModItems {
 		ITEMS.add(vulcaniteBootsItem);
 	}
 	
-	public static void PostInit() {
+	public static void Init() {
 		GameRegistry.addSmelting(ModBlocks.vulcaniteOre, new ItemStack(vulcaniteItem), 3.0f);
+		
+		OreDictionary.registerOre("gemVulcanite", vulcaniteItem);
 	}
 }

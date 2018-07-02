@@ -19,13 +19,13 @@ public class CommonProxy {
 		Config.SyncConfig();
 		Properties.Init();
 		
-		ModItems.Init();
-		ModBlocks.Init();
+		ModItems.PreInit();
+		ModBlocks.PreInit();
 	}
 	
 	public void Init(FMLInitializationEvent event) {
-		ModItems.PostInit();
-		ModBlocks.PostInit();
+		ModItems.Init();
+		ModBlocks.Init();
 		MinecraftForge.EVENT_BUS.register(LivingHurt.class);
 		MinecraftForge.EVENT_BUS.register(PlayerBreakSpeed.class);
 		MinecraftForge.EVENT_BUS.register(PlayerEntityInteract.class);

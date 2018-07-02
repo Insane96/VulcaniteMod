@@ -11,6 +11,7 @@ import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.oredict.OreDictionary;
 
 public class ModBlocks {
 	
@@ -19,7 +20,7 @@ public class ModBlocks {
 	
 	public static ArrayList<Block> BLOCKS = new ArrayList<Block>();
 	
-	public static void Init() {
+	public static void PreInit() {
 		ResourceLocation location = new ResourceLocation(Vulcanite.MOD_ID, Names.VULCANITE_BLOCK);
 		vulcaniteBlock = new BlockVulcanite();
 		vulcaniteBlock.setRegistryName(location);
@@ -41,7 +42,8 @@ public class ModBlocks {
 		GameRegistry.registerWorldGenerator(new OreGeneration(), 0);
 	}
 	
-	public static void PostInit() {
-		
+	public static void Init() {
+		OreDictionary.registerOre("oreVulcanite", vulcaniteOre);
+		OreDictionary.registerOre("blockVulcanite", vulcaniteBlock);
 	}
 }
