@@ -23,8 +23,8 @@ tooltip.weapon.adv_info.more_damage=§6Fa il §c%f%%§6 in più di danno, aument
 tooltip.tool.base_info.more_efficient=§6Nel nether, l'attrezzo è più efficiente
 tooltip.tool.adv_info.more_efficient=§6Nel nether, l'attrezzo rompe i blocchi il §c%f%%§6 più velocemente!
 
-tooltip.armor.base_info.damage_reduction=§6Riduce il danno dalle sorgenti di calore
-tooltip.armor.adv_info.damage_reduction=§6L'armatura completa riduce il danno da sorgenti di calore del §c%f%%§6. Un pezzo di armatura riduce il danno in base a quanto materiale è stato usato per fabbricarlo.
+tooltip.armor.base_info.damage_reduction=§6Riduce il danno dalle sorgenti di calore. Nel Nether la riduzione del danno è più efficace.
+tooltip.armor.adv_info.damage_reduction=§6L'armatura completa, nel Nether, riduce il danno da sorgenti di calore del §c%f%%§6. L'armatura completa, nelle altre dimensioni, riduce il danno da sorgenti di calore del §c%f%%§6.
 
 tooltip.flint_and_vulcanite.base_info.set_on_fire=§6Clicca col Tasto Destro su un mob per dargli fuoco
 tooltip.flint_and_vulcanite.adv_info.set_on_fire=§6Clicca col Tasto Destro su un mob per dargli fuoco per §c%d§6 secondi

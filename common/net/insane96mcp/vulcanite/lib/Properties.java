@@ -43,14 +43,16 @@ public class Properties {
 		public static int[] armorPoints;
 		public static int enchantability;
 		public static float toughness;
-		public static float hotSourceDamageReduction;
+		public static float damageReductionNether;
+		public static float damageReductionOther;
 		
 		public static void Init() {
 			baseDurability = Config.LoadIntProperty("armor", "base_durability", "Base durability for Vulcanite Armor\n(this value is multiplied by [11, 16, 15, 13] respectively from helmet to boots)\n", 24);
 			armorPoints = Config.LoadIntListProperty("armor", "armor_points", "Armor Points given by Vulcanite Armor", new int[] {2, 5, 4, 2});
 			enchantability = Config.LoadIntProperty("armor", "enchantability", "Enchantability for Vulcanite Armor", 17);
 			toughness = Config.LoadFloatProperty("armor", "toughness", "Toughness for Vulcanite Armor", 0f);
-			hotSourceDamageReduction = Config.LoadFloatProperty("armor", "damage_reduction", "Percentage damage reduction from Fire sources with Vulcanite Armor", 75f);
+			damageReductionNether = Config.LoadFloatProperty("armor", "damage_reduction", "Percentage damage reduction from hot sources with Vulcanite Armor in the Nether", 75f);
+			damageReductionOther = Config.LoadFloatProperty("armor", "damage_reduction_other_dimensions", "Percentage damage reduction from hot sources with Vulcanite Armor in non-Nether dimensions", 40f);
 		}
 	}
 	

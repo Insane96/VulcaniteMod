@@ -21,7 +21,7 @@ public class Tooltips {
 	
 	public static class Armor{
 		public static String base_damageReduction = "tooltip.armor.base_info.damage_reduction";
-		
+
 		public static String adv_damageReduction = "tooltip.armor.adv_info.damage_reduction";
 	}
 	

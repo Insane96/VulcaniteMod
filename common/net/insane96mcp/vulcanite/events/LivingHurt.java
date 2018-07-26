@@ -65,7 +65,11 @@ public class LivingHurt {
 			}
 		    
 		    if (materialsUsed >= 1) {
-		    	float maxReduction = Properties.Armor.hotSourceDamageReduction / 100f;
+		    	float maxReduction; 
+    			if (player.dimension == -1) 
+    				maxReduction = Properties.Armor.damageReductionNether / 100f;
+    			else 
+    				maxReduction = Properties.Armor.damageReductionOther / 100f;
 		    	float reductionPerMaterial = maxReduction / 24f;
 		    	float percentageReduction = reductionPerMaterial * materialsUsed;
 		    	amount = amount * (1f - percentageReduction);
