@@ -20,10 +20,10 @@ public class PlayerEntityInteract {
 	
 	@SubscribeEvent
 	public static void PlayerEntityInteractEvent(PlayerInteractEvent.EntityInteract event) {
-		if (event.getWorld().isRemote)
-			return;
+		//if (event.getWorld().isRemote)
+			//return;
 		
-		EntityPlayerMP player = (EntityPlayerMP) event.getEntityPlayer();
+		EntityPlayer player = event.getEntityPlayer();
 		ItemStack mainHand = player.getHeldItemMainhand();
 		ItemStack offHand = player.getHeldItemOffhand();
 		
