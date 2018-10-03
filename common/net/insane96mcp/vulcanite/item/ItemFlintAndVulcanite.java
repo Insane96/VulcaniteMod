@@ -55,9 +55,10 @@ public class ItemFlintAndVulcanite extends ItemFlintAndSteel{
 		if (worldIn.getBlockState(pos).getBlock() == Blocks.TNT) {
 			if (!worldIn.isRemote)
 			{
-		        EntityTNTPrimed entitytntprimed = new EntityTNTPrimed(worldIn, (double)((float)pos.getX() + 0.5F), (double)pos.getY(), (double)((float)pos.getZ() + 0.5F), player);
-		        worldIn.spawnEntity(entitytntprimed);
-                worldIn.playSound((EntityPlayer)null, entitytntprimed.posX, entitytntprimed.posY, entitytntprimed.posZ, SoundEvents.ENTITY_TNT_PRIMED, SoundCategory.BLOCKS, 1.0F, 1.0F);
+		        EntityTNTPrimed entityTNTPrimed = new EntityTNTPrimed(worldIn, (double)((float)pos.getX() + 0.5F), (double)pos.getY(), (double)((float)pos.getZ() + 0.5F), player);
+		        entityTNTPrimed.setFuse(40);
+		        worldIn.spawnEntity(entityTNTPrimed);
+                worldIn.playSound((EntityPlayer)null, entityTNTPrimed.posX, entityTNTPrimed.posY, entityTNTPrimed.posZ, SoundEvents.ENTITY_TNT_PRIMED, SoundCategory.BLOCKS, 1.0F, 1.0F);
 	        }
             worldIn.setBlockState(pos, Blocks.AIR.getDefaultState(), 11);
             player.getHeldItem(hand).damageItem(1, player);
