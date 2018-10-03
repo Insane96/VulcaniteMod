@@ -56,7 +56,8 @@ public class ItemFlintAndVulcanite extends ItemFlintAndSteel{
 			if (!worldIn.isRemote)
 			{
 		        EntityTNTPrimed entityTNTPrimed = new EntityTNTPrimed(worldIn, (double)((float)pos.getX() + 0.5F), (double)pos.getY(), (double)((float)pos.getZ() + 0.5F), player);
-		        entityTNTPrimed.setFuse(40);
+		        if (Properties.FlintAndVulcanite.tntIgnitesFaster)
+		        	entityTNTPrimed.setFuse(40);
 		        worldIn.spawnEntity(entityTNTPrimed);
                 worldIn.playSound((EntityPlayer)null, entityTNTPrimed.posX, entityTNTPrimed.posY, entityTNTPrimed.posZ, SoundEvents.ENTITY_TNT_PRIMED, SoundCategory.BLOCKS, 1.0F, 1.0F);
 	        }

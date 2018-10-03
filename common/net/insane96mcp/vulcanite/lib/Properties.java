@@ -62,12 +62,14 @@ public class Properties {
 		public static int damageOnUse;
 		
 		public static boolean pvp;
+		public static boolean tntIgnitesFaster;
 		
 		public static void Init() {
 			secondsOnFire = Config.LoadIntProperty("flint_and_vulcanite", "ignite_seconds", "The number of seconds an entity will be set on fire when right clicked with Flint and Vulcanite", 4);
 			maxUses = Config.LoadIntProperty("flint_and_vulcanite", "max_uses", "The durability of Flint and Vulcanite", 222);
 			damageOnUse = Config.LoadIntProperty("flint_and_vulcanite", "damage_on_use", "How much the flint and vulcanite will be damaged when you set a mob on fire", 2);
 			pvp = Config.LoadBoolProperty("flint_and_vulcanite", "pvp", "If true, players will be able to ignite other players", false);
+			tntIgnitesFaster = Config.LoadBoolProperty("flint_and_vulcanite", "tnt_ignites_faster", "If true TNT will take half the time to explode when ignited with Flint and Vulcanite", true);
 		}
 	}
 	
