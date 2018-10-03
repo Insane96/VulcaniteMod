@@ -25,7 +25,7 @@ public class ItemVulcaniteAxe extends ItemAxe{
 	}
 
 	@Override
-	public String getUnlocalizedName(ItemStack stack) {
+	public String getTranslationKey(ItemStack stack) {
 		return "item." + Vulcanite.RESOURCE_PREFIX + Names.VULCANITE_AXE;
 	}
 	

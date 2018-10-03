@@ -13,7 +13,7 @@ public class BlockVulcaniteOre extends Block{
 	}
 	
 	@Override
-	public String getUnlocalizedName() {
+	public String getTranslationKey() {
 		return "tile." + Vulcanite.RESOURCE_PREFIX + Names.VULCANITE_ORE;
 	}
 }

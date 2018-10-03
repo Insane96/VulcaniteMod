@@ -33,7 +33,7 @@ public class ItemFlintAndVulcanite extends ItemFlintAndSteel{
 	}
 	
 	@Override
-	public String getUnlocalizedName(ItemStack stack) {
+	public String getTranslationKey(ItemStack stack) {
 		return "item." + Vulcanite.RESOURCE_PREFIX + Names.FLINT_AND_VULCANITE;
 	}
 	

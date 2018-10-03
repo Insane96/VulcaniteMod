@@ -24,7 +24,7 @@ public class ItemVulcanitePickaxe extends ItemPickaxe {
 	}
 
 	@Override
-	public String getUnlocalizedName(ItemStack stack) {
+	public String getTranslationKey(ItemStack stack) {
 		return "item." + Vulcanite.RESOURCE_PREFIX + net.insane96mcp.vulcanite.lib.Names.VULCANITE_PICKAXE;
 	}
 	

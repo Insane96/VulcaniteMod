@@ -2,8 +2,9 @@ package net.insane96mcp.vulcanite;
 
 import java.util.Random;
 
+import javax.security.auth.login.Configuration;
+
 import net.insane96mcp.vulcanite.proxies.CommonProxy;
-import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
