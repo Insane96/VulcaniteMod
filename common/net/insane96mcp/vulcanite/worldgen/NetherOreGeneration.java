@@ -13,12 +13,12 @@ import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraft.world.gen.feature.WorldGenMinable;
 import net.minecraftforge.fml.common.IWorldGenerator;
 
-public class OreGeneration implements IWorldGenerator {
+public class NetherOreGeneration implements IWorldGenerator {
 
 	private final WorldGenMinable worldGenMinable;
 	
-	public OreGeneration() {
-		worldGenMinable = new WorldGenMinable(ModBlocks.vulcaniteOre.getDefaultState(), Properties.OreGeneration.orePerVein, BlockMatcher.forBlock(Blocks.NETHERRACK));
+	public NetherOreGeneration() {
+		worldGenMinable = new WorldGenMinable(ModBlocks.netherVulcaniteOre.getDefaultState(), Properties.OreGeneration.orePerVein, BlockMatcher.forBlock(Blocks.NETHERRACK));
 	}
 	
 	@Override
@@ -33,5 +33,4 @@ public class OreGeneration implements IWorldGenerator {
 		}
 	}
 
-	
 }
