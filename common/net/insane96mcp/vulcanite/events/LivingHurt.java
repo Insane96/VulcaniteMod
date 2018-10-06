@@ -32,18 +32,19 @@ public class LivingHurt {
 		new ItemStack(ModItems.vulcaniteBootsItem)
 	};
 	
+	static DamageSource[] validSources = new DamageSource[] {
+		DamageSource.IN_FIRE, 
+		DamageSource.ON_FIRE, 
+		DamageSource.HOT_FLOOR, 
+		DamageSource.LAVA
+	};
+	
 	public static void OnPlayerHurt(LivingHurtEvent event) {
 		if (!(event.getEntityLiving() instanceof EntityPlayerMP))
 			return;
 		
 		EntityPlayerMP player = (EntityPlayerMP) event.getEntityLiving();
 		DamageSource source = event.getSource();
-		DamageSource[] validSources = new DamageSource[] {
-			DamageSource.IN_FIRE, 
-			DamageSource.ON_FIRE, 
-			DamageSource.HOT_FLOOR, 
-			DamageSource.LAVA
-		};
 		
 		float[] materialPerPiece = new float[] { 5, 8, 7, 4 };
 		
@@ -78,7 +79,10 @@ public class LivingHurt {
 		}
 	}
 	
-	private static ItemStack[] vulcaniteWeapons = {new ItemStack(ModItems.vulcaniteSwordItem), new ItemStack(ModItems.vulcaniteAxeItem)};
+	private static ItemStack[] vulcaniteWeapons = {
+		new ItemStack(ModItems.vulcaniteSwordItem), 
+		new ItemStack(ModItems.vulcaniteAxeItem)
+	};
 	
 	public static void OnPlayerDamageEntity(LivingHurtEvent event) {
 		//Check if is not player attacking an entity
