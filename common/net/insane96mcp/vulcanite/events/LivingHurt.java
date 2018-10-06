@@ -81,9 +81,11 @@ public class LivingHurt {
 	private static ItemStack[] vulcaniteWeapons = {new ItemStack(ModItems.vulcaniteSwordItem), new ItemStack(ModItems.vulcaniteAxeItem)};
 	
 	public static void OnPlayerDamageEntity(LivingHurtEvent event) {
+		//Check if is not player attacking an entity
 		if (!(event.getSource().getTrueSource() instanceof EntityPlayerMP))
 			return;
 		
+		//Check if player is holding a vulcanite weapon
 		EntityPlayerMP player = (EntityPlayerMP) event.getSource().getTrueSource();
 		ItemStack heldItem = player.getHeldItemMainhand();
 		
@@ -97,17 +99,7 @@ public class LivingHurt {
 		if (!hasVulcaniteWeapon)
 			return;
 		
-		NBTTagList enchantments = heldItem.getEnchantmentTagList();
-		
-		if (enchantments == null)
-			return;
-		
-		int fireAspectLevel = 0;
-		for (int i = 0; i < enchantments.tagCount(); i++) {
-			if (enchantments.getCompoundTagAt(i).getShort("id") == Enchantment.getEnchantmentID(Enchantments.FIRE_ASPECT))
-				fireAspectLevel = enchantments.getCompoundTagAt(i).getShort("lvl");
-		}
-		
+		//Check if entity is fire immune
 		Entity target = event.getEntity();
 		if (!(target instanceof EntityLivingBase))
 			return;
@@ -116,11 +108,29 @@ public class LivingHurt {
 		if (!entity.isImmuneToFire())
 			return;
 		
+		//Define bonus damage
 		float damageDealth = event.getAmount();
 		float baseBonus = Properties.Tools.Bonus.damage / 100f;
-		float fireAspectBonus = Properties.Tools.Bonus.damageFireAspect / 100f * fireAspectLevel;
+		float fireAspectBonus = 0;
+		
+		
+		//Check if player has fire aspect enchantment
+		NBTTagList enchantments = heldItem.getEnchantmentTagList();
+		
+		if (enchantments != null){
+			int fireAspectLevel = 0;
+			for (int i = 0; i < enchantments.tagCount(); i++) {
+				if (enchantments.getCompoundTagAt(i).getShort("id") == Enchantment.getEnchantmentID(Enchantments.FIRE_ASPECT))
+					fireAspectLevel = enchantments.getCompoundTagAt(i).getShort("lvl");
+			}
+			
+			fireAspectBonus = Properties.Tools.Bonus.damageFireAspect / 100f * fireAspectLevel;
+		}
+		
+		//Calculate bonus damage
 		float bonusDamageDealth = damageDealth * (baseBonus + fireAspectBonus);
 		
+		//Set new damage
 		event.setAmount(damageDealth + bonusDamageDealth);
 	}
 }
