@@ -10,7 +10,7 @@
             "translate": "advancements.vulcanite.vulcanite.description"
         }
     },
-	"parent": "vulcanite:vulcanite/vulcanite_ore",
+	"parent": "vulcanite:vulcanite/root",
     "criteria": {
         "vulcanite": {
             "trigger": "minecraft:inventory_changed",

@@ -9,7 +9,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "vulcanite:vulcanite"
+        "recipe": "vulcanite:vulcanite_ingot"
       }
     },
     "has_vulcanite": {

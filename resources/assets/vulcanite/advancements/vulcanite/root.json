@@ -14,11 +14,24 @@
 		"announce_to_chat": false
     },
     "criteria": {
-        "vulcanite_root": {
+        "nether_trigger": {
             "trigger": "minecraft:changed_dimension",
             "conditions": {
                 "to": "the_nether"
             }
+        },
+        "overworld_ore_trigger": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+					{
+						"item": "vulcanite:vulcanite_nugget"
+					}
+				]
+            }
         }
-    }
+    },
+	"requirements": [
+		["nether_trigger", "overworld_ore_trigger"]
+	]
 }
