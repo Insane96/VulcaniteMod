@@ -27,7 +27,7 @@ import net.minecraft.world.World;
 
 public class ItemFlintAndVulcanite extends ItemFlintAndSteel{
 	public ItemFlintAndVulcanite(String name, ToolMaterial material, CreativeTabs tab) {
-		this.setMaxDamage(Properties.Tools.FlintAndVulcanite.maxUses);
+		this.setMaxDamage(Properties.ToolsAndWeapons.FlintAndVulcanite.maxUses);
 		this.setCreativeTab(tab);
 		setRegistryName(name);
 	}
@@ -40,8 +40,8 @@ public class ItemFlintAndVulcanite extends ItemFlintAndSteel{
 	@Override
 	public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
 		if (GuiScreen.isShiftKeyDown() && Properties.General.showMoreInfo) {
-			tooltip.add(I18n.format(Tooltips.FlintAndVulcanite.adv_setOnFire, Properties.Tools.FlintAndVulcanite.secondsOnFire));
-			tooltip.add(I18n.format(Tooltips.FlintAndVulcanite.adv_damageOnUse, Properties.Tools.FlintAndVulcanite.damageOnUse));
+			tooltip.add(I18n.format(Tooltips.FlintAndVulcanite.adv_setOnFire, Properties.ToolsAndWeapons.FlintAndVulcanite.secondsOnFire));
+			tooltip.add(I18n.format(Tooltips.FlintAndVulcanite.adv_damageOnUse, Properties.ToolsAndWeapons.FlintAndVulcanite.damageOnUse));
 		}
 		else {
 			tooltip.add(I18n.format(Tooltips.FlintAndVulcanite.base_setOnFire));
@@ -57,7 +57,7 @@ public class ItemFlintAndVulcanite extends ItemFlintAndSteel{
 			if (!worldIn.isRemote)
 			{
 		        EntityTNTPrimed entityTNTPrimed = new EntityTNTPrimed(worldIn, (double)((float)pos.getX() + 0.5F), (double)pos.getY(), (double)((float)pos.getZ() + 0.5F), player);
-		        if (Properties.Tools.FlintAndVulcanite.tntIgnitesFaster)
+		        if (Properties.ToolsAndWeapons.FlintAndVulcanite.tntIgnitesFaster)
 		        	entityTNTPrimed.setFuse(40);
 		        worldIn.spawnEntity(entityTNTPrimed);
                 worldIn.playSound((EntityPlayer)null, entityTNTPrimed.posX, entityTNTPrimed.posY, entityTNTPrimed.posZ, SoundEvents.ENTITY_TNT_PRIMED, SoundCategory.BLOCKS, 1.0F, 1.0F);

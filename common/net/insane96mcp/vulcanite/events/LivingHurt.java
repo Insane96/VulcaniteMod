@@ -110,7 +110,7 @@ public class LivingHurt {
 		
 		//Define bonus damage
 		float damageDealth = event.getAmount();
-		float baseBonus = Properties.Tools.Bonus.damage / 100f;
+		float baseBonus = Properties.ToolsAndWeapons.BonusStats.damage / 100f;
 		float fireAspectBonus = 0;
 		
 		
@@ -124,7 +124,7 @@ public class LivingHurt {
 					fireAspectLevel = enchantments.getCompoundTagAt(i).getShort("lvl");
 			}
 			
-			fireAspectBonus = Properties.Tools.Bonus.damageFireAspect / 100f * fireAspectLevel;
+			fireAspectBonus = Properties.ToolsAndWeapons.BonusStats.damageFireAspect / 100f * fireAspectLevel;
 		}
 		
 		//Calculate bonus damage

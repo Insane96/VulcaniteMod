@@ -31,7 +31,7 @@ public class ItemVulcaniteShovel extends ItemSpade{
 	@Override
 	public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
 		if (GuiScreen.isShiftKeyDown() && Properties.General.showMoreInfo) {
-			tooltip.add(I18n.format(Tooltips.Tool.adv_bonusEfficiency, Properties.Tools.Bonus.efficency));
+			tooltip.add(I18n.format(Tooltips.Tool.adv_bonusEfficiency, Properties.ToolsAndWeapons.BonusStats.efficency));
 		}
 		else {
 			tooltip.add(I18n.format(Tooltips.Tool.base_bonusEfficiency));

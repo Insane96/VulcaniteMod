@@ -3,23 +3,23 @@ package net.insane96mcp.vulcanite.lib;
 public class Properties {
 	
 	public static void Init() {
-		Tools.Init();
+		ToolsAndWeapons.Init();
 		Armor.Init();
 		OreGeneration.Init();
 		General.Init();
 	}
 	
-	public static class Tools{
+	public static class ToolsAndWeapons{
 		public static final String CATEGORY = "tools_and_weapons";
 		
 		public static void Init() {			
-			Base.Init();
-			Bonus.Init();
+			MaterialStats.Init();
+			BonusStats.Init();
 			FlintAndVulcanite.Init();
 		}
 		
-		public static class Base{
-			public static final String SUBCATEGORY = CATEGORY + ".base_properties";
+		public static class MaterialStats{
+			public static final String SUBCATEGORY = CATEGORY + ".material_stats";
 			
 			public static int harvestLevel;
 			public static int maxUses;
@@ -31,13 +31,13 @@ public class Properties {
 				harvestLevel = Config.LoadIntProperty(SUBCATEGORY, "harvest_level", "Harvest level for Vulcanite Tools\n(0 for wood, 1 for stone, 2 for iron, 3 for diamond)\n", 3);
 				maxUses = Config.LoadIntProperty(SUBCATEGORY, "max_uses", "Durability for Vulcanite Tools and Sword", 859);
 				efficency = Config.LoadFloatProperty(SUBCATEGORY, "efficency", "Efficency for Vulcanite Tools", 7f);
-				damage = Config.LoadFloatProperty(SUBCATEGORY, "base_damage", "Base Damage for Vulcanite Tools and Sword", 2.5f);
-				enchantability = Config.LoadIntProperty(SUBCATEGORY, "enchantability", "Enchantability for Vulcanite Tools and Sword", 16);
+				damage = Config.LoadFloatProperty(SUBCATEGORY, "base_damage", "Base Damage for Vulcanite Tools and Sword (each tools then adds a custom attack damage, e.g. sword adds 3.0 attack damage)", 2.5f);
+				enchantability = Config.LoadIntProperty(SUBCATEGORY, "enchantability", "Enchantability for Vulcanite Tools and Sword", 15);
 			}
 		}
 	
-		public static class Bonus{
-			public static final String SUBCATEGORY = CATEGORY + ".bonuses";
+		public static class BonusStats{
+			public static final String SUBCATEGORY = CATEGORY + ".bonus_stats";
 
 			public static float damage;
 			public static float damageFireAspect;
@@ -83,7 +83,7 @@ public class Properties {
 		public static void Init() {
 			baseDurability = Config.LoadIntProperty(CATEGORY, "base_durability", "Base durability for Vulcanite Armor\n(this value is multiplied by [11, 16, 15, 13] respectively from helmet to boots)\n", 22);
 			armorPoints = Config.LoadIntListProperty(CATEGORY, "armor_points", "Armor Points given by Vulcanite Armor", new int[] {2, 5, 4, 2});
-			enchantability = Config.LoadIntProperty(CATEGORY, "enchantability", "Enchantability for Vulcanite Armor", 16);
+			enchantability = Config.LoadIntProperty(CATEGORY, "enchantability", "Enchantability for Vulcanite Armor", 10);
 			toughness = Config.LoadFloatProperty(CATEGORY, "toughness", "Toughness for Vulcanite Armor", 0f);
 			damageReductionNether = Config.LoadFloatProperty(CATEGORY, "damage_reduction", "Percentage damage reduction from hot sources with full Vulcanite Armor in the Nether", 75f);
 			damageReductionOther = Config.LoadFloatProperty(CATEGORY, "damage_reduction_other_dimensions", "Percentage damage reduction from hot sources with full Vulcanite Armor in non-Nether dimensions", 40f);
@@ -107,7 +107,7 @@ public class Properties {
 			public static int maxY;
 			
 			public static void Init() {			
-				orePerVein = Config.LoadIntProperty(SUBCATEGORY, "block_per_vein", "Number of ores generated per vein", 3);
+				orePerVein = Config.LoadIntProperty(SUBCATEGORY, "block_per_vein", "Number of ores generated per vein", 4);
 				veinPerChunk = Config.LoadIntProperty(SUBCATEGORY, "vein_per_chunk", "Number of veins that have to try to spawn per chunk", 22);
 				minY = Config.LoadIntProperty(SUBCATEGORY, "min_Y", "The minimum height (Y) to try to generate Veins", 0);
 				maxY = Config.LoadIntProperty(SUBCATEGORY, "max_Y", "The maximum height (Y) to try to generate Veins", 32);

@@ -32,7 +32,7 @@ public class ItemVulcaniteSword extends ItemSword{
 	@Override
 	public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
 		if (GuiScreen.isShiftKeyDown() && Properties.General.showMoreInfo) {
-			tooltip.add(I18n.format(Tooltips.Weapon.adv_moreDamage, Properties.Tools.Bonus.damage, Properties.Tools.Bonus.damageFireAspect));
+			tooltip.add(I18n.format(Tooltips.Weapon.adv_moreDamage, Properties.ToolsAndWeapons.BonusStats.damage, Properties.ToolsAndWeapons.BonusStats.damageFireAspect));
 		}
 		else {
 			tooltip.add(I18n.format(Tooltips.Weapon.base_moreDamage));
