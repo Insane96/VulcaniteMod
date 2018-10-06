@@ -1,7 +1,7 @@
 package net.insane96mcp.vulcanite.lib;
 
 public class Names {
-	public static final String VULCANITE_INGOT = "vulcanite";
+	public static final String VULCANITE_INGOT = "vulcanite_ingot";
 	public static final String VULCANITE_BLOCK = "vulcanite_block";
 	public static final String VULCANITE_ORE = "vulcanite_ore";
 	public static final String VULCANITE_PICKAXE = "vulcanite_pickaxe";
