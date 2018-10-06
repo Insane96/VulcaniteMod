@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import net.insane96mcp.vulcanite.Vulcanite;
 import net.insane96mcp.vulcanite.block.BlockVulcanite;
+import net.insane96mcp.vulcanite.block.BlockVulcaniteOre;
 import net.insane96mcp.vulcanite.lib.Names;
 import net.insane96mcp.vulcanite.worldgen.NetherOreGeneration;
 import net.insane96mcp.vulcanite.worldgen.OverworldOreGeneration;
@@ -17,7 +18,7 @@ import net.minecraftforge.oredict.OreDictionary;
 public class ModBlocks {
 	
 	public static BlockVulcanite vulcaniteBlock;
-	public static Block vulcaniteOre;
+	public static BlockVulcaniteOre vulcaniteOre;
 	public static Block netherVulcaniteOre;
 	
 	public static ArrayList<Block> BLOCKS = new ArrayList<Block>();
@@ -33,7 +34,7 @@ public class ModBlocks {
 		BLOCKS.add(vulcaniteBlock);
 
 		location = new ResourceLocation(Vulcanite.MOD_ID, Names.VULCANITE_ORE);
-		vulcaniteOre = new Block(Material.ROCK);
+		vulcaniteOre = new BlockVulcaniteOre();
 		vulcaniteOre.setRegistryName(location);
 		vulcaniteOre.setTranslationKey(location.toString());
 		vulcaniteOre.setCreativeTab(CreativeTabs.BUILDING_BLOCKS);

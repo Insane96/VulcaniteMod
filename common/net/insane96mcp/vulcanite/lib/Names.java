@@ -15,4 +15,5 @@ public class Names {
 	public static final String VULCANITE_BOOTS = "vulcanite_boots";
 	public static final String FLINT_AND_VULCANITE = "flint_and_vulcanite";
 	public static final String NETHER_VULCANITE_ORE = "nether_vulcanite_ore";
+	public static final String VULCANITE_NUGGET = "vulcanite_nugget";
 }

@@ -78,7 +78,7 @@ public class LivingHurt {
 		}
 	}
 	
-	private static ItemStack vulcaniteSword = new ItemStack(ModItems.vulcaniteSwordItem);
+	private static ItemStack[] vulcaniteWeapons = {new ItemStack(ModItems.vulcaniteSwordItem), new ItemStack(ModItems.vulcaniteAxeItem)};
 	
 	public static void OnPlayerDamageEntity(LivingHurtEvent event) {
 		if (!(event.getSource().getTrueSource() instanceof EntityPlayerMP))
@@ -86,7 +86,15 @@ public class LivingHurt {
 		
 		EntityPlayerMP player = (EntityPlayerMP) event.getSource().getTrueSource();
 		ItemStack heldItem = player.getHeldItemMainhand();
-		if (!ItemStack.areItemsEqualIgnoreDurability(heldItem, vulcaniteSword))
+		
+		boolean hasVulcaniteWeapon = false;
+		for (ItemStack weapon : vulcaniteWeapons) {
+			if (ItemStack.areItemsEqualIgnoreDurability(heldItem, weapon)) {
+				hasVulcaniteWeapon = true;
+				break;
+			}
+		}
+		if (!hasVulcaniteWeapon)
 			return;
 		
 		NBTTagList enchantments = heldItem.getEnchantmentTagList();

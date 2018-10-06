@@ -21,6 +21,7 @@ import net.minecraftforge.oredict.OreDictionary;
 
 public class ModItems {
 	public static Item vulcaniteIngotItem;
+	public static Item vulcaniteNuggetItem;
 	
 	public static ItemVulcanitePickaxe vulcanitePickaxeItem;
 	public static ItemVulcaniteShovel vulcaniteShovelItem;
@@ -43,6 +44,12 @@ public class ModItems {
 		vulcaniteIngotItem.setRegistryName(Vulcanite.RESOURCE_PREFIX + Names.VULCANITE_INGOT);
 		vulcaniteIngotItem.setTranslationKey(vulcaniteIngotItem.getRegistryName().toString());
 		ITEMS.add(vulcaniteIngotItem);
+		
+		vulcaniteNuggetItem = new Item();
+		vulcaniteNuggetItem.setCreativeTab(CreativeTabs.MATERIALS);
+		vulcaniteNuggetItem.setRegistryName(Vulcanite.RESOURCE_PREFIX + Names.VULCANITE_NUGGET);
+		vulcaniteNuggetItem.setTranslationKey(vulcaniteNuggetItem.getRegistryName().toString());
+		ITEMS.add(vulcaniteNuggetItem);
 
 		vulcanitePickaxeItem = new ItemVulcanitePickaxe(Names.VULCANITE_PICKAXE, ModMaterial.tool, CreativeTabs.TOOLS);
 		ITEMS.add(vulcanitePickaxeItem);
@@ -76,7 +83,8 @@ public class ModItems {
 	}
 	
 	public static void Init() {
-		GameRegistry.addSmelting(ModBlocks.vulcaniteOre, new ItemStack(vulcaniteIngotItem), 3.0f);
+		GameRegistry.addSmelting(ModBlocks.netherVulcaniteOre, new ItemStack(vulcaniteIngotItem), 3.0f);
+		GameRegistry.addSmelting(ModBlocks.vulcaniteOre, new ItemStack(vulcaniteNuggetItem), 1.0f);
 		
 		OreDictionary.registerOre("ingotVulcanite", vulcaniteIngotItem);
 	}

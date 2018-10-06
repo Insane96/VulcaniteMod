@@ -55,12 +55,13 @@ public class BlockVulcanite extends Block{
 		if (Properties.General.vulcaniteBlockTimeOnFire == 0)
 			return;
 		
-		if (GuiScreen.isShiftKeyDown()) {
+		if (GuiScreen.isShiftKeyDown() && Properties.General.showMoreInfo) {
 			tooltip.add(I18n.format(Tooltips.VulcaniteBlock.adv_setOnFire, Properties.General.vulcaniteBlockTimeOnFire));
 		}
 		else {
 			tooltip.add(I18n.format(Tooltips.VulcaniteBlock.base_setOnFire));
-			tooltip.add(I18n.format(Tooltips.General.shiftForMore));
+			if (Properties.General.showMoreInfo)
+				tooltip.add(I18n.format(Tooltips.General.shiftForMore));
 		}
 	}
 }

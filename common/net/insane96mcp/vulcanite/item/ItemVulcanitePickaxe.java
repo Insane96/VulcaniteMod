@@ -30,12 +30,13 @@ public class ItemVulcanitePickaxe extends ItemPickaxe {
 	
 	@Override
 	public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
-		if (GuiScreen.isShiftKeyDown()) {
+		if (GuiScreen.isShiftKeyDown() && Properties.General.showMoreInfo) {
 			tooltip.add(I18n.format(Tooltips.Tool.adv_bonusEfficiency, Properties.Tools.Bonus.efficency));
 		}
 		else {
 			tooltip.add(I18n.format(Tooltips.Tool.base_bonusEfficiency));
-			tooltip.add(I18n.format(Tooltips.General.shiftForMore));
+			if (Properties.General.showMoreInfo)
+				tooltip.add(I18n.format(Tooltips.General.shiftForMore));
 		}
 	}
 	
