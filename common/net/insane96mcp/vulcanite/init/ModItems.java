@@ -2,8 +2,8 @@ package net.insane96mcp.vulcanite.init;
 
 import java.util.ArrayList;
 
+import net.insane96mcp.vulcanite.Vulcanite;
 import net.insane96mcp.vulcanite.item.ItemFlintAndVulcanite;
-import net.insane96mcp.vulcanite.item.ItemVulcanite;
 import net.insane96mcp.vulcanite.item.ItemVulcaniteArmor;
 import net.insane96mcp.vulcanite.item.ItemVulcaniteAxe;
 import net.insane96mcp.vulcanite.item.ItemVulcaniteHoe;
@@ -20,7 +20,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.OreDictionary;
 
 public class ModItems {
-	public static ItemVulcanite vulcaniteItem;
+	public static Item vulcaniteIngotItem;
 	
 	public static ItemVulcanitePickaxe vulcanitePickaxeItem;
 	public static ItemVulcaniteShovel vulcaniteShovelItem;
@@ -38,8 +38,11 @@ public class ModItems {
 	public static ArrayList<Item> ITEMS = new ArrayList<Item>();
 	
 	public static void PreInit() {
-		vulcaniteItem = new ItemVulcanite(Names.VULCANITE_ITEM, CreativeTabs.MATERIALS);
-		ITEMS.add(vulcaniteItem);
+		vulcaniteIngotItem = new Item();
+		vulcaniteIngotItem.setCreativeTab(CreativeTabs.MATERIALS);
+		vulcaniteIngotItem.setRegistryName(Vulcanite.RESOURCE_PREFIX + Names.VULCANITE_INGOT);
+		vulcaniteIngotItem.setTranslationKey(vulcaniteIngotItem.getRegistryName().toString());
+		ITEMS.add(vulcaniteIngotItem);
 
 		vulcanitePickaxeItem = new ItemVulcanitePickaxe(Names.VULCANITE_PICKAXE, ModMaterial.tool, CreativeTabs.TOOLS);
 		ITEMS.add(vulcanitePickaxeItem);
@@ -73,8 +76,8 @@ public class ModItems {
 	}
 	
 	public static void Init() {
-		GameRegistry.addSmelting(ModBlocks.vulcaniteOre, new ItemStack(vulcaniteItem), 3.0f);
+		GameRegistry.addSmelting(ModBlocks.vulcaniteOre, new ItemStack(vulcaniteIngotItem), 3.0f);
 		
-		OreDictionary.registerOre("gemVulcanite", vulcaniteItem);
+		OreDictionary.registerOre("ingotVulcanite", vulcaniteIngotItem);
 	}
 }

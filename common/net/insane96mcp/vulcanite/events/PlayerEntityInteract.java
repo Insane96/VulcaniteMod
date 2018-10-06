@@ -20,9 +20,6 @@ public class PlayerEntityInteract {
 	
 	@SubscribeEvent
 	public static void PlayerEntityInteractEvent(PlayerInteractEvent.EntityInteract event) {
-		//if (event.getWorld().isRemote)
-			//return;
-		
 		EntityPlayer player = event.getEntityPlayer();
 		ItemStack mainHand = player.getHeldItemMainhand();
 		ItemStack offHand = player.getHeldItemOffhand();
@@ -38,13 +35,13 @@ public class PlayerEntityInteract {
 		
 		EntityLivingBase entityLivingBase = (EntityLivingBase)target;
 		
-		if (entityLivingBase instanceof EntityPlayerMP && !Properties.FlintAndVulcanite.pvp)
+		if (entityLivingBase instanceof EntityPlayerMP && !Properties.Tools.FlintAndVulcanite.pvp)
 			return;
 		
 		if (entityLivingBase.isImmuneToFire())
 			return;
 		
-		entityLivingBase.setFire(Properties.FlintAndVulcanite.secondsOnFire);
+		entityLivingBase.setFire(Properties.Tools.FlintAndVulcanite.secondsOnFire);
 		
 		if (entityLivingBase instanceof EntityCreeper) {
 			NBTTagCompound ignited = new NBTTagCompound();
@@ -54,12 +51,12 @@ public class PlayerEntityInteract {
 		
 		if (ItemStack.areItemsEqualIgnoreDurability(mainHand, flintAndVulcanite)) {
 			player.swingArm(EnumHand.MAIN_HAND);
-			mainHand.damageItem(Properties.FlintAndVulcanite.damageOnUse, player);
+			mainHand.damageItem(Properties.Tools.FlintAndVulcanite.damageOnUse, player);
 		}
 		
 		else { 
 			player.swingArm(EnumHand.OFF_HAND);
-			offHand.damageItem(Properties.FlintAndVulcanite.damageOnUse, player);
+			offHand.damageItem(Properties.Tools.FlintAndVulcanite.damageOnUse, player);
 		}
 		
 		event.getWorld().playSound(player, entityLivingBase.getPosition(), SoundEvents.ITEM_FLINTANDSTEEL_USE, SoundCategory.PLAYERS, 1.0f, event.getWorld().rand.nextFloat() * 0.4F + 0.8F);

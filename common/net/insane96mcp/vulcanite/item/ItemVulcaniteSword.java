@@ -32,7 +32,7 @@ public class ItemVulcaniteSword extends ItemSword{
 	@Override
 	public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
 		if (GuiScreen.isShiftKeyDown()) {
-			tooltip.add(I18n.format(Tooltips.Weapon.adv_moreDamage, Properties.Tools.bonusDamage, Properties.Tools.bonusDamageFireAspect));
+			tooltip.add(I18n.format(Tooltips.Weapon.adv_moreDamage, Properties.Tools.Bonus.damage, Properties.Tools.Bonus.damageFireAspect));
 		}
 		else {
 			tooltip.add(I18n.format(Tooltips.Weapon.base_moreDamage));
@@ -42,6 +42,6 @@ public class ItemVulcaniteSword extends ItemSword{
 	
 	@Override
 	public boolean getIsRepairable(ItemStack toRepair, ItemStack repair) {
-		return ItemStack.areItemsEqualIgnoreDurability(repair, new ItemStack(ModItems.vulcaniteItem)) ? true : super.getIsRepairable(toRepair, repair);
+		return ItemStack.areItemsEqualIgnoreDurability(repair, new ItemStack(ModItems.vulcaniteIngotItem)) ? true : super.getIsRepairable(toRepair, repair);
   	}
 }

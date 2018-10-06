@@ -109,8 +109,8 @@ public class LivingHurt {
 			return;
 		
 		float damageDealth = event.getAmount();
-		float baseBonus = Properties.Tools.bonusDamage / 100f;
-		float fireAspectBonus = Properties.Tools.bonusDamageFireAspect / 100f * fireAspectLevel;
+		float baseBonus = Properties.Tools.Bonus.damage / 100f;
+		float fireAspectBonus = Properties.Tools.Bonus.damageFireAspect / 100f * fireAspectLevel;
 		float bonusDamageDealth = damageDealth * (baseBonus + fireAspectBonus);
 		
 		event.setAmount(damageDealth + bonusDamageDealth);

@@ -31,7 +31,7 @@ public class ItemVulcanitePickaxe extends ItemPickaxe {
 	@Override
 	public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
 		if (GuiScreen.isShiftKeyDown()) {
-			tooltip.add(I18n.format(Tooltips.Tool.adv_bonusEfficiency, Properties.Tools.bonusEfficency));
+			tooltip.add(I18n.format(Tooltips.Tool.adv_bonusEfficiency, Properties.Tools.Bonus.efficency));
 		}
 		else {
 			tooltip.add(I18n.format(Tooltips.Tool.base_bonusEfficiency));
@@ -41,6 +41,6 @@ public class ItemVulcanitePickaxe extends ItemPickaxe {
 	
 	@Override
 	public boolean getIsRepairable(ItemStack toRepair, ItemStack repair) {
-		return ItemStack.areItemsEqualIgnoreDurability(repair, new ItemStack(ModItems.vulcaniteItem)) ? true : super.getIsRepairable(toRepair, repair);
+		return ItemStack.areItemsEqualIgnoreDurability(repair, new ItemStack(ModItems.vulcaniteIngotItem)) ? true : super.getIsRepairable(toRepair, repair);
   	}
 }
