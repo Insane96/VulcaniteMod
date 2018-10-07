@@ -141,10 +141,15 @@ public class Properties {
 	}
 	
 	public static class General{
+		//public static String configVersion;
+		
 		public static int vulcaniteBlockTimeOnFire;
 		public static boolean showMoreInfo;
 		
 		public static void Init() {
+			//configVersion = Config.LoadStringProperty("general", "version", "DON'T TOUCH THIS", "1.4.0");
+			
+			
 			vulcaniteBlockTimeOnFire = Config.LoadIntProperty("general", "vulcanite_block_seconds_on_fire", "How much time will the Vulcanite Block set on fire mobs that are standing on it", 3);
 			
 			showMoreInfo = Config.LoadBoolProperty("general", "show_more_info", "Whenever or not enable the \"Press SHIFT to show more infos\" thing", true);
