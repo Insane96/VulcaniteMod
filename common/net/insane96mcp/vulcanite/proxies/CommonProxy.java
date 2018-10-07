@@ -3,6 +3,7 @@ package net.insane96mcp.vulcanite.proxies;
 import net.insane96mcp.vulcanite.events.LivingHurt;
 import net.insane96mcp.vulcanite.events.PlayerBreakSpeed;
 import net.insane96mcp.vulcanite.events.PlayerEntityInteract;
+import net.insane96mcp.vulcanite.events.RegistryMissingMappings;
 import net.insane96mcp.vulcanite.init.ModBlocks;
 import net.insane96mcp.vulcanite.init.ModItems;
 import net.insane96mcp.vulcanite.lib.Config;
@@ -29,6 +30,7 @@ public class CommonProxy {
 		MinecraftForge.EVENT_BUS.register(LivingHurt.class);
 		MinecraftForge.EVENT_BUS.register(PlayerBreakSpeed.class);
 		MinecraftForge.EVENT_BUS.register(PlayerEntityInteract.class);
+		MinecraftForge.EVENT_BUS.register(RegistryMissingMappings.class);
 	}
 	
 	public void PostInit(FMLPostInitializationEvent event) {

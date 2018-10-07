@@ -130,7 +130,7 @@ public class Properties {
 			public static void Init() {
 				veinPerChunk = Config.LoadIntProperty(SUBCATEGORY, "vein_per_chunk", "Number of veins that have to try to spawn per chunk", 1);
 				orePerVein = Config.LoadIntProperty(SUBCATEGORY, "ore_per_vein", "Number of ores per vein", 15);
-				minY = Config.LoadIntProperty(SUBCATEGORY, "min_Y", "The minimum height (Y) to try to generate Veins", 10);
+				minY = Config.LoadIntProperty(SUBCATEGORY, "min_Y", "The minimum height (Y) to try to generate Veins", 11);
 				maxY = Config.LoadIntProperty(SUBCATEGORY, "max_Y", "The maximum height (Y) to try to generate Veins", 14);
 				minLavaRequired = Config.LoadIntProperty(SUBCATEGORY, "min_lava_required", "How many lava blocks should be near vulcanite to be able to spawn?", 5);
 

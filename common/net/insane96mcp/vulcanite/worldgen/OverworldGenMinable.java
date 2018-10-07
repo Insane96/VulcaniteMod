@@ -25,8 +25,6 @@ public class OverworldGenMinable extends WorldGenerator {
 	private int numberOfBlocks;
     private final Predicate<IBlockState> forBlock;
     
-    private static ResourceLocation lava = new ResourceLocation("minecraft:lava");
-    
 	public OverworldGenMinable(IBlockState defaultState, int numberOfBlocks, BlockMatcher forBlock) {
         this.oreBlock = defaultState;
         this.numberOfBlocks = numberOfBlocks;
