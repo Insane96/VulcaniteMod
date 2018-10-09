@@ -1,4 +1,5 @@
-item.vulcanite:vulcanite.name=Vulcanite
+item.vulcanite:vulcanite_ingot.name=Lingotto di Vulcanite
+item.vulcanite:vulcanite_nugget.name=Pepita di Vulcanite
 item.vulcanite:vulcanite_pickaxe.name=Piccone di Vulcanite
 item.vulcanite:vulcanite_axe.name=Ascia di Vulcanite
 item.vulcanite:vulcanite_shovel.name=Pala di Vulcanite
@@ -14,6 +15,7 @@ item.vulcanite:vulcanite_boots.name=Stivali di Vulcanite
 
 tile.vulcanite:vulcanite_block.name=Blocco di Vulcanite
 tile.vulcanite:vulcanite_ore.name=Vulcanite Grezza
+tile.vulcanite:nether_vulcanite_ore.name=Vulcanite del Nether Grezza
 
 tooltip.general.shift_for_more=§7Premi MAIUSC per più informazioni
 
@@ -23,7 +25,7 @@ tooltip.weapon.adv_info.more_damage=§6Fa il §c%f%%§6 in più di danno, aument
 tooltip.tool.base_info.more_efficient=§6Nel nether, l'attrezzo è più efficiente
 tooltip.tool.adv_info.more_efficient=§6Nel nether, l'attrezzo rompe i blocchi il §c%f%%§6 più velocemente!
 
-tooltip.armor.base_info.damage_reduction=§6Riduce il danno dalle sorgenti di calore. Nel Nether la riduzione del danno è più efficace.
+tooltip.armor.base_info.damage_reduction=§6Riduce il danno dalle sorgenti di calore. Ogni pezzo protegge da un po' di danno. Nel Nether la riduzione del danno è più efficace.
 tooltip.armor.adv_info.damage_reduction=§6L'armatura completa, nel Nether, riduce il danno da sorgenti di calore del §c%f%%§6. L'armatura completa, nelle altre dimensioni, riduce il danno da sorgenti di calore del §c%f%%§6.
 
 tooltip.flint_and_vulcanite.base_info.set_on_fire=§6Clicca col Tasto Destro su un mob per dargli fuoco
@@ -36,19 +38,16 @@ tooltip.vulcanite_block.adv_info.set_on_fire=§6Da' fuoco ai mob che ci sono sop
 advancements.vulcanite.root.title=Vulcanite Mod
 advancements.vulcanite.root.description=L'inizio dell'anti calore
 
-advancements.vulcanite.ore.title=Molto caldo
-advancements.vulcanite.ore.description=Ottieni una Vulcanite Grezza. Può essere trovata sotto il livello della lava.
+advancements.vulcanite.vulcanite.title=Leggermente Caldo
+advancements.vulcanite.vulcanite.description=Fondi una Vulcanite del Nether Grezza o Fabbrica delle Pepite di Vulcanite assieme per ottenere un Lingotto di Vulcanite
 
-advancements.vulcanite.vulcanite.title=Meno caldo
-advancements.vulcanite.vulcanite.description=Fondi una Vulcanite grezza per ottenere una Vulcanite
-
-advancements.vulcanite.sword.title=Gli immuni al fuoco dovrebbero fuggire
+advancements.vulcanite.sword.title=Gli immuni al fuoco dovrebbero aver paura
 advancements.vulcanite.sword.description=Ottieni una spada di Vulcanite
 
-advancements.vulcanite.tools.title=Sonic il porcospino nel Nether
+advancements.vulcanite.tools.title=Sonic nel Nether
 advancements.vulcanite.tools.description=Ottieni ogni attrezzo fatto di Vulcanite
 
-advancements.vulcanite.flint.title=Dando fuoco ai Mob
+advancements.vulcanite.flint.title=Dai fuoco a tutti!
 advancements.vulcanite.flint.description=Ottieni un Acciarino in Vulcanite
 
 advancements.vulcanite.armor.title=Anti Calore

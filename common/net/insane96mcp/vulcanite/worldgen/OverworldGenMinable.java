@@ -31,6 +31,9 @@ public class OverworldGenMinable extends WorldGenerator {
         this.forBlock = forBlock;
 	}
 
+	public static ResourceLocation lava = new ResourceLocation("minecraft:lava");
+	public static ResourceLocation air = new ResourceLocation("minecraft:air");
+
 	@Override
 	public boolean generate(World worldIn, Random rand, BlockPos position) {
     	Iterable<BlockPos> blocksAround = BlockPos.getAllInBox(position.add(-3, -3, -3), position.add(3, 3, 3));
@@ -39,9 +42,9 @@ public class OverworldGenMinable extends WorldGenerator {
     	int airAround = 0;
     	
     	for (BlockPos blockPos : blocksAround) {
-			if (worldIn.getBlockState(blockPos).getBlock().getRegistryName().equals(new ResourceLocation("minecraft:lava")))
+			if (worldIn.getBlockState(blockPos).getBlock().getRegistryName().equals(lava))
 				lavaAround++;
-			if (worldIn.getBlockState(blockPos).getBlock().getRegistryName().equals(new ResourceLocation("minecraft:air")))
+			if (worldIn.getBlockState(blockPos).getBlock().getRegistryName().equals(air))
 				airAround++;
 			
 			if (lavaAround >= Properties.OreGeneration.Overworld.minLavaRequired && airAround >= 1)
@@ -96,7 +99,6 @@ public class OverworldGenMinable extends WorldGenerator {
                                 {
                                     BlockPos blockpos = new BlockPos(l1, i2, j2);
 
-                                	//System.out.println(lavaAround + " " + blockpos);
                                     IBlockState state = worldIn.getBlockState(blockpos);
                                     if (state.getBlock().isReplaceableOreGen(state, worldIn, blockpos, this.forBlock))
                                     {
