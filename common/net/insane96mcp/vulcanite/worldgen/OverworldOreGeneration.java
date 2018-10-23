@@ -10,16 +10,14 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.IChunkGenerator;
-import net.minecraft.world.gen.feature.WorldGenMinable;
 import net.minecraftforge.fml.common.IWorldGenerator;
-import net.minecraftforge.fml.common.eventhandler.IGenericEvent;
 
 public class OverworldOreGeneration implements IWorldGenerator {
 
 	private final OverworldGenMinable worldGenMinable;
 	
 	public OverworldOreGeneration() {
-		worldGenMinable = new OverworldGenMinable(ModBlocks.vulcaniteOre.getDefaultState(), Properties.OreGeneration.Overworld.orePerVein, BlockMatcher.forBlock(Blocks.STONE));
+		worldGenMinable = new OverworldGenMinable(ModBlocks.vulcaniteOre.getDefaultState(), Properties.config.oreGeneration.overworld.orePerVein, BlockMatcher.forBlock(Blocks.STONE));
 	}
 	
 	@Override
@@ -28,8 +26,8 @@ public class OverworldOreGeneration implements IWorldGenerator {
 		BlockPos chunkPos = new BlockPos(chunkX * 16, 0, chunkZ * 16);
 
 		if (world.provider.getDimension() == 0) {
-			for (int i = 0; i < Properties.OreGeneration.Overworld.veinPerChunk; i++) {
-				worldGenMinable.generate(world, random, chunkPos.add(random.nextInt(16), random.nextInt(Properties.OreGeneration.Overworld.maxY - Properties.OreGeneration.Overworld.minY) + Properties.OreGeneration.Overworld.minY, random.nextInt(16)));
+			for (int i = 0; i < Properties.config.oreGeneration.overworld.veinPerChunk; i++) {
+				worldGenMinable.generate(world, random, chunkPos.add(random.nextInt(16), random.nextInt(Properties.config.oreGeneration.overworld.maxY - Properties.config.oreGeneration.overworld.minY) + Properties.config.oreGeneration.overworld.minY, random.nextInt(16)));
 			}
 		}
 	}

@@ -5,13 +5,13 @@ import java.util.List;
 import net.insane96mcp.vulcanite.Vulcanite;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.datafix.fixes.TileEntityId;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.event.RegistryEvent.MissingMappings.Mapping;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
+@Mod.EventBusSubscriber(modid = Vulcanite.MOD_ID)
 public class RegistryMissingMappings {
 
 	@SubscribeEvent
@@ -24,7 +24,7 @@ public class RegistryMissingMappings {
 			System.out.format("Remapped item: {} -> {}", oldLoc, item.key);
 		}
 	}
-	
+
 	@SubscribeEvent
 	public static void MissingBlockMappingsEvent(RegistryEvent.MissingMappings<Block> event) {
 		List<Mapping<Block>> list = event.getMappings();

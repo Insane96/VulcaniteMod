@@ -35,12 +35,12 @@ public class ItemVulcaniteArmor extends ItemArmor{
 	
 	@Override
 	public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
-		if (GuiScreen.isShiftKeyDown() && Properties.General.showMoreInfo) {
-			tooltip.add(I18n.format(Tooltips.Armor.adv_damageReduction, Properties.Armor.damageReductionNether, Properties.Armor.damageReductionOther));
+		if (GuiScreen.isShiftKeyDown() && Properties.config.showMoreInfo) {
+			tooltip.add(I18n.format(Tooltips.Armor.adv_damageReduction, Properties.config.armor.damageReductionNether, Properties.config.armor.damageReductionOther));
 		}
 		else {
 			tooltip.add(I18n.format(Tooltips.Armor.base_damageReduction));
-			if (Properties.General.showMoreInfo)
+			if (Properties.config.showMoreInfo)
 				tooltip.add(I18n.format(Tooltips.General.shiftForMore));
 		}
 	}

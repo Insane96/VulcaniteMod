@@ -11,7 +11,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import scala.sys.Prop;
 
 public class BlockVulcaniteOre extends BlockOre{
 
@@ -26,14 +25,14 @@ public class BlockVulcaniteOre extends BlockOre{
 
 	@Override
 	public int quantityDropped(Random random) {
-		return MathHelper.getInt(random, Properties.OreGeneration.Overworld.minNuggetDrop, Properties.OreGeneration.Overworld.maxNuggetDrop);
+		return MathHelper.getInt(random, Properties.config.oreGeneration.overworld.minNuggetDrop, Properties.config.oreGeneration.overworld.maxNuggetDrop);
 	}
 
 	@Override
 	public int quantityDroppedWithBonus(int fortune, Random random) {
 		if (fortune > 0) {
-			int maxNugget = Properties.OreGeneration.Overworld.maxNuggetDrop + fortune;
-			return MathHelper.getInt(random, Properties.OreGeneration.Overworld.minNuggetDrop, maxNugget);
+			int maxNugget = Properties.config.oreGeneration.overworld.maxNuggetDrop + fortune;
+			return MathHelper.getInt(random, Properties.config.oreGeneration.overworld.minNuggetDrop, maxNugget);
 		}
 		else {
 			return this.quantityDropped(random);

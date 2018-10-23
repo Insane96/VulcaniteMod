@@ -4,7 +4,6 @@ import java.util.Random;
 
 import com.google.common.base.Predicate;
 
-import net.insane96mcp.vulcanite.init.ModBlocks;
 import net.insane96mcp.vulcanite.lib.Properties;
 import net.minecraft.block.BlockStone;
 import net.minecraft.block.state.IBlockState;
@@ -14,9 +13,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
-import net.minecraft.world.gen.feature.WorldGenMinable;
 import net.minecraft.world.gen.feature.WorldGenerator;
-import scala.reflect.internal.Trees.New;
 
 public class OverworldGenMinable extends WorldGenerator {
 
@@ -47,10 +44,10 @@ public class OverworldGenMinable extends WorldGenerator {
 			if (worldIn.getBlockState(blockPos).getBlock().getRegistryName().equals(air))
 				airAround++;
 			
-			if (lavaAround >= Properties.OreGeneration.Overworld.minLavaRequired && airAround >= 1)
+			if (lavaAround >= Properties.config.oreGeneration.overworld.minLavaRequired && airAround >= 1)
 				break;
 		}
-    	if (lavaAround < Properties.OreGeneration.Overworld.minLavaRequired)
+    	if (lavaAround < Properties.config.oreGeneration.overworld.minLavaRequired)
     		return false;
     	if (airAround < 1)
     		return false;

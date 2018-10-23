@@ -1,29 +1,22 @@
 package net.insane96mcp.vulcanite.events;
 
+import net.insane96mcp.vulcanite.Vulcanite;
 import net.insane96mcp.vulcanite.init.ModItems;
 import net.insane96mcp.vulcanite.lib.Properties;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Enchantments;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.util.DamageSource;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
+@Mod.EventBusSubscriber(modid = Vulcanite.MOD_ID)
 public class LivingHurt {
-
-	@SubscribeEvent
-	public static void LivingHurtEvent(LivingHurtEvent event) {
-		if (event.getEntityLiving().world.isRemote)
-			return;
-		
-		OnPlayerHurt(event);
-		OnPlayerDamageEntity(event);
-	}
 	
 	static ItemStack[] armorList = new ItemStack[] {
 		new ItemStack(ModItems.vulcaniteHelmetItem), 
@@ -38,8 +31,12 @@ public class LivingHurt {
 		DamageSource.HOT_FLOOR, 
 		DamageSource.LAVA
 	};
-	
+
+	@SubscribeEvent
 	public static void OnPlayerHurt(LivingHurtEvent event) {
+		if (event.getEntityLiving().world.isRemote)
+			return;
+		
 		if (!(event.getEntityLiving() instanceof EntityPlayerMP))
 			return;
 		
@@ -68,9 +65,9 @@ public class LivingHurt {
 		    if (materialsUsed >= 1) {
 		    	float maxReduction; 
     			if (player.dimension == -1) 
-    				maxReduction = Properties.Armor.damageReductionNether / 100f;
+    				maxReduction = Properties.config.armor.damageReductionNether / 100f;
     			else 
-    				maxReduction = Properties.Armor.damageReductionOther / 100f;
+    				maxReduction = Properties.config.armor.damageReductionOther / 100f;
 		    	float reductionPerMaterial = maxReduction / 24f;
 		    	float percentageReduction = reductionPerMaterial * materialsUsed;
 		    	amount = amount * (1f - percentageReduction);
@@ -83,8 +80,12 @@ public class LivingHurt {
 		new ItemStack(ModItems.vulcaniteSwordItem), 
 		new ItemStack(ModItems.vulcaniteAxeItem)
 	};
-	
+
+	@SubscribeEvent
 	public static void OnPlayerDamageEntity(LivingHurtEvent event) {
+		if (event.getEntityLiving().world.isRemote)
+			return;
+		
 		//Check if is not player attacking an entity
 		if (!(event.getSource().getTrueSource() instanceof EntityPlayerMP))
 			return;
@@ -114,7 +115,7 @@ public class LivingHurt {
 		
 		//Define bonus damage
 		float damageDealth = event.getAmount();
-		float baseBonus = Properties.ToolsAndWeapons.BonusStats.damage / 100f;
+		float baseBonus = Properties.config.toolsAndWeapons.bonusStats.damage / 100f;
 		float fireAspectBonus = 0;
 		
 		
@@ -128,7 +129,7 @@ public class LivingHurt {
 					fireAspectLevel = enchantments.getCompoundTagAt(i).getShort("lvl");
 			}
 			
-			fireAspectBonus = Properties.ToolsAndWeapons.BonusStats.damageFireAspect / 100f * fireAspectLevel;
+			fireAspectBonus = Properties.config.toolsAndWeapons.bonusStats.damageFireAspect / 100f * fireAspectLevel;
 		}
 		
 		//Calculate bonus damage

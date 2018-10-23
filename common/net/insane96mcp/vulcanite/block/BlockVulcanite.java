@@ -44,23 +44,23 @@ public class BlockVulcanite extends Block{
 	
 	@Override
 	public void onEntityWalk(World worldIn, BlockPos pos, Entity entityIn) {
-		if (Properties.General.vulcaniteBlockTimeOnFire == 0)
+		if (Properties.config.vulcaniteBlockTimeOnFire == 0)
 			return;
 		
-		entityIn.setFire(Properties.General.vulcaniteBlockTimeOnFire);
+		entityIn.setFire(Properties.config.vulcaniteBlockTimeOnFire);
 	}
 
 	@Override
 	public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
-		if (Properties.General.vulcaniteBlockTimeOnFire == 0)
+		if (Properties.config.vulcaniteBlockTimeOnFire == 0)
 			return;
 		
-		if (GuiScreen.isShiftKeyDown() && Properties.General.showMoreInfo) {
-			tooltip.add(I18n.format(Tooltips.VulcaniteBlock.adv_setOnFire, Properties.General.vulcaniteBlockTimeOnFire));
+		if (GuiScreen.isShiftKeyDown() && Properties.config.showMoreInfo) {
+			tooltip.add(I18n.format(Tooltips.VulcaniteBlock.adv_setOnFire, Properties.config.vulcaniteBlockTimeOnFire));
 		}
 		else {
 			tooltip.add(I18n.format(Tooltips.VulcaniteBlock.base_setOnFire));
-			if (Properties.General.showMoreInfo)
+			if (Properties.config.showMoreInfo)
 				tooltip.add(I18n.format(Tooltips.General.shiftForMore));
 		}
 	}

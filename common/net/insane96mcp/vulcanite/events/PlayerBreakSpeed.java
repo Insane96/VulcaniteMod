@@ -1,13 +1,16 @@
 package net.insane96mcp.vulcanite.events;
 
+import net.insane96mcp.vulcanite.Vulcanite;
 import net.insane96mcp.vulcanite.init.ModItems;
 import net.insane96mcp.vulcanite.lib.Properties;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.event.entity.player.PlayerEvent;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
+@Mod.EventBusSubscriber(modid = Vulcanite.MOD_ID)
 public class PlayerBreakSpeed {
 	private static ItemStack[] validEfficencyBoost = new ItemStack[] {
 			new ItemStack(ModItems.vulcanitePickaxeItem),
@@ -40,7 +43,7 @@ public class PlayerBreakSpeed {
 			return;
 		
 		float speed = event.getOriginalSpeed();
-		speed += event.getOriginalSpeed() * Properties.ToolsAndWeapons.BonusStats.efficency / 100f;
+		speed += event.getOriginalSpeed() * Properties.config.toolsAndWeapons.bonusStats.efficencyInNether / 100f;
 		event.setNewSpeed(speed);
 	}
 }

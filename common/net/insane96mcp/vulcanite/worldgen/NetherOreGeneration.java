@@ -18,7 +18,7 @@ public class NetherOreGeneration implements IWorldGenerator {
 	private final WorldGenMinable worldGenMinable;
 	
 	public NetherOreGeneration() {
-		worldGenMinable = new WorldGenMinable(ModBlocks.netherVulcaniteOre.getDefaultState(), Properties.OreGeneration.Nether.orePerVein, BlockMatcher.forBlock(Blocks.NETHERRACK));
+		worldGenMinable = new WorldGenMinable(ModBlocks.netherVulcaniteOre.getDefaultState(), Properties.config.oreGeneration.nether.orePerVein, BlockMatcher.forBlock(Blocks.NETHERRACK));
 	}
 	
 	@Override
@@ -27,8 +27,8 @@ public class NetherOreGeneration implements IWorldGenerator {
 		BlockPos chunkPos = new BlockPos(chunkX * 16, 0, chunkZ * 16);
 
 		if (world.provider.getDimension() == -1) {
-			for (int i = 0; i < Properties.OreGeneration.Nether.veinPerChunk; i++) {
-				worldGenMinable.generate(world, random, chunkPos.add(random.nextInt(16), random.nextInt(Properties.OreGeneration.Nether.maxY - Properties.OreGeneration.Nether.minY) + Properties.OreGeneration.Nether.minY, random.nextInt(16)));
+			for (int i = 0; i < Properties.config.oreGeneration.nether.veinPerChunk; i++) {
+				worldGenMinable.generate(world, random, chunkPos.add(random.nextInt(16), random.nextInt(Properties.config.oreGeneration.nether.maxY - Properties.config.oreGeneration.nether.minY) + Properties.config.oreGeneration.nether.minY, random.nextInt(16)));
 			}
 		}
 	}
