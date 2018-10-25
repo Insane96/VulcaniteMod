@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import net.insane96mcp.vulcanite.Vulcanite;
 import net.insane96mcp.vulcanite.block.BlockVulcanite;
 import net.insane96mcp.vulcanite.block.BlockVulcaniteOre;
-import net.insane96mcp.vulcanite.lib.Names;
+import net.insane96mcp.vulcanite.lib.Strings.Names;
 import net.insane96mcp.vulcanite.worldgen.NetherOreGeneration;
 import net.insane96mcp.vulcanite.worldgen.OverworldOreGeneration;
 import net.minecraft.block.Block;

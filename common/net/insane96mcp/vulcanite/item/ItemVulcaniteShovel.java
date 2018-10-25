@@ -7,7 +7,8 @@ import javax.annotation.Nullable;
 import net.insane96mcp.vulcanite.Vulcanite;
 import net.insane96mcp.vulcanite.init.ModItems;
 import net.insane96mcp.vulcanite.lib.Properties;
-import net.insane96mcp.vulcanite.lib.Tooltips;
+import net.insane96mcp.vulcanite.lib.Strings.Names;
+import net.insane96mcp.vulcanite.lib.Strings.Tooltips;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
@@ -25,7 +26,7 @@ public class ItemVulcaniteShovel extends ItemSpade{
 
 	@Override
 	public String getTranslationKey(ItemStack stack) {
-		return "item." + Vulcanite.RESOURCE_PREFIX + net.insane96mcp.vulcanite.lib.Names.VULCANITE_SHOVEL;
+		return "item." + Vulcanite.RESOURCE_PREFIX + Names.VULCANITE_SHOVEL;
 	}
 	
 	@Override

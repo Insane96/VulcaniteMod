@@ -11,7 +11,7 @@ import net.insane96mcp.vulcanite.item.ItemVulcanitePickaxe;
 import net.insane96mcp.vulcanite.item.ItemVulcaniteShovel;
 import net.insane96mcp.vulcanite.item.ItemVulcaniteSword;
 import net.insane96mcp.vulcanite.item.material.ModMaterial;
-import net.insane96mcp.vulcanite.lib.Names;
+import net.insane96mcp.vulcanite.lib.Strings.Names;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;

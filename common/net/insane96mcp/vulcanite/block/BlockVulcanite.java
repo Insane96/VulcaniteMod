@@ -5,9 +5,9 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 import net.insane96mcp.vulcanite.Vulcanite;
-import net.insane96mcp.vulcanite.lib.Names;
 import net.insane96mcp.vulcanite.lib.Properties;
-import net.insane96mcp.vulcanite.lib.Tooltips;
+import net.insane96mcp.vulcanite.lib.Strings.Names;
+import net.insane96mcp.vulcanite.lib.Strings.Tooltips;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.gui.GuiScreen;

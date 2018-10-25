@@ -2,6 +2,7 @@ package net.insane96mcp.vulcanite.item;
 
 import net.insane96mcp.vulcanite.Vulcanite;
 import net.insane96mcp.vulcanite.init.ModItems;
+import net.insane96mcp.vulcanite.lib.Strings.Names;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemHoe;
 import net.minecraft.item.ItemStack;
@@ -15,7 +16,7 @@ public class ItemVulcaniteHoe extends ItemHoe{
 
 	@Override
 	public String getTranslationKey(ItemStack stack) {
-		return "item." + Vulcanite.RESOURCE_PREFIX + net.insane96mcp.vulcanite.lib.Names.VULCANITE_HOE;
+		return "item." + Vulcanite.RESOURCE_PREFIX + Names.VULCANITE_HOE;
 	}
 	
 	@Override
