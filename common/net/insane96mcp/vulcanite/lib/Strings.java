@@ -34,6 +34,7 @@ public class Strings {
 		
 		public static class Weapon{
 			public static String base_moreDamage = "tooltip.weapon.base_info.more_damage";
+			public static String base_moreDamageFireAspect = "tooltip.weapon.base_info.more_damage_fire_aspect";
 			
 			public static String adv_moreDamage = "tooltip.weapon.adv_info.more_damage";
 		}

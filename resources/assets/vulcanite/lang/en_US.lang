@@ -17,23 +17,24 @@ tile.vulcanite:vulcanite_block.name=Vulcanite Block
 tile.vulcanite:vulcanite_ore.name=Vulcanite Ore
 tile.vulcanite:nether_vulcanite_ore.name=Nether Vulcanite Ore
 
-tooltip.general.shift_for_more=ยง7Press SHIFT for more infos
+tooltip.general.shift_for_more=ง7Press SHIFT for more infos
 
-tooltip.weapon.base_info.more_damage=ยง6Deals more damage to fire immune mobs. Fire Aspect increases this bonus damage
-tooltip.weapon.adv_info.more_damage=ยง6Deals ยงc%f%%ยง6 more damage to fire immune mobs, increased by ยงc%f%%ยง6 for each level of Fire Aspect
+tooltip.weapon.base_info.more_damage=ง6Deals more damage to fire immune mobs
+tooltip.weapon.base_info.more_damage_fire_aspect=ง6Fire Aspect increases this bonus damage
+tooltip.weapon.adv_info.more_damage=ง6Deals งc%f%%ง6 more damage to fire immune mobs, increased by งc%f%%ง6 for each level of Fire Aspect
 
-tooltip.tool.base_info.more_efficient=ยง6While in the nether the tool is more efficient
-tooltip.tool.adv_info.more_efficient=ยง6While in the nether the tool mines blocks ยงc%f%%ยง6 faster!
+tooltip.tool.base_info.more_efficient=ง6While in the nether the tool is more efficient
+tooltip.tool.adv_info.more_efficient=ง6While in the nether the tool mines blocks งc%f%%ง6 faster!
 
-tooltip.armor.base_info.damage_reduction=ยง6Reduces damage from hot sources. Every piece protects on it's own. In the Nether the damage reduction is more effective.
-tooltip.armor.adv_info.damage_reduction=ยง6Full Armor Set damage reduction in the Nether: ยงc%f%%ยง6. Full Armor Set damage reduction in other Dimensions: ยงc%f%%ยง6.
+tooltip.armor.base_info.damage_reduction=ง6Reduces damage from hot sources. Every piece protects on it's own. In the Nether the damage reduction is more effective.
+tooltip.armor.adv_info.damage_reduction=ง6Full Armor Set damage reduction in the Nether: งc%f%%ง6. Full Armor Set damage reduction in other Dimensions: งc%f%%ง6.
 
-tooltip.flint_and_vulcanite.base_info.set_on_fire=ยง6Right-Click on mob to set it on fire
-tooltip.flint_and_vulcanite.adv_info.set_on_fire=ยง6Right-Click on mob to set it on fire for ยงc%dยง6 seconds
-tooltip.flint_and_vulcanite.adv_info.damage_on_use=ยง6When used on a mob the Flint and Vulcanite will be damaged by ยงc%d
+tooltip.flint_and_vulcanite.base_info.set_on_fire=ง6Right-Click on mob to set it on fire
+tooltip.flint_and_vulcanite.adv_info.set_on_fire=ง6Right-Click on mob to set it on fire for งc%dง6 seconds
+tooltip.flint_and_vulcanite.adv_info.damage_on_use=ง6When used on a mob the Flint and Vulcanite will be damaged by งc%d
 
-tooltip.vulcanite_block.base_info.set_on_fire=ยง6Sets on fire mobs stading on it
-tooltip.vulcanite_block.adv_info.set_on_fire=ยง6Mobs stading on it will be ignited for ยงc%dยง6 seconds
+tooltip.vulcanite_block.base_info.set_on_fire=ง6Sets on fire mobs stading on it
+tooltip.vulcanite_block.adv_info.set_on_fire=ง6Mobs stading on it will be ignited for งc%dง6 seconds
 
 advancements.vulcanite.root.title=Vulcanite Mod
 advancements.vulcanite.root.description=The beginning of anti-hotness

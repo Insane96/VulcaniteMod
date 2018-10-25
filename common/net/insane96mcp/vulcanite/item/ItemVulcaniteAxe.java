@@ -36,6 +36,7 @@ public class ItemVulcaniteAxe extends ItemAxe{
 		}
 		else {
 			tooltip.add(I18n.format(Tooltips.Tool.base_bonusEfficiency));
+			tooltip.add(I18n.format(Tooltips.Weapon.base_moreDamage));
 			if (Properties.config.showMoreInfo)
 				tooltip.add(I18n.format(Tooltips.General.shiftForMore));
 		}

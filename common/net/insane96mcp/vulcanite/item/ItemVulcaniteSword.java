@@ -36,6 +36,7 @@ public class ItemVulcaniteSword extends ItemSword{
 		}
 		else {
 			tooltip.add(I18n.format(Tooltips.Weapon.base_moreDamage));
+			tooltip.add(I18n.format(Tooltips.Weapon.base_moreDamageFireAspect));
 			if (Properties.config.showMoreInfo)
 				tooltip.add(I18n.format(Tooltips.General.shiftForMore));
 		}
