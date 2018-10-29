@@ -89,7 +89,7 @@ public class Properties {
 				public int orePerVein = 4;
 				@Name("Veins Per Chunk")
 				@Comment("Number of veins that have to try to spawn per chunk")
-				public int veinPerChunk = 22;
+				public int veinPerChunk = 15;
 				@Name("Min Y")
 				@Comment("The minimum height (Y) to try to generate Veins")
 				@RangeInt(min = 0, max = 128)
