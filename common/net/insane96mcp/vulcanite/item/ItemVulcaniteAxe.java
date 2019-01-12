@@ -6,10 +6,8 @@ import javax.annotation.Nullable;
 
 import net.insane96mcp.vulcanite.Vulcanite;
 import net.insane96mcp.vulcanite.init.ModItems;
-import net.insane96mcp.vulcanite.lib.Properties;
 import net.insane96mcp.vulcanite.lib.Strings.Names;
 import net.insane96mcp.vulcanite.lib.Strings.Tooltips;
-import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.creativetab.CreativeTabs;
@@ -31,15 +29,8 @@ public class ItemVulcaniteAxe extends ItemAxe{
 	
 	@Override
 	public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
-		if (GuiScreen.isShiftKeyDown() && Properties.config.showMoreInfo) {
-			tooltip.add(I18n.format(Tooltips.Tool.adv_bonusEfficiency, Properties.config.toolsAndWeapons.bonusStats.efficencyInNether));
-		}
-		else {
-			tooltip.add(I18n.format(Tooltips.Tool.base_bonusEfficiency));
-			tooltip.add(I18n.format(Tooltips.Weapon.base_moreDamage));
-			if (Properties.config.showMoreInfo)
-				tooltip.add(I18n.format(Tooltips.General.shiftForMore));
-		}
+		tooltip.add(I18n.format(Tooltips.Tool.base_smelting));
+		tooltip.add(I18n.format(Tooltips.Weapon.base_moreDamage));
 	}
 	
 	@Override

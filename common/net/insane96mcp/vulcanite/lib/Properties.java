@@ -11,7 +11,6 @@ import net.minecraftforge.common.config.ConfigManager;
 import net.minecraftforge.fml.client.event.ConfigChangedEvent.OnConfigChangedEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.fml.common.gameevent.PlayerEvent.PlayerLoggedInEvent;
 
 @Config(modid = Vulcanite.MOD_ID, category = "", name = "Vulcanite")
 public class Properties {
@@ -36,9 +35,9 @@ public class Properties {
 				@Name("Bonus Damage with Fire Aspect")
 				@Comment("Bonus damage % dealt to Fire Immune mobs per Fire Aspect Level (to sum to 'bonus_damage')")
 				public float damageFireAspect = 7.5f;
-				@Name("Bonus Efficiency")
-				@Comment("Bonus Efficency % for tools when in the nether (100.0 means that the tool will be twice as fast in the nether)")
-				public float efficencyInNether = 100f;
+				@Name("Should Drop Experience")
+				@Comment("If the smelting property of the tools should make the blocks broken drop experience")
+				public boolean shouldDropExperience = true;
 			}
 			
 			@Name("Flint and Vulcanite")
@@ -106,7 +105,7 @@ public class Properties {
 			public static class Overworld {
 				@Name("Veins Per Chunk")
 				@Comment("Number of veins that have to try to spawn per chunk")
-				public int veinPerChunk = 1;
+				public int veinPerChunk = 0;
 				@Name("Ore Per Vein")
 				@Comment("Number of ores per vein")
 				public int orePerVein = 15; 
@@ -149,14 +148,6 @@ public class Properties {
 	        {
 	            ConfigManager.sync(Vulcanite.MOD_ID, Type.INSTANCE);
 	        }
-	    }
-	    
-		@SubscribeEvent
-	    public static void onPlayerLoggedIn(PlayerLoggedInEvent event) {
-	    	if (event.player.world.isRemote)
-	    		return;
-	    	
-	    	
 	    }
 	}
 }
