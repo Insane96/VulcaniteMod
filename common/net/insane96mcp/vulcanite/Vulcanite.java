@@ -18,7 +18,7 @@ public class Vulcanite {
 	
 	public static final String MOD_ID = "vulcanite";
 	public static final String MOD_NAME = "Vulcanite";
-	public static final String VERSION = "1.4.1";
+	public static final String VERSION = "1.5.0";
 	public static final String RESOURCE_PREFIX = MOD_ID.toLowerCase() + ":";
 	public static final String MINECRAFT_VERSIONS = "[1.12,1.12.2]";
 	

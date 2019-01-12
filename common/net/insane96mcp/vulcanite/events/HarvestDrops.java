@@ -22,7 +22,7 @@ public class HarvestDrops {
 	private static ItemStack[] validTools = new ItemStack[] {
 			new ItemStack(ModItems.vulcanitePickaxeItem),
 			new ItemStack(ModItems.vulcaniteAxeItem),
-			new ItemStack(ModItems.vulcaniteShovelItem),
+			new ItemStack(ModItems.vulcaniteShovelItem)
 	};
 	
 	@SubscribeEvent(priority = EventPriority.HIGHEST)
