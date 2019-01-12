@@ -5,8 +5,10 @@ import java.util.List;
 import net.insane96mcp.vulcanite.Vulcanite;
 import net.insane96mcp.vulcanite.init.ModItems;
 import net.insane96mcp.vulcanite.lib.Properties;
+import net.insane96mcp.vulcanite.network.BlockBreak;
+import net.insane96mcp.vulcanite.network.PacketHandler;
 import net.minecraft.entity.item.EntityXPOrb;
-import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraftforge.event.world.BlockEvent.HarvestDropsEvent;
@@ -25,7 +27,7 @@ public class HarvestDrops {
 	
 	@SubscribeEvent(priority = EventPriority.HIGHEST)
 	public static void EventHarvestDrops(HarvestDropsEvent event) {
-		EntityPlayer player = event.getHarvester();
+		EntityPlayerMP player = (EntityPlayerMP) event.getHarvester();
 		
 		if (player == null)
 			return;
@@ -42,6 +44,7 @@ public class HarvestDrops {
 			return;
 		
 		float experience = 0f;
+		boolean smelted = false;
 		
 		List<ItemStack> drops = event.getDrops();
 		for (int i = 0; i < drops.size(); i++) {
@@ -49,7 +52,14 @@ public class HarvestDrops {
 			if (!smeltingResult.isEmpty()) {
 				drops.set(i, smeltingResult);
 				experience += FurnaceRecipes.instance().getSmeltingExperience(smeltingResult);
+				smelted = true;
 			}
+		}
+		
+		if (smelted) {
+			PacketHandler.SendToClient(new BlockBreak(event.getPos()), player);
+			if (player.dimension != -1)
+				player.getHeldItemMainhand().damageItem(1, player);
 		}
 		
 		if (!Properties.config.toolsAndWeapons.bonusStats.shouldDropExperience)
@@ -69,4 +79,5 @@ public class HarvestDrops {
 			event.getWorld().spawnEntity(xpOrb);
 		}
 	}
+
 }

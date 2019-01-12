@@ -13,12 +13,16 @@ import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.EnchantmentArrowFire;
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityTNTPrimed;
 import net.minecraft.entity.monster.EntityCreeper;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Enchantments;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemFlintAndSteel;
 import net.minecraft.item.ItemStack;
@@ -92,12 +96,20 @@ public class ItemFlintAndVulcanite extends ItemFlintAndSteel{
 		if (entityLivingBase.isImmuneToFire())
 			return false;
 		
-		entityLivingBase.setFire(Properties.config.toolsAndWeapons.flintAndVulcanite.secondsOnFire);
+		int timeOnFire = Properties.config.toolsAndWeapons.flintAndVulcanite.secondsOnFire;
+		
+		int flameLevel = EnchantmentHelper.getEnchantmentLevel(Enchantments.FLAME, stack);
+		
+		timeOnFire += flameLevel * Properties.config.toolsAndWeapons.flintAndVulcanite.secondsOnFire;
+		
+		entityLivingBase.setFire(timeOnFire);
 		
 		if (entityLivingBase instanceof EntityCreeper) {
-			NBTTagCompound ignited = new NBTTagCompound();
-			ignited.setByte("ignited", (byte)1);
-			entityLivingBase.readEntityFromNBT(ignited);
+			EntityCreeper creeper = (EntityCreeper) entityLivingBase;
+			NBTTagCompound nbtTagCompound = new NBTTagCompound();
+			creeper.writeEntityToNBT(nbtTagCompound);
+			nbtTagCompound.setByte("ignited", (byte)1);
+			creeper.readEntityFromNBT(nbtTagCompound);
 		}
 		
 		playerIn.swingArm(hand);
@@ -105,5 +117,11 @@ public class ItemFlintAndVulcanite extends ItemFlintAndSteel{
 		
 		playerIn.world.playSound(playerIn, entityLivingBase.getPosition(), SoundEvents.ITEM_FLINTANDSTEEL_USE, SoundCategory.PLAYERS, 1.0f, playerIn.world.rand.nextFloat() * 0.4F + 0.8F);
 		return true;
+	}
+	
+	@Override
+	public boolean canApplyAtEnchantingTable(ItemStack stack, Enchantment enchantment) {
+		if (enchantment instanceof EnchantmentArrowFire) return true;
+		return super.canApplyAtEnchantingTable(stack, enchantment);
 	}
 }

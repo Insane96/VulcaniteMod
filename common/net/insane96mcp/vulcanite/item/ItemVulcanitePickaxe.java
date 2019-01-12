@@ -11,6 +11,8 @@ import net.insane96mcp.vulcanite.lib.Strings.Tooltips;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.EnchantmentLootBonus;
 import net.minecraft.item.ItemPickaxe;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
@@ -37,4 +39,10 @@ public class ItemVulcanitePickaxe extends ItemPickaxe {
 	public boolean getIsRepairable(ItemStack toRepair, ItemStack repair) {
 		return ItemStack.areItemsEqualIgnoreDurability(repair, new ItemStack(ModItems.vulcaniteIngotItem)) ? true : super.getIsRepairable(toRepair, repair);
   	}
+	
+	@Override
+	public boolean canApplyAtEnchantingTable(ItemStack stack, Enchantment enchantment) {
+		if (enchantment instanceof EnchantmentLootBonus) return false;
+		return super.canApplyAtEnchantingTable(stack, enchantment);
+	}
 }

@@ -23,8 +23,7 @@ tooltip.weapon.base_info.more_damage=§6Deals more damage to fire immune mobs
 tooltip.weapon.base_info.more_damage_fire_aspect=§6Fire Aspect increases this bonus damage
 tooltip.weapon.adv_info.more_damage=§6Deals §c%f%%§6 more damage to fire immune mobs, increased by §c%f%%§6 for each level of Fire Aspect
 
-tooltip.tool.base_info.more_efficient=§6While in the nether the tool is more efficient
-tooltip.tool.adv_info.more_efficient=§6While in the nether the tool mines blocks §c%f%%§6 faster!
+tooltip.tool.base_info.smelting=§6This tool smelts blocks that breaks
 
 tooltip.armor.base_info.damage_reduction=§6Reduces damage from hot sources. Every piece protects on it's own. In the Nether the damage reduction is more effective.
 tooltip.armor.adv_info.damage_reduction=§6Full Armor Set damage reduction in the Nether: §c%f%%§6. Full Armor Set damage reduction in other Dimensions: §c%f%%§6.

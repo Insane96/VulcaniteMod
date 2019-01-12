@@ -2,6 +2,7 @@ package net.insane96mcp.vulcanite.proxies;
 
 import net.insane96mcp.vulcanite.init.ModBlocks;
 import net.insane96mcp.vulcanite.init.ModItems;
+import net.insane96mcp.vulcanite.network.PacketHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -10,6 +11,8 @@ public class CommonProxy {
 	public void PreInit(FMLPreInitializationEvent event) {		
 		ModItems.PreInit();
 		ModBlocks.PreInit();
+		
+		PacketHandler.Init();
 	}
 	
 	public void Init(FMLInitializationEvent event) {
