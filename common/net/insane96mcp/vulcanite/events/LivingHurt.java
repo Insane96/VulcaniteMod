@@ -78,7 +78,10 @@ public class LivingHurt {
 	
 	private static ItemStack[] vulcaniteWeapons = {
 		new ItemStack(ModItems.vulcaniteSwordItem), 
-		new ItemStack(ModItems.vulcaniteAxeItem)
+		new ItemStack(ModItems.vulcaniteAxeItem),
+		new ItemStack(ModItems.vulcanitePickaxeItem),
+		new ItemStack(ModItems.vulcaniteShovelItem)
+		
 	};
 
 	@SubscribeEvent

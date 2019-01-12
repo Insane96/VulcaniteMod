@@ -68,8 +68,8 @@ public class Properties {
 			@Name("Damage Reduction in Nether")
 			@Comment("Percentage damage reduction from hot sources with full Vulcanite Armor in the Nether")
 			@RangeDouble(min = 0.0, max = 100.0)
-			public float damageReductionNether = 75f;
-			@Name("Damage Reduction in Overworld")
+			public float damageReductionNether = 70f;
+			@Name("Damage Reduction in Other Dimensions")
 			@Comment("Percentage damage reduction from hot sources with full Vulcanite Armor in non-Nether dimensions")
 			@RangeDouble(min = 0.0, max = 100.0)
 			public float damageReductionOther = 40f;
