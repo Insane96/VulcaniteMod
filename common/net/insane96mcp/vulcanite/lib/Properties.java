@@ -51,9 +51,6 @@ public class Properties {
 				@Comment("How much uses will be consumed on the flint and vulcanite when you set a mob on fire")
 				@RangeInt(min = 0, max = 222)
 				public int damageOnUse = 2;
-				@Name("PvP")
-				@Comment("If true, players will be able to ignite other players")
-				public boolean pvp = false;
 				@Name("TnT Ignites Faster")
 				@Comment("If true TNT will take half the time to explode when ignited with Flint and Vulcanite")
 				public boolean tntIgnitesFaster = true;

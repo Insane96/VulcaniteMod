@@ -90,8 +90,11 @@ public class ItemFlintAndVulcanite extends ItemFlintAndSteel{
 		
 		EntityLivingBase entityLivingBase = (EntityLivingBase)target;
 		
-		if (entityLivingBase instanceof EntityPlayerMP && !Properties.config.toolsAndWeapons.flintAndVulcanite.pvp)
-			return false;
+		if (entityLivingBase instanceof EntityPlayerMP){
+			EntityPlayerMP targetPlayer = (EntityPlayerMP) entityLivingBase;
+			if (!playerIn.canAttackPlayer(targetPlayer))
+				return false;
+		}
 		
 		if (entityLivingBase.isImmuneToFire())
 			return false;
