@@ -27,6 +27,9 @@ public class HarvestDrops {
 	
 	@SubscribeEvent(priority = EventPriority.HIGHEST)
 	public static void EventHarvestDrops(HarvestDropsEvent event) {
+		if (event.getWorld().isRemote)
+			return;
+		
 		EntityPlayerMP player = (EntityPlayerMP) event.getHarvester();
 		
 		if (player == null)
