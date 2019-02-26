@@ -2,40 +2,25 @@ package net.insane96mcp.vulcanite.item;
 
 import java.util.List;
 
-import javax.annotation.Nullable;
-
-import net.insane96mcp.vulcanite.Vulcanite;
-import net.insane96mcp.vulcanite.init.ModItems;
-import net.insane96mcp.vulcanite.lib.Strings.Names;
-import net.insane96mcp.vulcanite.lib.Strings.Tooltips;
-import net.minecraft.client.resources.I18n;
+import net.insane96mcp.vulcanite.init.Strings.Tooltips;
 import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.IItemTier;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemPickaxe;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.world.World;
 
 public class ItemVulcanitePickaxe extends ItemPickaxe {
-	public ItemVulcanitePickaxe(String name, ToolMaterial material, CreativeTabs tab) {
-		super(material);
-		setRegistryName(name);
-		setCreativeTab(tab);
-	}
-
-	@Override
-	public String getTranslationKey(ItemStack stack) {
-		return "item." + Vulcanite.RESOURCE_PREFIX + Names.VULCANITE_PICKAXE;
+	public ItemVulcanitePickaxe(IItemTier tier, int attackDamage, float attackSpeed, Item.Properties builder) {
+		super(tier, attackDamage, attackSpeed, builder);
 	}
 	
 	@Override
-	public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
-		tooltip.add(I18n.format(Tooltips.Tool.smelting));
-		tooltip.add(I18n.format(Tooltips.Tool.bonusEfficiency));
-		tooltip.add(I18n.format(Tooltips.Weapon.moreDamage));
+	public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
+		tooltip.add(new TextComponentTranslation(Tooltips.Tool.smelting));
+		/*tooltip.add(I18n.format(Tooltips.Tool.bonusEfficiency));
+		tooltip.add(I18n.format(Tooltips.Weapon.moreDamage));*/
 	}
-	
-	@Override
-	public boolean getIsRepairable(ItemStack toRepair, ItemStack repair) {
-		return ItemStack.areItemsEqualIgnoreDurability(repair, new ItemStack(ModItems.vulcaniteIngotItem)) ? true : super.getIsRepairable(toRepair, repair);
-  	}
 }

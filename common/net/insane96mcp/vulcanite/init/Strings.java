@@ -1,4 +1,4 @@
-package net.insane96mcp.vulcanite.lib;
+package net.insane96mcp.vulcanite.init;
 
 public class Strings {
 	public static class Names {
