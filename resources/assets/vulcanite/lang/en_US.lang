@@ -17,23 +17,17 @@ tile.vulcanite:vulcanite_block.name=Vulcanite Block
 tile.vulcanite:vulcanite_ore.name=Vulcanite Ore
 tile.vulcanite:nether_vulcanite_ore.name=Nether Vulcanite Ore
 
-tooltip.general.shift_for_more=§7Press SHIFT for more infos
+tooltip.weapon.more_damage=§6Deals more damage to fire immune mobs
+tooltip.weapon.more_damage_fire_aspect=§6Fire Aspect increases this bonus damage
 
-tooltip.weapon.base_info.more_damage=§6Deals more damage to fire immune mobs
-tooltip.weapon.base_info.more_damage_fire_aspect=§6Fire Aspect increases this bonus damage
-tooltip.weapon.adv_info.more_damage=§6Deals §c%f%%§6 more damage to fire immune mobs, increased by §c%f%%§6 for each level of Fire Aspect
+tooltip.tool.bonus_efficiency=§6This tool breaks blocks faster in the Nether
+tooltip.tool.smelting=§6This tool smelts blocks that breaks
 
-tooltip.tool.base_info.smelting=§6This tool smelts blocks that breaks
+tooltip.armor.damage_reduction=§6Reduces damage from hot sources. Every piece protects on it's own. In the Nether the damage reduction is more effective.
 
-tooltip.armor.base_info.damage_reduction=§6Reduces damage from hot sources. Every piece protects on it's own. In the Nether the damage reduction is more effective.
-tooltip.armor.adv_info.damage_reduction=§6Full Armor Set damage reduction in the Nether: §c%f%%§6. Full Armor Set damage reduction in other Dimensions: §c%f%%§6.
+tooltip.flint_and_vulcanite.set_on_fire=§6Use on a mob to set it on fire
 
-tooltip.flint_and_vulcanite.base_info.set_on_fire=§6Right-Click on mob to set it on fire
-tooltip.flint_and_vulcanite.adv_info.set_on_fire=§6Right-Click on mob to set it on fire for §c%d§6 seconds
-tooltip.flint_and_vulcanite.adv_info.damage_on_use=§6When used on a mob the Flint and Vulcanite will be damaged by §c%d
-
-tooltip.vulcanite_block.base_info.set_on_fire=§6Sets on fire mobs stading on it
-tooltip.vulcanite_block.adv_info.set_on_fire=§6Mobs stading on it will be ignited for §c%d§6 seconds
+tooltip.vulcanite_block.set_on_fire=§6Sets on fire mobs stading on it
 
 advancements.vulcanite.root.title=Vulcanite Mod
 advancements.vulcanite.root.description=The beginning of anti-hotness

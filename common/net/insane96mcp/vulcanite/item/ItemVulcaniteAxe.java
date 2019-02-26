@@ -29,8 +29,9 @@ public class ItemVulcaniteAxe extends ItemAxe{
 	
 	@Override
 	public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
-		tooltip.add(I18n.format(Tooltips.Tool.base_smelting));
-		tooltip.add(I18n.format(Tooltips.Weapon.base_moreDamage));
+		tooltip.add(I18n.format(Tooltips.Tool.smelting));
+		tooltip.add(I18n.format(Tooltips.Tool.bonusEfficiency));
+		tooltip.add(I18n.format(Tooltips.Weapon.moreDamage));
 	}
 	
 	@Override

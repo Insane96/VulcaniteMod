@@ -17,23 +17,17 @@ tile.vulcanite:vulcanite_block.name=Blocco di Vulcanite
 tile.vulcanite:vulcanite_ore.name=Vulcanite Grezza
 tile.vulcanite:nether_vulcanite_ore.name=Vulcanite del Nether Grezza
 
-tooltip.general.shift_for_more=§7Premi MAIUSC per più informazioni
+tooltip.weapon.more_damage=§6Fa più danno ai mob immuni al fuoco
+tooltip.weapon.more_damage_fire_aspect=§6Aspetto di Fuoco aumenta questo danno bonus
 
-tooltip.weapon.base_info.more_damage=§6Fa più danno ai mob immuni al fuoco
-tooltip.weapon.base_info.more_damage_fire_aspect=§6Aspetto di Fuoco aumenta questo danno bonus
-tooltip.weapon.adv_info.more_damage=§6Fa il §c%f%%§6 in più di danno, aumentato del §c%f%%§6 per livello di Aspetto di Fuoco
+tooltip.tool.bonus_efficiency=§6Questo attrezzo rompe i blocchi più velocemente nel Nether
+tooltip.tool.smelting=§6Questo attrezzo cuoce i blocchi che rompe
 
-tooltip.tool.base_info.smelting=§6Questo attrezzo cuoce i blocchi che rompe
+tooltip.armor.damage_reduction=§6Riduce il danno dalle sorgenti di calore. Ogni pezzo protegge da un po' di danno. Nel Nether la riduzione del danno è più efficace.
 
-tooltip.armor.base_info.damage_reduction=§6Riduce il danno dalle sorgenti di calore. Ogni pezzo protegge da un po' di danno. Nel Nether la riduzione del danno è più efficace.
-tooltip.armor.adv_info.damage_reduction=§6L'armatura completa, nel Nether, riduce il danno da sorgenti di calore del §c%f%%§6. L'armatura completa, nelle altre dimensioni, riduce il danno da sorgenti di calore del §c%f%%§6.
+tooltip.flint_and_vulcanite.set_on_fire=§6Utilizzalo su di un mob per dargli fuoco
 
-tooltip.flint_and_vulcanite.base_info.set_on_fire=§6Clicca col Tasto Destro su un mob per dargli fuoco
-tooltip.flint_and_vulcanite.adv_info.set_on_fire=§6Clicca col Tasto Destro su un mob per dargli fuoco per §c%d§6 secondi
-tooltip.flint_and_vulcanite.adv_info.damage_on_use=§6Quando usato su di un mob, l'Acciarino in Vulcanite sarà danneggiato di §c%d
-
-tooltip.vulcanite_block.base_info.set_on_fire=§6Da' fuoco ai mob che ci sono sopra
-tooltip.vulcanite_block.adv_info.set_on_fire=§6Da' fuoco ai mob che ci sono sopra per §c%d§6 secondi
+tooltip.vulcanite_block.set_on_fire=§6Da' fuoco ai mob che ci sono sopra
 
 advancements.vulcanite.root.title=Vulcanite Mod
 advancements.vulcanite.root.description=L'inizio dell'anti calore

@@ -9,7 +9,6 @@ import net.insane96mcp.vulcanite.init.ModItems;
 import net.insane96mcp.vulcanite.lib.Properties;
 import net.insane96mcp.vulcanite.lib.Strings.Names;
 import net.insane96mcp.vulcanite.lib.Strings.Tooltips;
-import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.creativetab.CreativeTabs;
@@ -48,15 +47,7 @@ public class ItemFlintAndVulcanite extends ItemFlintAndSteel{
 	
 	@Override
 	public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
-		if (GuiScreen.isShiftKeyDown() && Properties.config.showMoreInfo) {
-			tooltip.add(I18n.format(Tooltips.FlintAndVulcanite.adv_setOnFire, Properties.config.toolsAndWeapons.flintAndVulcanite.secondsOnFire));
-			tooltip.add(I18n.format(Tooltips.FlintAndVulcanite.adv_damageOnUse, Properties.config.toolsAndWeapons.flintAndVulcanite.damageOnUse));
-		}
-		else {
-			tooltip.add(I18n.format(Tooltips.FlintAndVulcanite.base_setOnFire));
-			if (Properties.config.showMoreInfo)
-				tooltip.add(I18n.format(Tooltips.General.shiftForMore));
-		}
+		tooltip.add(I18n.format(Tooltips.FlintAndVulcanite.setOnFire));
 	}
 
 	@Override

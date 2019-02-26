@@ -19,40 +19,28 @@ public class Strings {
 		public static final String VULCANITE_NUGGET = "vulcanite_nugget";
 	}
 	
-	public static class Tooltips {	
-		
-		public static class General{
-			public static String shiftForMore = "tooltip.general.shift_for_more";
-		}
+	public static class Tooltips {
 		
 		public static class FlintAndVulcanite{
-			public static String adv_setOnFire = "tooltip.flint_and_vulcanite.adv_info.set_on_fire";
-			public static String adv_damageOnUse = "tooltip.flint_and_vulcanite.adv_info.damage_on_use";
-			
-			public static String base_setOnFire = "tooltip.flint_and_vulcanite.base_info.set_on_fire";
+			public static String setOnFire = "tooltip.flint_and_vulcanite.set_on_fire";
 		}
 		
 		public static class Weapon{
-			public static String base_moreDamage = "tooltip.weapon.base_info.more_damage";
-			public static String base_moreDamageFireAspect = "tooltip.weapon.base_info.more_damage_fire_aspect";
-			
-			public static String adv_moreDamage = "tooltip.weapon.adv_info.more_damage";
+			public static String moreDamage = "tooltip.weapon.more_damage";
+			public static String moreDamageFireAspect = "tooltip.weapon.more_damage_fire_aspect";
 		}
 		
 		public static class Armor{
-			public static String base_damageReduction = "tooltip.armor.base_info.damage_reduction";
-
-			public static String adv_damageReduction = "tooltip.armor.adv_info.damage_reduction";
+			public static String damageReduction = "tooltip.armor.damage_reduction";
 		}
 		
 		public static class Tool{
-			public static String base_smelting = "tooltip.tool.base_info.smelting";
+			public static String bonusEfficiency = "tooltip.tool.bonus_efficiency";
+			public static String smelting = "tooltip.tool.smelting";
 		}
 		
 		public static class VulcaniteBlock{
-			public static String base_setOnFire = "tooltip.vulcanite_block.base_info.set_on_fire";
-
-			public static String adv_setOnFire = "tooltip.vulcanite_block.adv_info.set_on_fire";
+			public static String setOnFire = "tooltip.vulcanite_block.set_on_fire";
 		}
 	}
 

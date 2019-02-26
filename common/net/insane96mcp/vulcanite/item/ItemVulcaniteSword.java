@@ -6,10 +6,8 @@ import javax.annotation.Nullable;
 
 import net.insane96mcp.vulcanite.Vulcanite;
 import net.insane96mcp.vulcanite.init.ModItems;
-import net.insane96mcp.vulcanite.lib.Properties;
 import net.insane96mcp.vulcanite.lib.Strings.Names;
 import net.insane96mcp.vulcanite.lib.Strings.Tooltips;
-import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.creativetab.CreativeTabs;
@@ -31,15 +29,8 @@ public class ItemVulcaniteSword extends ItemSword{
 	
 	@Override
 	public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
-		if (GuiScreen.isShiftKeyDown() && Properties.config.showMoreInfo) {
-			tooltip.add(I18n.format(Tooltips.Weapon.adv_moreDamage, Properties.config.toolsAndWeapons.bonusStats.damage, Properties.config.toolsAndWeapons.bonusStats.damageFireAspect));
-		}
-		else {
-			tooltip.add(I18n.format(Tooltips.Weapon.base_moreDamage));
-			tooltip.add(I18n.format(Tooltips.Weapon.base_moreDamageFireAspect));
-			if (Properties.config.showMoreInfo)
-				tooltip.add(I18n.format(Tooltips.General.shiftForMore));
-		}
+		tooltip.add(I18n.format(Tooltips.Weapon.moreDamage));
+		tooltip.add(I18n.format(Tooltips.Weapon.moreDamageFireAspect));
 	}
 	
 	@Override

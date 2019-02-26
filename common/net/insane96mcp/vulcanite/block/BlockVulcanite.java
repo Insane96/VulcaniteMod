@@ -10,7 +10,6 @@ import net.insane96mcp.vulcanite.lib.Strings.Names;
 import net.insane96mcp.vulcanite.lib.Strings.Tooltips;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
@@ -55,13 +54,6 @@ public class BlockVulcanite extends Block{
 		if (Properties.config.vulcaniteBlockTimeOnFire == 0)
 			return;
 		
-		if (GuiScreen.isShiftKeyDown() && Properties.config.showMoreInfo) {
-			tooltip.add(I18n.format(Tooltips.VulcaniteBlock.adv_setOnFire, Properties.config.vulcaniteBlockTimeOnFire));
-		}
-		else {
-			tooltip.add(I18n.format(Tooltips.VulcaniteBlock.base_setOnFire));
-			if (Properties.config.showMoreInfo)
-				tooltip.add(I18n.format(Tooltips.General.shiftForMore));
-		}
+		tooltip.add(I18n.format(Tooltips.VulcaniteBlock.setOnFire));
 	}
 }

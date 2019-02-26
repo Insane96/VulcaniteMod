@@ -38,6 +38,9 @@ public class Properties {
 				@Name("Should Drop Experience")
 				@Comment("If the smelting property of the tools should make the blocks broken drop experience")
 				public boolean shouldDropExperience = true;
+				@Name("Bonus Efficiency")
+				@Comment("Bonus Efficency % for tools when in the nether (100.0 means that the tool will be twice as fast in the nether)")
+				public float efficencyInNether = 50f;
 			}
 			
 			@Name("Flint and Vulcanite")
@@ -85,7 +88,7 @@ public class Properties {
 				public int orePerVein = 4;
 				@Name("Veins Per Chunk")
 				@Comment("Number of veins that have to try to spawn per chunk")
-				public int veinPerChunk = 15;
+				public int veinPerChunk = 12;
 				@Name("Min Y")
 				@Comment("The minimum height (Y) to try to generate Veins")
 				@RangeInt(min = 0, max = 128)
@@ -130,9 +133,6 @@ public class Properties {
 		@Name("Vulcanite Block Time on Fire")
 		@Comment("How much time will the Vulcanite Block set on fire mobs that are standing on it")
 		public int vulcaniteBlockTimeOnFire = 3;
-		@Name("More Info")
-		@Comment("Whenever or not enable more infos")
-		public boolean showMoreInfo = false;
 	}
 	
 	
