@@ -1,0 +1,53 @@
+{
+    "item.vulcanite.vulcanite_ingot": "Vulcanitbarren",
+    "item.vulcanite.vulcanite_nugget": "Vulcanitklumpen",
+    "item.vulcanite.vulcanite_pickaxe": "Vulcanitspitzhacke",
+    "item.vulcanite.vulcanite_axe": "Vulcanitaxt",
+    "item.vulcanite.vulcanite_shovel": "Vulcanitschaufel",
+    "item.vulcanite.vulcanite_hoe": "Vulcanithacke",
+    "item.vulcanite.vulcanite_sword": "Vulcanitschwert",
+
+    "item.vulcanite.flint_and_vulcanite": "Vulcanit Feuerzeug",
+
+    "item.vulcanite.vulcanite_helmet": "Vulcanithelm",
+    "item.vulcanite.vulcanite_chestplate": "Vulcanitharnisch",
+    "item.vulcanite.ulcanite_leggings": "Vulcanitbeinschutz",
+    "item.vulcanite.vulcanite_boots": "Vulcanitstiefel",
+
+    "block.vulcanite.vulcanite_block": "Vulcanitblock",
+    "block.vulcanite.vulcanite_ore": "Vulcaniterz",
+    "block.vulcanite.nether_vulcanite_ore": "Nethervulcaniterz",
+
+    "tooltip.weapon.more_damage": "§6Fügt feuerimmunen Mobs mehr Schaden zu",
+    "tooltip.weapon.more_damage_fire_aspect": "§6Verbrennung erhöht diesen Bonusschaden",
+
+    "tooltip.tool.bonus_efficiency": "§6Dieses Werkzeug zerstört Blöcke im Nether schneller",
+    "tooltip.tool.smelting": "§6Dieses Werkzeug schmlizt die Blöcke, die es zerstört",
+
+    "tooltip.armor.damage_reduction": "§6Reduziert Schaden durch heiße Quellen. Jedes Stück schützt von sich aus. Im Nether ist die Schadensreduzierung effektiver",
+
+    "tooltip.flint_and_vulcanite.set_on_fire": "§6Verwende es gegen ein Mob, um es anzuzünden",
+
+    "tooltip.vulcanite_block.set_on_fire": "§6Setzt Mobs in brand, die darauf stehen",
+
+    "advancements.vulcanite.root.title": "Vulcanit Mod",
+    "advancements.vulcanite.root.description": "Der Beginn der anti-Hitze",
+
+    "advancements.vulcanite.vulcanite.title": "Ganz schön heiß",
+    "advancements.vulcanite.vulcanite.description": "Schmelze Nethervulcaniterz oder crafte ein paar Klumpen zusammen, um einen Vulcanitbarren zu bekommen",
+
+    "advancements.vulcanite.sword.title": "Die Feuerimmunen sollten Angst haben",
+    "advancements.vulcanite.sword.description": "Bekomme ein Vulcanitschwert",
+
+    "advancements.vulcanite.tools.title": "Schmelzen zum mitnehmen",
+    "advancements.vulcanite.tools.description": "Mache jedes Werkzeug aus Vulcanit",
+
+    "advancements.vulcanite.flint.title": "Zünd sie alle an",
+    "advancements.vulcanite.flint.description": "Bekomme ein Vulcanit Feuerzeug",
+
+    "advancements.vulcanite.armor.title": "Anti-Hitze",
+    "advancements.vulcanite.armor.description": "Bekomme eine komplette Vulcanit Rüstung",
+
+    "advancements.vulcanite.block.title": "Automatisch gekocht",
+    "advancements.vulcanite.block.description": "Bekomme einen Vulcanitblock"
+}
