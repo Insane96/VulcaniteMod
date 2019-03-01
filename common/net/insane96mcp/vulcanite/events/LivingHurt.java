@@ -12,26 +12,13 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Enchantments;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.DamageSource;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 @Mod.EventBusSubscriber(modid = Vulcanite.MOD_ID)
 public class LivingHurt {
-	
-	/*static ItemStack[] armorList = new ItemStack[] {
-		new ItemStack(ModItems.vulcaniteHelmetItem), 
-		new ItemStack(ModItems.vulcaniteChestplateItem), 
-		new ItemStack(ModItems.vulcaniteLeggingsItem), 
-		new ItemStack(ModItems.vulcaniteBootsItem)
-	};
-	
-	static DamageSource[] validSources = new DamageSource[] {
-		DamageSource.IN_FIRE, 
-		DamageSource.ON_FIRE, 
-		DamageSource.HOT_FLOOR, 
-		DamageSource.LAVA
-	};
 
 	@SubscribeEvent
 	public static void OnPlayerHurt(LivingHurtEvent event) {
@@ -45,6 +32,20 @@ public class LivingHurt {
 		DamageSource source = event.getSource();
 		
 		float[] materialPerPiece = new float[] { 5, 8, 7, 4 };
+		
+		DamageSource[] validSources = new DamageSource[] {
+			DamageSource.IN_FIRE, 
+			DamageSource.ON_FIRE, 
+			DamageSource.HOT_FLOOR, 
+			DamageSource.LAVA
+		};
+
+		ItemStack[] armorList = new ItemStack[] {
+			new ItemStack(ModItems.vulcaniteHelmet), 
+			new ItemStack(ModItems.vulcaniteChestplate), 
+			new ItemStack(ModItems.vulcaniteLeggings), 
+			new ItemStack(ModItems.vulcaniteBoots)
+		};
 		
 		for (DamageSource damageSource : validSources) {
 			if (source != damageSource) 
@@ -65,17 +66,17 @@ public class LivingHurt {
 		    
 		    if (materialsUsed >= 1) {
 		    	float maxReduction; 
-    			if (player.dimension == -1) 
-    				maxReduction = Properties.config.armor.damageReductionNether / 100f;
+    			if (player.dimension.getId() == -1) 
+    				maxReduction = (float) (ModConfig.Armor.damageReductionNether.get() / 100f);
     			else 
-    				maxReduction = Properties.config.armor.damageReductionOther / 100f;
+    				maxReduction = (float) (ModConfig.Armor.damageReductionOther.get() / 100f);
 		    	float reductionPerMaterial = maxReduction / 24f;
 		    	float percentageReduction = reductionPerMaterial * materialsUsed;
 		    	amount = amount * (1f - percentageReduction);
 		        event.setAmount(amount);
 		    }
 		}
-	}*/
+	}
 
 	@SubscribeEvent
 	public static void OnPlayerDamageEntity(LivingHurtEvent event) {
@@ -109,11 +110,11 @@ public class LivingHurt {
 		if (!hasVulcaniteWeapon)
 			return;
 		
-		//Check if entity is fire immune
 		Entity target = event.getEntity();
 		if (!(target instanceof EntityLivingBase))
 			return;
 		
+		//Check if entity is fire immune
 		EntityLivingBase entity = (EntityLivingBase)target;
 		if (!entity.isImmuneToFire())
 			return;

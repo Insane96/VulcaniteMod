@@ -7,14 +7,19 @@ import org.apache.logging.log4j.Logger;
 
 import net.insane96mcp.vulcanite.init.ModConfig;
 import net.insane96mcp.vulcanite.init.Strings.Names;
+import net.insane96mcp.vulcanite.item.ItemFlintAndVulcanite;
+import net.insane96mcp.vulcanite.item.ItemVulcaniteArmor;
 import net.insane96mcp.vulcanite.item.ItemVulcaniteAxe;
 import net.insane96mcp.vulcanite.item.ItemVulcanitePickaxe;
 import net.insane96mcp.vulcanite.item.ItemVulcaniteShovel;
 import net.insane96mcp.vulcanite.item.ItemVulcaniteSword;
+import net.insane96mcp.vulcanite.item.materials.ModMaterial;
 import net.insane96mcp.vulcanite.network.PacketBlockBreak;
 import net.minecraft.block.Block;
+import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemHoe;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
@@ -102,7 +107,14 @@ public class Vulcanite {
         		new ItemVulcanitePickaxe(Vulcanite.RESOURCE_PREFIX + Names.VULCANITE_PICKAXE),
         		new ItemVulcaniteAxe(Vulcanite.RESOURCE_PREFIX + Names.VULCANITE_AXE),
         		new ItemVulcaniteShovel(Vulcanite.RESOURCE_PREFIX + Names.VULCANITE_SHOVEL),
-        		new ItemVulcaniteSword(Vulcanite.RESOURCE_PREFIX + Names.VULCANITE_SWORD)
+        		new ItemHoe(ModMaterial.TOOL_VULCANITE, -0.5f, new Item.Properties().group(ItemGroup.TOOLS)).setRegistryName(new ResourceLocation(Vulcanite.MOD_ID, Names.VULCANITE_HOE)),
+        		new ItemFlintAndVulcanite(Vulcanite.RESOURCE_PREFIX + Names.FLINT_AND_VULCANITE),
+        		new ItemVulcaniteSword(Vulcanite.RESOURCE_PREFIX + Names.VULCANITE_SWORD),
+
+        		new ItemVulcaniteArmor(EntityEquipmentSlot.HEAD, Vulcanite.RESOURCE_PREFIX + Names.VULCANITE_HELMET),
+        		new ItemVulcaniteArmor(EntityEquipmentSlot.CHEST, Vulcanite.RESOURCE_PREFIX + Names.VULCANITE_CHESTPLATE),
+        		new ItemVulcaniteArmor(EntityEquipmentSlot.LEGS, Vulcanite.RESOURCE_PREFIX + Names.VULCANITE_LEGGINGS),
+        		new ItemVulcaniteArmor(EntityEquipmentSlot.FEET, Vulcanite.RESOURCE_PREFIX + Names.VULCANITE_BOOTS)
         	);
         }
         
