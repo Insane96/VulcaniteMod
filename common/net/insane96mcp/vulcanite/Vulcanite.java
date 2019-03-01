@@ -62,9 +62,8 @@ public class Vulcanite {
     	
        	channel.registerMessage(discriminator++, PacketBlockBreak.class, PacketBlockBreak::encode, PacketBlockBreak::decode, PacketBlockBreak::onMessage);
        	
-       	ModConfig.Init(Paths.get("config", MOD_ID + ".toml"));
-       	
        	ModLoadingContext.get().registerConfig(Type.COMMON, ModConfig.SPEC);
+       	ModConfig.Init(Paths.get("config", MOD_ID + ".toml"));
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {
