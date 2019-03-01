@@ -1,4 +1,4 @@
-package net.insane96mcp.vulcanite.init.itemtier;
+package net.insane96mcp.vulcanite.item.materials;
 
 import net.insane96mcp.vulcanite.init.ModItems;
 import net.minecraft.init.SoundEvents;
@@ -8,7 +8,7 @@ import net.minecraft.item.IItemTier;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.SoundEvent;
 
-public class Material {
+public class ModMaterial {
 	public static IItemTier TOOL_VULCANITE = new IItemTier() {
 		
 		@Override

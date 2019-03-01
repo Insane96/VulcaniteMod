@@ -7,10 +7,10 @@ import org.apache.logging.log4j.Logger;
 
 import net.insane96mcp.vulcanite.init.ModConfig;
 import net.insane96mcp.vulcanite.init.Strings.Names;
-import net.insane96mcp.vulcanite.init.itemtier.Material;
 import net.insane96mcp.vulcanite.item.ItemVulcaniteAxe;
 import net.insane96mcp.vulcanite.item.ItemVulcanitePickaxe;
 import net.insane96mcp.vulcanite.item.ItemVulcaniteShovel;
+import net.insane96mcp.vulcanite.item.ItemVulcaniteSword;
 import net.insane96mcp.vulcanite.network.PacketBlockBreak;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
@@ -92,17 +92,17 @@ public class Vulcanite {
         @SubscribeEvent
         public static void onBlocksRegistry(final RegistryEvent.Register<Block> blockRegistryEvent) {
             // register a new block here
-            LOGGER.info("HELLO from Register Block");
         }
-        	
+        
         @SubscribeEvent
         public static void OnItemsRegistry(final RegistryEvent.Register<Item> itemRegistryEvent) {
         	
         	itemRegistryEvent.getRegistry().registerAll(
         		new Item(new Item.Properties().group(ItemGroup.MATERIALS)).setRegistryName(new ResourceLocation(Vulcanite.MOD_ID, Names.VULCANITE_INGOT)),
-        		new ItemVulcanitePickaxe(Material.TOOL_VULCANITE, 1, -2.8f, new Item.Properties().group(ItemGroup.TOOLS)).setRegistryName(new ResourceLocation(Vulcanite.MOD_ID, Names.VULCANITE_PICKAXE)),
-        		new ItemVulcaniteAxe(Material.TOOL_VULCANITE, 7f, -3.2f, new Item.Properties().group(ItemGroup.TOOLS)).setRegistryName(new ResourceLocation(Vulcanite.MOD_ID, Names.VULCANITE_AXE)),
-        		new ItemVulcaniteShovel(Material.TOOL_VULCANITE, 1.5f, -3.0f, new Item.Properties().group(ItemGroup.TOOLS)).setRegistryName(new ResourceLocation(Vulcanite.MOD_ID, Names.VULCANITE_SHOVEL))
+        		new ItemVulcanitePickaxe(Vulcanite.RESOURCE_PREFIX + Names.VULCANITE_PICKAXE),
+        		new ItemVulcaniteAxe(Vulcanite.RESOURCE_PREFIX + Names.VULCANITE_AXE),
+        		new ItemVulcaniteShovel(Vulcanite.RESOURCE_PREFIX + Names.VULCANITE_SHOVEL),
+        		new ItemVulcaniteSword(Vulcanite.RESOURCE_PREFIX + Names.VULCANITE_SWORD)
         	);
         }
         
