@@ -43,6 +43,8 @@ public class PacketBlockBreak {
 	}
 
 	public static void onMessage(PacketBlockBreak message, Supplier<NetworkEvent.Context> ctx) {
+		ctx.get().setPacketHandled(true);
+		
 		World world = Minecraft.getInstance().world;
 		for (int i = 0; i < 20; i++) {
 			double x = (double)((float)message.pos.getX() + world.rand.nextFloat());

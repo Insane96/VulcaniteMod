@@ -1,8 +1,11 @@
 package net.insane96mcp.vulcanite;
 
+import java.nio.file.Paths;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import net.insane96mcp.vulcanite.init.ModConfig;
 import net.insane96mcp.vulcanite.init.Strings.Names;
 import net.insane96mcp.vulcanite.init.itemtier.Material;
 import net.insane96mcp.vulcanite.item.ItemVulcaniteAxe;
@@ -16,7 +19,9 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.config.ModConfig.Type;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
@@ -55,8 +60,11 @@ public class Vulcanite {
     {
     	int discriminator = 0;
     	
-        // some preinit code
        	channel.registerMessage(discriminator++, PacketBlockBreak.class, PacketBlockBreak::encode, PacketBlockBreak::decode, PacketBlockBreak::onMessage);
+       	
+       	ModConfig.Init(Paths.get("config", MOD_ID + ".toml"));
+       	
+       	ModLoadingContext.get().registerConfig(Type.COMMON, ModConfig.SPEC);
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {
@@ -98,5 +106,7 @@ public class Vulcanite {
         		new ItemVulcaniteShovel(Material.TOOL_VULCANITE, 1.5f, -3.0f, new Item.Properties().group(ItemGroup.TOOLS)).setRegistryName(new ResourceLocation(Vulcanite.MOD_ID, Names.VULCANITE_SHOVEL))
         	);
         }
+        
+        
     }
 }
