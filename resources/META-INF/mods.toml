@@ -47,6 +47,6 @@ New ore into the nether. Tools and Armor made with this ore, the Vulcanite, have
 [[dependencies.examplemod]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.13.2]"
+    versionRange="[1.13,1.13.2]"
     ordering="NONE"
     side="BOTH"
