@@ -50,7 +50,7 @@ public class PacketBlockBreak {
 			double x = (double)((float)message.pos.getX() + world.rand.nextFloat());
             double y = (double)((float)message.pos.getY() + world.rand.nextFloat());
             double z = (double)((float)message.pos.getZ() + world.rand.nextFloat());
-			world.spawnParticle(Particles.FLAME, x, y, z, 0, 0, 0);
+			world.addParticle(Particles.FLAME, x, y, z, 0, 0, 0);
 		}
 	}
 	
