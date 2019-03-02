@@ -1,0 +1,8 @@
+* Updated to 1.13
+* Fire Protection can no longer be applied on Vulcanite Armor
+* Overworld ore generation has been removed.
+* Entities that die out of Flint and Vulcanite Fire now drop experience (and get angry)
+* Armor Durability and tools durability has been reduced
+* Hot Damage reduction has been slightly increased in the nether
+* Vulcanite Ore takes less time to smelt now and sets entities on fire for half the time of Vulcanite Block when walking on it
+* Vulcanite Block is now less hard to break

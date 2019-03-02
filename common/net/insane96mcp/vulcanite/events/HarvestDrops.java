@@ -1,6 +1,5 @@
 package net.insane96mcp.vulcanite.events;
 
-import java.nio.file.Paths;
 import java.util.List;
 
 import net.insane96mcp.vulcanite.Vulcanite;
@@ -26,8 +25,6 @@ public class HarvestDrops {
 	public static void EventHarvestDrops(HarvestDropsEvent event) {
 		if (event.getWorld().isRemote())
 			return;
-		
-		System.out.println(Paths.get("config", Vulcanite.MOD_ID + ".toml"));
 		
 		EntityPlayerMP player = (EntityPlayerMP) event.getHarvester();
 		

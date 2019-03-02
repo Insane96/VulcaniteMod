@@ -1,15 +1,5 @@
 {
-  "forge_marker": 1,
-  "defaults": {
-    "model": "cube_all",
-    "transform": "forge:default-block"
-  },
-  "variants": {
-    "inventory": [{
-      "textures": {
-        "all": "vulcanite:blocks/vulcanite_block"
-      }
-    }],
-	"normal": { "model":"vulcanite:vulcanite_block" }
-  }
+    "variants": {
+        "": { "model": "vulcanite:block/vulcanite_block" }
+    }
 }

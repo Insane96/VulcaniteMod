@@ -1,15 +1,5 @@
 {
-  "forge_marker": 1,
-  "defaults": {
-    "model": "cube_all",
-    "transform": "forge:default-block"
-  },
-  "variants": {
-    "inventory": [{
-      "textures": {
-        "all": "vulcanite:blocks/nether_vulcanite_ore"
-      }
-    }],
-	"normal": { "model":"vulcanite:nether_vulcanite_ore" }
-  }
+    "variants": {
+        "": { "model": "vulcanite:block/nether_vulcanite_ore" }
+    }
 }

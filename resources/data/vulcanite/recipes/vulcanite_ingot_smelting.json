@@ -1,0 +1,10 @@
+{
+	"type": "smelting",
+	"ingredient":
+	{
+		"item": "vulcanite:nether_vulcanite_ore"
+	},
+	"result": "vulcanite:vulcanite_ingot",
+	"experience": 0.8,
+	"cookingtime": 150
+}

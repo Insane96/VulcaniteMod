@@ -1,7 +1,7 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "vulcanite:items/vulcanite_nugget"
+    "layer0": "vulcanite:item/vulcanite_nugget"
   }
 }
 

@@ -100,7 +100,7 @@ public class ModConfig {
 			BUILDER.push(name);
 			damageReductionNether = BUILDER
 					.comment("Percentage damage reduction from hot sources with full Vulcanite Armor in the Nether")
-					.defineInRange("damage_reduction_nether", 70.0, 0, 100);
+					.defineInRange("damage_reduction_nether", 75.0, 0, 100);
 			damageReductionOther= BUILDER
 					.comment("Percentage damage reduction from hot sources with full Vulcanite Armor in non-Nether dimensions")
 					.defineInRange("damage_reduction_other", 40.0, 0, 100);
@@ -126,7 +126,7 @@ public class ModConfig {
 					.defineInRange("ore_per_vein", 4, 1, 255);
 				veinPerChunk = BUILDER
 					.comment("Number of veins that have to try to spawn per chunk. Set to 0 to disable Nether Vulcanite generation")
-					.defineInRange("vein_per_chunk", 11, 0, 255);
+					.defineInRange("vein_per_chunk", 13, 0, 255);
 				minY = BUILDER
 					.comment("The minimum height (Y) to try to generate Veins")
 					.defineInRange("min_y", 0, 0, 128);

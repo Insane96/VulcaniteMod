@@ -19,7 +19,7 @@ public class ModMaterial {
 		
 		@Override
 		public int getMaxUses() {
-			return 406;
+			return 312;
 		}
 		
 		@Override
@@ -63,7 +63,7 @@ public class ModMaterial {
 		
 		@Override
 		public String getName() {
-			return "vulcanite";
+			return "vulcanite:vulcanite";
 		}
 		
 		@Override
@@ -75,16 +75,16 @@ public class ModMaterial {
 		public int getDurability(EntityEquipmentSlot arg0) {
 			switch (arg0) {
 			case HEAD:
-				return 242;
+				return 206;
 				
 			case CHEST:
-				return 352;
+				return 300;
 				
 			case LEGS:
-				return 330;
+				return 281;
 				
 			case FEET:
-				return 286;
+				return 244;
 
 			default:
 				break;

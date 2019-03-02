@@ -1,7 +1,7 @@
 {
   "parent": "block/cube_all",
     "textures": {
-        "all": "vulcanite:blocks/vulcanite_block"
+        "all": "vulcanite:block/vulcanite_block"
     }
 }
 

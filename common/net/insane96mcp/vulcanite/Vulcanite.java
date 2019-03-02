@@ -5,6 +5,9 @@ import java.nio.file.Paths;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import net.insane96mcp.vulcanite.block.BlockVulcanite;
+import net.insane96mcp.vulcanite.block.BlockVulcaniteOre;
+import net.insane96mcp.vulcanite.init.ModBlocks;
 import net.insane96mcp.vulcanite.init.ModConfig;
 import net.insane96mcp.vulcanite.init.Strings.Names;
 import net.insane96mcp.vulcanite.item.ItemFlintAndVulcanite;
@@ -15,13 +18,16 @@ import net.insane96mcp.vulcanite.item.ItemVulcaniteShovel;
 import net.insane96mcp.vulcanite.item.ItemVulcaniteSword;
 import net.insane96mcp.vulcanite.item.materials.ModMaterial;
 import net.insane96mcp.vulcanite.network.PacketBlockBreak;
+import net.insane96mcp.vulcanite.worldgen.OreGenerator;
 import net.minecraft.block.Block;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemHoe;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.ToolType;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModLoadingContext;
@@ -69,6 +75,8 @@ public class Vulcanite {
        	
        	ModLoadingContext.get().registerConfig(Type.COMMON, ModConfig.SPEC);
        	ModConfig.Init(Paths.get("config", MOD_ID + ".toml"));
+       	
+       	OreGenerator.Init();
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {
@@ -96,25 +104,33 @@ public class Vulcanite {
     public static class RegistryEvents {
         @SubscribeEvent
         public static void onBlocksRegistry(final RegistryEvent.Register<Block> blockRegistryEvent) {
-            // register a new block here
+            blockRegistryEvent.getRegistry().registerAll(
+            	new BlockVulcanite(Vulcanite.RESOURCE_PREFIX + Names.VULCANITE_BLOCK),
+            	new BlockVulcaniteOre(Vulcanite.RESOURCE_PREFIX + Names.NETHER_VULCANITE_ORE)
+            );
         }
         
         @SubscribeEvent
         public static void OnItemsRegistry(final RegistryEvent.Register<Item> itemRegistryEvent) {
         	
         	itemRegistryEvent.getRegistry().registerAll(
-        		new Item(new Item.Properties().group(ItemGroup.MATERIALS)).setRegistryName(new ResourceLocation(Vulcanite.MOD_ID, Names.VULCANITE_INGOT)),
+        		new Item(new Item.Properties().group(ItemGroup.MATERIALS)).setRegistryName(Vulcanite.MOD_ID, Names.VULCANITE_INGOT),
+        		new Item(new Item.Properties().group(ItemGroup.MATERIALS)).setRegistryName(Vulcanite.MOD_ID, Names.VULCANITE_NUGGET),
         		new ItemVulcanitePickaxe(Vulcanite.RESOURCE_PREFIX + Names.VULCANITE_PICKAXE),
         		new ItemVulcaniteAxe(Vulcanite.RESOURCE_PREFIX + Names.VULCANITE_AXE),
         		new ItemVulcaniteShovel(Vulcanite.RESOURCE_PREFIX + Names.VULCANITE_SHOVEL),
-        		new ItemHoe(ModMaterial.TOOL_VULCANITE, -0.5f, new Item.Properties().group(ItemGroup.TOOLS)).setRegistryName(new ResourceLocation(Vulcanite.MOD_ID, Names.VULCANITE_HOE)),
+        		new ItemHoe(ModMaterial.TOOL_VULCANITE, -0.5f, new Item.Properties().group(ItemGroup.TOOLS)).setRegistryName(Vulcanite.MOD_ID, Names.VULCANITE_HOE),
         		new ItemFlintAndVulcanite(Vulcanite.RESOURCE_PREFIX + Names.FLINT_AND_VULCANITE),
         		new ItemVulcaniteSword(Vulcanite.RESOURCE_PREFIX + Names.VULCANITE_SWORD),
 
         		new ItemVulcaniteArmor(EntityEquipmentSlot.HEAD, Vulcanite.RESOURCE_PREFIX + Names.VULCANITE_HELMET),
         		new ItemVulcaniteArmor(EntityEquipmentSlot.CHEST, Vulcanite.RESOURCE_PREFIX + Names.VULCANITE_CHESTPLATE),
         		new ItemVulcaniteArmor(EntityEquipmentSlot.LEGS, Vulcanite.RESOURCE_PREFIX + Names.VULCANITE_LEGGINGS),
-        		new ItemVulcaniteArmor(EntityEquipmentSlot.FEET, Vulcanite.RESOURCE_PREFIX + Names.VULCANITE_BOOTS)
+        		new ItemVulcaniteArmor(EntityEquipmentSlot.FEET, Vulcanite.RESOURCE_PREFIX + Names.VULCANITE_BOOTS),
+        		
+        		//addToolType doesn't work but I think might be given use in future 
+        		new ItemBlock(ModBlocks.vulcaniteBlock, new Item.Properties().group(ItemGroup.BUILDING_BLOCKS).addToolType(ToolType.PICKAXE, 2)).setRegistryName(Vulcanite.MOD_ID, Names.VULCANITE_BLOCK),
+        		new ItemBlock(ModBlocks.vulcaniteOre, new Item.Properties().group(ItemGroup.BUILDING_BLOCKS).addToolType(ToolType.PICKAXE, 2)).setRegistryName(Vulcanite.MOD_ID, Names.NETHER_VULCANITE_ORE)
         	);
         }
         
