@@ -1,0 +1,51 @@
+item.vulcanite:vulcanite_ingot.name=Sztabka Wulkanitu
+item.vulcanite:vulcanite_nugget.name=Bryłka Wulkanitu
+item.vulcanite:vulcanite_pickaxe.name=Wulkanitowy Kilof
+item.vulcanite:vulcanite_axe.name=Wulkanitowy Topór
+item.vulcanite:vulcanite_shovel.name=Wulkanitowa Łopata
+item.vulcanite:vulcanite_hoe.name=Wulkanitowa Motyka
+item.vulcanite:vulcanite_sword.name=Wulkanitowy Miecz
+
+item.vulcanite:flint_and_vulcanite.name=Krzemień i Wulkanit
+
+item.vulcanite:vulcanite_helmet.name=Wulkanitowy Hełm
+item.vulcanite:vulcanite_chestplate.name=Wulkanitowy Napierśnik
+item.vulcanite:vulcanite_leggings.name=Wulkanitowe Spodnie
+item.vulcanite:vulcanite_boots.name=Wulkanitowe Buty
+
+tile.vulcanite:vulcanite_block.name=Blok Wulkanitu
+tile.vulcanite:vulcanite_ore.name=Ruda Wulkanitu
+tile.vulcanite:nether_vulcanite_ore.name=Ruda Piekielnego Wulkanitu
+
+tooltip.weapon.more_damage=§6Zadaje więcej obrażeń mobom odpornym na ogień
+tooltip.weapon.more_damage_fire_aspect=§6Fire Aspect zwiększa te dodatkowe obrażenia
+
+tooltip.tool.bonus_efficiency=§6To narzędzie rozbija bloki szybciej w Netherze
+tooltip.tool.smelting=§6To narzędzie przetapia bloki
+
+tooltip.armor.damage_reduction=§6Zmniejsza obrażenia od źródeł ciepła. Każda część zbroi chroni osobno. Bardziej efektywne w Netherze.
+
+tooltip.flint_and_vulcanite.set_on_fire=§6Użyj na mobie aby go podpalić
+
+tooltip.vulcanite_block.set_on_fire=§6Podpala stojące na nim moby.
+
+advancements.vulcanite.root.title=Vulcanite Mod
+advancements.vulcanite.root.description=Początki anty-ciepła
+
+advancements.vulcanite.vulcanite.title=Trochę gorąco
+advancements.vulcanite.vulcanite.description=Przetop Rudę Piekielnego Wulkanitu lub złącz ze sobą bryłki aby otrzymać sztabkę Wulkanitu
+
+advancements.vulcanite.sword.title=Ognio-odporni powinni się bać
+advancements.vulcanite.sword.description=Zdobądź Wulkanitowy Miecz
+
+advancements.vulcanite.tools.title=Przetapianie na wynos
+advancements.vulcanite.tools.description=Zdobądź każde wulkanitowe narzędzie
+
+advancements.vulcanite.flint.title=Podpal ich wszystkich
+advancements.vulcanite.flint.description=Zdobądź Krzemień i Wulkanit
+
+advancements.vulcanite.armor.title=Anty-Ciepło
+advancements.vulcanite.armor.description=Zdobądź pełen zestaw zbroi z wulkanitu
+
+advancements.vulcanite.block.title=Samo-gotująca farma
+advancements.vulcanite.block.description=Zdobądź blok Wulkanitu
