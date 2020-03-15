@@ -1,0 +1,40 @@
+{
+  "display": {
+    "icon": {
+      "item": "vulcanite:vulcanite_block"
+    },
+    "title": {
+      "translate": "advancements.vulcanite.root.title"
+    },
+    "description": {
+      "translate": "advancements.vulcanite.root.description"
+    },
+    "background": "vulcanite:textures/blocks/vulcanite_ore.png",
+    "show_toast": true,
+    "announce_to_chat": false
+  },
+  "criteria": {
+    "nether_trigger": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": {
+        "to": "the_nether"
+      }
+    },
+    "overworld_ore_trigger": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "vulcanite:vulcanite_nugget"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "nether_trigger",
+      "overworld_ore_trigger"
+    ]
+  ]
+}

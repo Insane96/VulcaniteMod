@@ -1,0 +1,56 @@
+{
+  "display": {
+    "icon": {
+      "item": "vulcanite:vulcanite_chestplate"
+    },
+    "title": {
+      "translate": "advancements.vulcanite.armor.title"
+    },
+    "description": {
+      "translate": "advancements.vulcanite.armor.description"
+    }
+  },
+  "parent": "vulcanite:vulcanite/vulcanite",
+  "criteria": {
+    "vulcanite_helmet": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "vulcanite:vulcanite_helmet"
+          }
+        ]
+      }
+    },
+    "vulcanite_chestplate": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "vulcanite:vulcanite_chestplate"
+          }
+        ]
+      }
+    },
+    "vulcanite_leggings": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "vulcanite:vulcanite_leggings"
+          }
+        ]
+      }
+    },
+    "vulcanite_boots": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "vulcanite:vulcanite_boots"
+          }
+        ]
+      }
+    }
+  }
+}

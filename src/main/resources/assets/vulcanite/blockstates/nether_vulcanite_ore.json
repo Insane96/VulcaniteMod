@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "": {
+            "model": "vulcanite:block/nether_vulcanite_ore"
+        }
+    }
+}
