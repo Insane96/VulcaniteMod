@@ -21,7 +21,7 @@ import java.util.Map;
 public class LivingHurt {
 
     @SubscribeEvent
-    public static void OnPlayerHurt(LivingHurtEvent event) {
+    public static void onPlayerHurt(LivingHurtEvent event) {
         if (event.getEntityLiving().world.isRemote)
             return;
 
@@ -79,7 +79,7 @@ public class LivingHurt {
     }
 
     @SubscribeEvent
-    public static void OnPlayerDamageEntity(LivingHurtEvent event) {
+    public static void onPlayerDamageEntity(LivingHurtEvent event) {
         if (event.getEntityLiving().world.isRemote)
             return;
 

@@ -1,0 +1,5 @@
+Updated to 1.14.4
+*AutoSmelting is missing! Need to wait for Forge fix
+*Nerfed Sword (-0.5) and Axe Damage (-1.0)
+*Heavily reduced Flint and Vulcanite Durability (222 -> 80)
+*Maybe other changes but really don't know which ones
