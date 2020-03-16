@@ -19,23 +19,23 @@ public class OreGenerator {
         for (Biome biome : ForgeRegistries.BIOMES.getValues()) {
             if (biome.getCategory().equals(Biome.Category.NETHER)) {
                 biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES,
-                        Biome.createDecoratedFeature(Feature.ORE,
+                        Feature.ORE.withConfiguration(
                                 new OreFeatureConfig(
                                         OreFeatureConfig.FillerBlockType.NETHERRACK,
                                         ModBlocks.vulcaniteOre.getDefaultState(),
-                                        VEIN_SIZE
-                                ),
-                                Placement.COUNT_RANGE, DEPTH_COUNT_RANGE
+                                        VEIN_SIZE)
+                        ).withPlacement(
+                                Placement.COUNT_RANGE.configure(DEPTH_COUNT_RANGE)
                         )
                 );
                 biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES,
-                        Biome.createDecoratedFeature(Feature.ORE,
+                        Feature.ORE.withConfiguration(
                                 new OreFeatureConfig(
                                         OreFeatureConfig.FillerBlockType.NETHERRACK,
                                         ModBlocks.vulcaniteOre.getDefaultState(),
-                                        VEIN_SIZE
-                                ),
-                                Placement.COUNT_RANGE, ANY_HEIGHT_COUNT_RANGE
+                                        VEIN_SIZE)
+                        ).withPlacement(
+                                Placement.COUNT_RANGE.configure(ANY_HEIGHT_COUNT_RANGE)
                         )
                 );
             }

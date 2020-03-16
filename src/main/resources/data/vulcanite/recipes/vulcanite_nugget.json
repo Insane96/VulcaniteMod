@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "vulcanite:vulcanite_ingot"
+    }
+  ],
+  "result": {
+    "item": "vulcanite:vulcanite_nugget",
+    "count": 9
+  }
+}

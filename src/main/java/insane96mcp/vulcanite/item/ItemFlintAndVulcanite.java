@@ -51,7 +51,7 @@ public class ItemFlintAndVulcanite extends FlintAndSteelItem {
                 if (ModConfig.COMMON.toolsAndWeapons.flintAndVulcanite.tntIgnitesFaster.get())
                     entityTNTPrimed.setFuse(40);
                 world.addEntity(entityTNTPrimed);
-                world.playSound(null, entityTNTPrimed.posX, entityTNTPrimed.posY, entityTNTPrimed.posZ, SoundEvents.ENTITY_TNT_PRIMED, SoundCategory.BLOCKS, 1.0F, 1.0F);
+                world.playSound(null, entityTNTPrimed.getPosX(), entityTNTPrimed.getPosX(), entityTNTPrimed.getPosX(), SoundEvents.ENTITY_TNT_PRIMED, SoundCategory.BLOCKS, 1.0F, 1.0F);
             }
             world.setBlockState(pos, Blocks.AIR.getDefaultState(), 11);
             player.getHeldItem(hand).damageItem(1, player, (playerEntity) -> playerEntity.sendBreakAnimation(hand));
