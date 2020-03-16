@@ -6,16 +6,17 @@ import insane96mcp.vulcanite.setup.ModConfig;
 import insane96mcp.vulcanite.setup.ModItems;
 import net.minecraft.entity.item.ExperienceOrbEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
+import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipe;
 import net.minecraft.item.crafting.IRecipeType;
-import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.Hand;
 import net.minecraftforge.event.world.BlockEvent.HarvestDropsEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.network.PacketDistributor;
+import net.minecraftforge.items.ItemHandlerHelper;
 
 import java.util.List;
 
@@ -26,6 +27,8 @@ public class HarvestDrops {
 	public static void eventHarvestDrops(HarvestDropsEvent event) {
 		if (event.getWorld().isRemote())
 			return;
+
+		//Cache recipes so
 
 		ServerPlayerEntity player = (ServerPlayerEntity) event.getHarvester();
 
@@ -53,21 +56,15 @@ public class HarvestDrops {
 		boolean smelted = false;
 
 		List<ItemStack> drops = event.getDrops();
-		for (int i = 0; i < drops.size(); i++) {
-			List<FurnaceRecipe> furnaceRecipes = event.getWorld().getWorld().getRecipeManager().getRecipes(IRecipeType.SMELTING, null, event.getWorld().getWorld());
-			for (FurnaceRecipe furnaceRecipe : furnaceRecipes) {
-				List<Ingredient> ingredients = furnaceRecipe.getIngredients();
-				for (Ingredient ingredient : ingredients) {
-					if (ingredient.test(drops.get(i))) {
-						drops.set(i, furnaceRecipe.getRecipeOutput());
-						experience += furnaceRecipe.getExperience();
-						smelted = true;
-						break;
-					}
-				}
-				if (smelted)
-					break;
-			}
+		for (ItemStack drop : drops) {
+			ItemStack smeltedStack = event.getWorld().getWorld().getRecipeManager().getRecipe(IRecipeType.SMELTING, new Inventory(drop), event.getWorld().getWorld())
+					.map(FurnaceRecipe::getRecipeOutput)
+					.filter(itemStack -> !itemStack.isEmpty())
+					.map(itemStack -> ItemHandlerHelper.copyStackWithSize(itemStack, drop.getCount() * itemStack.getCount()))
+					.orElse(drop);
+
+			smelted = drop != smeltedStack;
+
 			if (smelted)
 				break;
 		}
@@ -78,7 +75,7 @@ public class HarvestDrops {
 				player.getHeldItemMainhand().damageItem(1, player, playerEntity -> playerEntity.sendBreakAnimation(Hand.MAIN_HAND));
 		}
 
-		if (!ModConfig.COMMON.toolsAndWeapons.bonusStats.shouldDropExperience.get())
+		if (!ModConfig.COMMON.toolsAndWeapons.bonusStats.smeltingDropsExperience.get())
 			return;
 		if (experience % 1 != 0) {
 			int intXp = (int) experience;

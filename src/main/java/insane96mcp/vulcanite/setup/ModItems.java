@@ -13,6 +13,9 @@ public class ModItems {
     @ObjectHolder(Vulcanite.RESOURCE_PREFIX + Names.VULCANITE_INGOT)
     public static Item vulcaniteIngot;
 
+    @ObjectHolder(Vulcanite.RESOURCE_PREFIX + Names.VULCANITE_NUGGET)
+    public static Item vulcaniteNugget;
+
     @ObjectHolder(Vulcanite.RESOURCE_PREFIX + Names.VULCANITE_PICKAXE)
     public static ItemVulcanitePickaxe vulcanitePickaxe;
 

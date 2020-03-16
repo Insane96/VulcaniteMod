@@ -22,13 +22,11 @@ public class ModConfig {
 
         public final ToolsAndWeapons toolsAndWeapons;
         public final Armor armor;
-        public final OreGeneration oreGeneration;
         public final Misc misc;
 
         public CommonConfig(final ForgeConfigSpec.Builder builder) {
             toolsAndWeapons = new ToolsAndWeapons(builder);
             armor = new Armor(builder);
-            oreGeneration = new OreGeneration(builder);
             misc = new Misc(builder);
         }
 
@@ -52,7 +50,7 @@ public class ModConfig {
 
                 public static ConfigValue<Double> damage;
                 public static ConfigValue<Double> damageFireAspect;
-                public static ConfigValue<Boolean> shouldDropExperience;
+                public static ConfigValue<Boolean> smeltingDropsExperience;
                 public static ConfigValue<Double> efficiency;
 
                 public BonusStats(ForgeConfigSpec.Builder builder) {
@@ -63,9 +61,9 @@ public class ModConfig {
                     damageFireAspect = builder
                             .comment("Bonus damage % dealt to Fire Immune mobs per Fire Aspect Level")
                             .defineInRange("damage_fire_aspect", 7.5, 0.0, Double.MAX_VALUE);
-                    shouldDropExperience = builder
-                            .comment("If the smelting property of the tools should make the blocks broken drop experience")
-                            .define("should_drop_experience", false);
+                    smeltingDropsExperience = builder
+                            .comment("If the Smelting property of the tools should make the blocks broken drop experience")
+                            .define("smelting_drops_experience", false);
                     efficiency = builder
                             .comment("Bonus Efficency % for tools when in the nether (100.0 means that the tool will be twice as fast in the nether)")
                             .defineInRange("efficiency", 50.0, 0.0, Double.MAX_VALUE);
@@ -85,7 +83,7 @@ public class ModConfig {
                     builder.push(name);
                     secondsOnFire = builder
                             .comment("The number of seconds an entity will be set on fire when right clicked with Flint and Vulcanite")
-                            .defineInRange("seconds_on_fire", 12, 0, Short.MAX_VALUE);
+                            .defineInRange("seconds_on_fire", 5, 0, Short.MAX_VALUE);
                     durabilityOnUse = builder
                             .comment("How much uses will be consumed on the flint and vulcanite when you set a mob on fire")
                             .defineInRange("durability_on_use", 2, 1, 80);
@@ -111,32 +109,6 @@ public class ModConfig {
                 damageReductionOther = builder
                         .comment("Percentage damage reduction from hot sources with full Vulcanite Armor in non-Nether dimensions")
                         .defineInRange("damage_reduction_other", 40.0, 0, 100);
-                builder.pop();
-            }
-        }
-
-        public static class OreGeneration {
-            public static String name = "ore_generation";
-
-            public static ConfigValue<Integer> orePerVein;
-            public static ConfigValue<Integer> veinPerChunk;
-            public static ConfigValue<Integer> minY;
-            public static ConfigValue<Integer> maxY;
-
-            public OreGeneration(ForgeConfigSpec.Builder builder) {
-                builder.push(name);
-                orePerVein = builder
-                        .comment("Number of ores generated per vein")
-                        .defineInRange("ore_per_vein", 4, 1, 255);
-                veinPerChunk = builder
-                        .comment("Number of veins that have to try to spawn per chunk. Set to 0 to disable Nether Vulcanite generation")
-                        .defineInRange("vein_per_chunk", 13, 0, 255);
-                minY = builder
-                        .comment("The minimum height (Y) to try to generate Veins")
-                        .defineInRange("min_y", 0, 0, 128);
-                maxY = builder
-                        .comment("The maximum height (Y) to try to generate Veins")
-                        .defineInRange("max_y", 32, 0, 128);
                 builder.pop();
             }
         }
