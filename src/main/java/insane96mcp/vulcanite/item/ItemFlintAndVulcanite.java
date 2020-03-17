@@ -43,7 +43,7 @@ public class ItemFlintAndVulcanite extends FlintAndSteelItem {
         World world = itemUseContext.getWorld();
         BlockPos pos = itemUseContext.getPos();
         PlayerEntity player = itemUseContext.getPlayer();
-        Hand hand = player.getActiveHand();
+        Hand hand = itemUseContext.getHand();
 
         if (world.getBlockState(pos).getBlock() == Blocks.TNT) {
             if (!world.isRemote) {
@@ -51,7 +51,7 @@ public class ItemFlintAndVulcanite extends FlintAndSteelItem {
                 if (ModConfig.COMMON.toolsAndWeapons.flintAndVulcanite.tntIgnitesFaster.get())
                     entityTNTPrimed.setFuse(40);
                 world.addEntity(entityTNTPrimed);
-                world.playSound(null, entityTNTPrimed.getPosX(), entityTNTPrimed.getPosX(), entityTNTPrimed.getPosX(), SoundEvents.ENTITY_TNT_PRIMED, SoundCategory.BLOCKS, 1.0F, 1.0F);
+                world.playSound(null, entityTNTPrimed.getPosX(), entityTNTPrimed.getPosY(), entityTNTPrimed.getPosZ(), SoundEvents.ENTITY_TNT_PRIMED, SoundCategory.BLOCKS, 1.0F, 1.0F);
             }
             world.setBlockState(pos, Blocks.AIR.getDefaultState(), 11);
             player.getHeldItem(hand).damageItem(1, player, (playerEntity) -> playerEntity.sendBreakAnimation(hand));
