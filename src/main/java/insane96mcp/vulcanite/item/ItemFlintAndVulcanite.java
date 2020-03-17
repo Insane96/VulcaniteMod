@@ -27,8 +27,10 @@ import java.util.Map;
 
 public class ItemFlintAndVulcanite extends FlintAndSteelItem {
 
+    public static final int DURABILITY = 80;
+
     public ItemFlintAndVulcanite(String id) {
-        super(new Properties().group(ItemGroup.TOOLS).defaultMaxDamage(80));
+        super(new Properties().group(ItemGroup.TOOLS).defaultMaxDamage(DURABILITY));
 
         setRegistryName(id);
     }

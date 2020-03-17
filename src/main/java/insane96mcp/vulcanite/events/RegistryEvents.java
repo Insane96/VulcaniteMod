@@ -5,6 +5,7 @@ import insane96mcp.vulcanite.Vulcanite;
 import insane96mcp.vulcanite.block.BlockVulcanite;
 import insane96mcp.vulcanite.block.BlockVulcaniteOre;
 import insane96mcp.vulcanite.item.*;
+import insane96mcp.vulcanite.lootmodifiers.SmeltingModifier;
 import insane96mcp.vulcanite.setup.ModBlocks;
 import insane96mcp.vulcanite.setup.Strings.Names;
 import net.minecraft.block.Block;
@@ -13,7 +14,9 @@ import net.minecraft.item.BlockItem;
 import net.minecraft.item.HoeItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.ToolType;
+import net.minecraftforge.common.loot.GlobalLootModifierSerializer;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -23,7 +26,7 @@ import static insane96mcp.vulcanite.item.materials.ModMaterial.TOOL_VULCANITE;
 @Mod.EventBusSubscriber(modid = Vulcanite.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class RegistryEvents {
     @SubscribeEvent
-    public static void onBlocksRegistry(final RegistryEvent.Register<Block> blockRegistryEvent) {
+    public static void registerBlocks(final RegistryEvent.Register<Block> blockRegistryEvent) {
         blockRegistryEvent.getRegistry().registerAll(
                 new BlockVulcanite(Vulcanite.RESOURCE_PREFIX + Names.VULCANITE_BLOCK),
                 new BlockVulcaniteOre(Vulcanite.RESOURCE_PREFIX + Names.NETHER_VULCANITE_ORE)
@@ -31,8 +34,7 @@ public class RegistryEvents {
     }
 
     @SubscribeEvent
-    public static void OnItemsRegistry(final RegistryEvent.Register<Item> itemRegistryEvent) {
-
+    public static void registerItems(final RegistryEvent.Register<Item> itemRegistryEvent) {
         itemRegistryEvent.getRegistry().registerAll(
                 new Item(new Item.Properties().group(ItemGroup.MATERIALS)).setRegistryName(Vulcanite.MOD_ID, Names.VULCANITE_INGOT),
                 new Item(new Item.Properties().group(ItemGroup.MATERIALS)).setRegistryName(Vulcanite.MOD_ID, Names.VULCANITE_NUGGET),
@@ -51,6 +53,13 @@ public class RegistryEvents {
                 //addToolType doesn't work but I think might be given use in future
                 new BlockItem(ModBlocks.vulcaniteBlock, new Item.Properties().group(ItemGroup.BUILDING_BLOCKS).addToolType(ToolType.PICKAXE, 2)).setRegistryName(Vulcanite.MOD_ID, Names.VULCANITE_BLOCK),
                 new BlockItem(ModBlocks.vulcaniteOre, new Item.Properties().group(ItemGroup.BUILDING_BLOCKS).addToolType(ToolType.PICKAXE, 2)).setRegistryName(Vulcanite.MOD_ID, Names.NETHER_VULCANITE_ORE)
+        );
+    }
+
+    @SubscribeEvent
+    public static void registerModifiersSerializers(final RegistryEvent.Register<GlobalLootModifierSerializer<?>> event) {
+        event.getRegistry().registerAll(
+                new SmeltingModifier.Serializer().setRegistryName(new ResourceLocation(Vulcanite.MOD_ID, "smelting"))
         );
     }
 }
