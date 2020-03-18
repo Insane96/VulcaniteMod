@@ -1,0 +1,130 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:anvil"
+    },
+    "title": {
+      "translate": "advancements.vulcanite.vulcanite_upgrade.title"
+    },
+    "description": {
+      "translate": "advancements.vulcanite.vulcanite_upgrade.description"
+    }
+  },
+  "parent": "vulcanite:vulcanite/vulcanite_ingot",
+  "criteria": {
+    "vulcanite_equipment1": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "vulcanite:vulcanite_pickaxe"
+          }
+        ]
+      }
+    },
+    "vulcanite_equipment2": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "vulcanite:vulcanite_sword"
+          }
+        ]
+      }
+    },
+    "vulcanite_equipment3": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "vulcanite:vulcanite_axe"
+          }
+        ]
+      }
+    },
+    "vulcanite_equipment4": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "vulcanite:vulcanite_shovel"
+          }
+        ]
+      }
+    },
+    "vulcanite_equipment5": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "vulcanite:vulcanite_hoe"
+          }
+        ]
+      }
+    },
+    "vulcanite_equipment6": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "vulcanite:flint_and_vulcanite"
+          }
+        ]
+      }
+    },
+    "vulcanite_equipment7": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "vulcanite:vulcanite_helmet"
+          }
+        ]
+      }
+    },
+    "vulcanite_equipment8": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "vulcanite:vulcanite_chestplate"
+          }
+        ]
+      }
+    },
+    "vulcanite_equipment9": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "vulcanite:vulcanite_leggings"
+          }
+        ]
+      }
+    },
+    "vulcanite_equipment10": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "vulcanite:vulcanite_boots"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "vulcanite_equipment1",
+      "vulcanite_equipment2",
+      "vulcanite_equipment3",
+      "vulcanite_equipment4",
+      "vulcanite_equipment5",
+      "vulcanite_equipment6",
+      "vulcanite_equipment7",
+      "vulcanite_equipment8",
+      "vulcanite_equipment9",
+      "vulcanite_equipment10"
+    ]
+  ]
+}

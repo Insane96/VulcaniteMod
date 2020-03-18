@@ -27,8 +27,10 @@ import java.util.Map;
 
 public class ItemFlintAndVulcanite extends FlintAndSteelItem {
 
+    public static final int DURABILITY = 80;
+
     public ItemFlintAndVulcanite(String id) {
-        super(new Properties().group(ItemGroup.TOOLS).defaultMaxDamage(80));
+        super(new Properties().group(ItemGroup.TOOLS).defaultMaxDamage(DURABILITY));
 
         setRegistryName(id);
     }
@@ -43,7 +45,7 @@ public class ItemFlintAndVulcanite extends FlintAndSteelItem {
         World world = itemUseContext.getWorld();
         BlockPos pos = itemUseContext.getPos();
         PlayerEntity player = itemUseContext.getPlayer();
-        Hand hand = player.getActiveHand();
+        Hand hand = itemUseContext.getHand();
 
         if (world.getBlockState(pos).getBlock() == Blocks.TNT) {
             if (!world.isRemote) {

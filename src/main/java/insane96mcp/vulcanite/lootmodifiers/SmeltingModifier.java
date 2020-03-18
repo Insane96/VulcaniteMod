@@ -1,0 +1,81 @@
+package insane96mcp.vulcanite.lootmodifiers;
+
+
+//import net.minecraftforge.common.loot.GlobalLootModifierSerializer;
+//import net.minecraftforge.common.loot.LootModifier;
+
+public class SmeltingModifier /*extends LootModifier */ {
+    /*public SmeltingModifier(ILootCondition[] conditions) {
+        super(conditions);
+    }
+
+    @Nonnull
+    @Override
+    protected List<ItemStack> doApply(List<ItemStack> generatedLoot, LootContext context) {
+        ArrayList<ItemStack> newLoot = new ArrayList<>();
+
+        generatedLoot.forEach(stack -> newLoot.add(smelt(stack, context)));
+
+        if (newLoot.equals(generatedLoot))
+            return generatedLoot;
+
+        Entity entity = context.get(LootParameters.THIS_ENTITY);
+
+        if (!(entity instanceof ServerPlayerEntity))
+            throw new ClassCastException("Hope this isn't called other than the player breaking blocks " + entity.toString());
+
+        ServerPlayerEntity player = (ServerPlayerEntity) entity;
+        BlockPos pos = context.get(LootParameters.POSITION);
+
+        Vulcanite.channel.send(PacketDistributor.PLAYER.with(() -> player), new PacketBlockBreak(pos));
+        if (player.dimension.getId() != -1)
+            player.getHeldItemMainhand().damageItem(1, player, playerEntity -> playerEntity.sendBreakAnimation(Hand.MAIN_HAND));
+
+        if (ModConfig.COMMON.toolsAndWeapons.bonusStats.smeltingDropsExperience.get()) {
+            float experience = 0;
+            for (ItemStack stack : generatedLoot) {
+                experience += getExperience(stack, context);
+            }
+
+            //If experience is not an integer
+            if (experience % 1 != 0) {
+                int intXp = (int) experience;
+                float decimals = experience - intXp;
+
+                if (context.getRandom().nextFloat() < decimals)
+                    experience = (float) Math.ceil(experience);
+                else
+                    experience = (float) Math.floor(experience);
+            }
+
+            if (experience > 0) {
+                ExperienceOrbEntity xpOrb = new ExperienceOrbEntity(context.getWorld(), pos.getX() + .5f, pos.getY() + .5f, pos.getZ() + .5f, (int) experience);
+                context.getWorld().addEntity(xpOrb);
+            }
+        }
+        return newLoot;
+
+    }
+
+    private static ItemStack smelt(ItemStack stack, LootContext context) {
+        return context.getWorld().getRecipeManager().getRecipe(IRecipeType.SMELTING, new Inventory(stack), context.getWorld())
+                .map(FurnaceRecipe::getRecipeOutput)
+                .filter(itemStack -> !itemStack.isEmpty())
+                .map(itemStack -> ItemHandlerHelper.copyStackWithSize(itemStack, stack.getCount() * itemStack.getCount()))
+                .orElse(stack);
+    }
+
+    private static float getExperience(ItemStack stack, LootContext context) {
+        return context.getWorld().getRecipeManager().getRecipe(IRecipeType.SMELTING, new Inventory(stack), context.getWorld())
+                .map(FurnaceRecipe::getExperience)
+                .orElse(0f);
+    }
+
+    public static class Serializer extends GlobalLootModifierSerializer<SmeltingModifier> {
+
+        @Override
+        public SmeltingModifier read(ResourceLocation location, JsonObject object, ILootCondition[] lootConditions) {
+            return new SmeltingModifier(lootConditions);
+        }
+    }*/
+}

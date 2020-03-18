@@ -1,6 +1,7 @@
 package insane96mcp.vulcanite.setup;
 
 import insane96mcp.vulcanite.Vulcanite;
+import insane96mcp.vulcanite.item.ItemFlintAndVulcanite;
 import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.common.ForgeConfigSpec.ConfigValue;
 import net.minecraftforge.fml.common.Mod;
@@ -63,10 +64,10 @@ public class ModConfig {
                             .defineInRange("damage_fire_aspect", 7.5, 0.0, Double.MAX_VALUE);
                     smeltingDropsExperience = builder
                             .comment("If the Smelting property of the tools should make the blocks broken drop experience")
-                            .define("smelting_drops_experience", false);
+                            .define("smelting_drops_experience", true);
                     efficiency = builder
                             .comment("Bonus Efficency % for tools when in the nether (100.0 means that the tool will be twice as fast in the nether)")
-                            .defineInRange("efficiency", 50.0, 0.0, Double.MAX_VALUE);
+                            .defineInRange("efficiency", 75.0, 0.0, Double.MAX_VALUE);
                     builder.pop();
                 }
             }
@@ -82,11 +83,11 @@ public class ModConfig {
                 public FlintAndVulcanite(ForgeConfigSpec.Builder builder) {
                     builder.push(name);
                     secondsOnFire = builder
-                            .comment("The number of seconds an entity will be set on fire when right clicked with Flint and Vulcanite")
+                            .comment("The number of seconds an entity will be set on fire when right clicked with Flint and Vulcanite. This is doubled with the Flame enchantment.")
                             .defineInRange("seconds_on_fire", 5, 0, Short.MAX_VALUE);
                     durabilityOnUse = builder
                             .comment("How much uses will be consumed on the flint and vulcanite when you set a mob on fire")
-                            .defineInRange("durability_on_use", 2, 1, 80);
+                            .defineInRange("durability_on_use", 2, 1, ItemFlintAndVulcanite.DURABILITY);
                     tntIgnitesFaster = builder
                             .comment("If true TNT will take half the time to explode when ignited with Flint and Vulcanite")
                             .define("tnt_ignites_faster", true);

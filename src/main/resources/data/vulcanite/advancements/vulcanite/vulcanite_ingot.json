@@ -4,15 +4,15 @@
       "item": "vulcanite:vulcanite_ingot"
     },
     "title": {
-      "translate": "advancements.vulcanite.vulcanite.title"
+      "translate": "advancements.vulcanite.vulcanite_ingot.title"
     },
     "description": {
-      "translate": "advancements.vulcanite.vulcanite.description"
+      "translate": "advancements.vulcanite.vulcanite_ingot.description"
     }
   },
   "parent": "vulcanite:vulcanite/root",
   "criteria": {
-    "vulcanite": {
+    "vulcanite_ingot": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [

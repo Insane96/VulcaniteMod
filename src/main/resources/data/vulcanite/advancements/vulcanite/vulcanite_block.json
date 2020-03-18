@@ -10,7 +10,7 @@
       "translate": "advancements.vulcanite.block.description"
     }
   },
-  "parent": "vulcanite:vulcanite/vulcanite",
+  "parent": "vulcanite:vulcanite/vulcanite_ingot",
   "criteria": {
     "vulcanite_block": {
       "trigger": "minecraft:inventory_changed",

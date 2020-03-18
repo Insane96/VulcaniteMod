@@ -2,9 +2,10 @@ package insane96mcp.vulcanite.events;
 
 
 import insane96mcp.vulcanite.Vulcanite;
-import insane96mcp.vulcanite.setup.ModItems;
+import insane96mcp.vulcanite.setup.ModConfig;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -14,35 +15,18 @@ public class PlayerBreakSpeed {
 
 	@SubscribeEvent
 	public static void playerBreakSpeedEvent(PlayerEvent.BreakSpeed event) {
-		PlayerEntity player = event.getPlayer();
+        PlayerEntity player = event.getPlayer();
 
-		if (player.dimension.getId() != -1)
-			return;
+        if (player.dimension.getId() != -1)
+            return;
 
-		ItemStack[] validEfficencyBoost = new ItemStack[]{
-				new ItemStack(ModItems.vulcanitePickaxe),
-				new ItemStack(ModItems.vulcaniteAxe),
-				new ItemStack(ModItems.vulcaniteShovel),
-		};
+        ItemStack mainHand = player.getHeldItemMainhand();
 
-		ItemStack mainHand = player.getHeldItemMainhand();
-		boolean isValid = false;
-
-		for (ItemStack itemStack : validEfficencyBoost) {
-			if (!ItemStack.areItemsEqualIgnoreDurability(mainHand, itemStack))
-				continue;
-
-			if (itemStack.getItem().getDestroySpeed(itemStack, event.getState()) > 1.0f) {
-				isValid = true;
-				break;
-			}
-		}
-
-		if (!isValid)
-			return;
-
-		float speed = event.getOriginalSpeed();
-		speed += event.getOriginalSpeed() * 3.25;//ModConfig.COMMON.toolsAndWeapons.bonusStats.efficiency.get() / 100f;
-		event.setNewSpeed(speed);
-	}
+        if (mainHand.getItem().getTags().contains(new ResourceLocation(Vulcanite.MOD_ID, "more_efficient_tools"))
+                && mainHand.getItem().getDestroySpeed(mainHand, event.getState()) > 1.0f) {
+            float speed = event.getOriginalSpeed();
+            speed += event.getOriginalSpeed() * ModConfig.COMMON.toolsAndWeapons.bonusStats.efficiency.get() / 100f;
+            event.setNewSpeed(speed);
+        }
+    }
 }

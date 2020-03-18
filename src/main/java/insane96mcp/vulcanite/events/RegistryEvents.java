@@ -23,7 +23,7 @@ import static insane96mcp.vulcanite.item.materials.ModMaterial.TOOL_VULCANITE;
 @Mod.EventBusSubscriber(modid = Vulcanite.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class RegistryEvents {
     @SubscribeEvent
-    public static void onBlocksRegistry(final RegistryEvent.Register<Block> blockRegistryEvent) {
+    public static void registerBlocks(final RegistryEvent.Register<Block> blockRegistryEvent) {
         blockRegistryEvent.getRegistry().registerAll(
                 new BlockVulcanite(Vulcanite.RESOURCE_PREFIX + Names.VULCANITE_BLOCK),
                 new BlockVulcaniteOre(Vulcanite.RESOURCE_PREFIX + Names.NETHER_VULCANITE_ORE)
@@ -31,8 +31,7 @@ public class RegistryEvents {
     }
 
     @SubscribeEvent
-    public static void OnItemsRegistry(final RegistryEvent.Register<Item> itemRegistryEvent) {
-
+    public static void registerItems(final RegistryEvent.Register<Item> itemRegistryEvent) {
         itemRegistryEvent.getRegistry().registerAll(
                 new Item(new Item.Properties().group(ItemGroup.MATERIALS)).setRegistryName(Vulcanite.MOD_ID, Names.VULCANITE_INGOT),
                 new Item(new Item.Properties().group(ItemGroup.MATERIALS)).setRegistryName(Vulcanite.MOD_ID, Names.VULCANITE_NUGGET),
@@ -53,4 +52,11 @@ public class RegistryEvents {
                 new BlockItem(ModBlocks.vulcaniteOre, new Item.Properties().group(ItemGroup.BUILDING_BLOCKS).addToolType(ToolType.PICKAXE, 2)).setRegistryName(Vulcanite.MOD_ID, Names.NETHER_VULCANITE_ORE)
         );
     }
+
+    /*@SubscribeEvent
+    public static void registerModifiersSerializers(final RegistryEvent.Register<GlobalLootModifierSerializer<?>> event) {
+        event.getRegistry().registerAll(
+                new SmeltingModifier.Serializer().setRegistryName(new ResourceLocation(Vulcanite.MOD_ID, "smelting"))
+        );
+    }*/
 }
