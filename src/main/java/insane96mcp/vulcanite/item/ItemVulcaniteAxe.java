@@ -22,7 +22,7 @@ public class ItemVulcaniteAxe extends AxeItem {
 
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-		tooltip.add(new TranslationTextComponent(Tooltips.Tool.smelting));
+		//tooltip.add(new TranslationTextComponent(Tooltips.Tool.smelting));
 		tooltip.add(new TranslationTextComponent(Tooltips.Tool.bonusEfficiency));
 		tooltip.add(new TranslationTextComponent(Tooltips.Weapon.moreDamage));
 	}
