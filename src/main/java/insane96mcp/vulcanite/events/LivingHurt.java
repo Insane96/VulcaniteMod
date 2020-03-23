@@ -10,6 +10,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.potion.Effects;
 import net.minecraft.util.DamageSource;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -97,7 +98,6 @@ public class LivingHurt {
                 new ItemStack(ModItems.vulcaniteAxe),
                 new ItemStack(ModItems.vulcanitePickaxe),
                 new ItemStack(ModItems.vulcaniteShovel)
-
         };
 
         boolean hasVulcaniteWeapon = false;
@@ -113,10 +113,9 @@ public class LivingHurt {
         Entity target = event.getEntity();
         if (!(target instanceof LivingEntity))
             return;
-
-        //Check if entity is fire immune
+        //Check if entity is fire immune or if has fire restistance
         LivingEntity entity = (LivingEntity) target;
-        if (!entity.isImmuneToFire())
+        if (!entity.isImmuneToFire() && !entity.isPotionActive(Effects.FIRE_RESISTANCE))
             return;
 
         //Define bonus damage
