@@ -2,8 +2,8 @@ package insane96mcp.vulcanite.lootmodifiers;
 
 
 import com.google.gson.JsonObject;
-import insane96mcp.vulcanite.Vulcanite;
 import insane96mcp.vulcanite.network.PacketBlockBreak;
+import insane96mcp.vulcanite.network.PacketHandler;
 import insane96mcp.vulcanite.setup.ModConfig;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.item.ExperienceOrbEntity;
@@ -49,8 +49,7 @@ public class SmeltingModifier extends LootModifier {
 
         ServerPlayerEntity player = (ServerPlayerEntity) entity;
         BlockPos pos = context.get(LootParameters.POSITION);
-
-        Vulcanite.channel.send(PacketDistributor.PLAYER.with(() -> player), new PacketBlockBreak(pos));
+        PacketHandler.sendToClient(PacketDistributor.PLAYER.with(() -> player), new PacketBlockBreak(pos));
         if (player.dimension.getId() != -1)
             player.getHeldItemMainhand().damageItem(1, player, playerEntity -> playerEntity.sendBreakAnimation(Hand.MAIN_HAND));
 
