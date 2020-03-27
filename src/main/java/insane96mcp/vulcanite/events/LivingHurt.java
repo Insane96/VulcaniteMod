@@ -124,7 +124,6 @@ public class LivingHurt {
         float baseBonus = (float) (ModConfig.COMMON.toolsAndWeapons.bonusStats.damage.get() / 100f);
         float fireAspectBonus = 0;
 
-
         //Check if player has fire aspect enchantment
         Map<Enchantment, Integer> enchantments = EnchantmentHelper.getEnchantments(heldItem);
 
