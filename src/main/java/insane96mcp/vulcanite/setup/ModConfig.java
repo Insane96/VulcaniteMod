@@ -58,10 +58,10 @@ public class ModConfig {
                     builder.push(name);
                     damage = builder
                             .comment("Bonus damage % dealt to Fire Immune mobs")
-                            .defineInRange("damage", 15.0, 0.0, Double.MAX_VALUE);
+                            .defineInRange("damage", 16.0, 0.0, Double.MAX_VALUE);
                     damageFireAspect = builder
                             .comment("Bonus damage % dealt to Fire Immune mobs per Fire Aspect Level")
-                            .defineInRange("damage_fire_aspect", 7.5, 0.0, Double.MAX_VALUE);
+                            .defineInRange("damage_fire_aspect", 8.0, 0.0, Double.MAX_VALUE);
                     smeltingDropsExperience = builder
                             .comment("If the Smelting property of the tools should make the blocks broken drop experience")
                             .define("smelting_drops_experience", true);

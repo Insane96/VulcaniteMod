@@ -15,8 +15,7 @@ import java.util.List;
 
 public class ItemVulcaniteAxe extends AxeItem {
 	public ItemVulcaniteAxe(String id) {
-		super(ModMaterial.TOOL_VULCANITE, 6.5f, -3.2f, new Item.Properties().group(ItemGroup.TOOLS));
-
+		super(ModMaterial.TOOL_VULCANITE, 6f, -3.1f, new Item.Properties().group(ItemGroup.TOOLS));
 		setRegistryName(id);
 	}
 
