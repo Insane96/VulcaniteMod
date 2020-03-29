@@ -5,6 +5,9 @@ import net.minecraft.network.PacketBuffer;
 import net.minecraft.particles.ParticleTypes;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.fml.LogicalSide;
 import net.minecraftforge.fml.network.NetworkEvent;
 
 import java.util.function.Supplier;
@@ -36,14 +39,19 @@ public class PacketBlockBreak {
 
     public static PacketBlockBreak decode(PacketBuffer packet) {
         PacketBlockBreak message = new PacketBlockBreak();
-
         message.fromBytes(packet);
         return message;
     }
 
     public static void onMessage(PacketBlockBreak message, Supplier<NetworkEvent.Context> ctx) {
-        ctx.get().setPacketHandled(true);
+        if (ctx.get().getDirection().getReceptionSide() == LogicalSide.CLIENT) {
+            handleClient(message, ctx);
+        }
+    }
 
+    @OnlyIn(Dist.CLIENT)
+    public static void handleClient(PacketBlockBreak message, Supplier<NetworkEvent.Context> ctx) {
+        ctx.get().setPacketHandled(true);
         World world = Minecraft.getInstance().world;
         for (int i = 0; i < 20; i++) {
             double x = (double) ((float) message.pos.getX() + world.rand.nextFloat());
