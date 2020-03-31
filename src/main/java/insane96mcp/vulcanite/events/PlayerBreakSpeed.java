@@ -22,8 +22,6 @@ public class PlayerBreakSpeed {
 
 		ItemStack mainHand = player.getHeldItemMainhand();
 
-		System.out.println(mainHand.getItem().getTags());
-
 		if (mainHand.getItem().getTags().contains(new ResourceLocation(Vulcanite.MOD_ID, "more_efficient_tools"))
 				&& mainHand.getItem().getDestroySpeed(mainHand, event.getState()) > 1.0f) {
 			float speed = event.getOriginalSpeed();
