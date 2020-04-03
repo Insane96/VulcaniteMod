@@ -2,14 +2,18 @@ package insane96mcp.vulcanite.setup;
 
 import insane96mcp.vulcanite.Vulcanite;
 import insane96mcp.vulcanite.block.VulcaniteBlock;
-import insane96mcp.vulcanite.setup.Strings.Names;
+import insane96mcp.vulcanite.block.VulcaniteOreBlock;
+import insane96mcp.vulcanite.setup.Strings.RegistryNames;
+import net.minecraft.block.Block;
 import net.minecraft.block.OreBlock;
-import net.minecraftforge.registries.ObjectHolder;
+import net.minecraftforge.fml.RegistryObject;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
 
 public class ModBlocks {
-    @ObjectHolder(Vulcanite.RESOURCE_PREFIX + Names.VULCANITE_BLOCK)
-    public static VulcaniteBlock vulcaniteBlock;
+	public static final DeferredRegister<Block> BLOCKS = new DeferredRegister<>(ForgeRegistries.BLOCKS, Vulcanite.MOD_ID);
 
-    @ObjectHolder(Vulcanite.RESOURCE_PREFIX + Names.NETHER_VULCANITE_ORE)
-    public static OreBlock vulcaniteOre;
+	public static final RegistryObject<VulcaniteBlock> VULCANITE_BLOCK = BLOCKS.register(RegistryNames.VULCANITE_BLOCK, VulcaniteBlock::new);
+
+	public static final RegistryObject<OreBlock> NETHER_VULCANITE_ORE = BLOCKS.register(RegistryNames.NETHER_VULCANITE_ORE, VulcaniteOreBlock::new);
 }

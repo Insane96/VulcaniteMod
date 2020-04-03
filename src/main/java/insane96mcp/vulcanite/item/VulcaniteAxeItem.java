@@ -1,7 +1,7 @@
 package insane96mcp.vulcanite.item;
 
 import insane96mcp.vulcanite.item.materials.ModMaterial;
-import insane96mcp.vulcanite.setup.Strings.Tooltips;
+import insane96mcp.vulcanite.setup.Strings.Translatable;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.Item;
@@ -13,16 +13,15 @@ import net.minecraft.world.World;
 
 import java.util.List;
 
-public class ItemVulcaniteAxe extends AxeItem {
-	public ItemVulcaniteAxe(String id) {
+public class VulcaniteAxeItem extends AxeItem {
+	public VulcaniteAxeItem() {
 		super(ModMaterial.TOOL_VULCANITE, 6f, -3.1f, new Item.Properties().group(ItemGroup.TOOLS));
-		setRegistryName(id);
 	}
 
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-		tooltip.add(new TranslationTextComponent(Tooltips.Tool.smelting));
-		tooltip.add(new TranslationTextComponent(Tooltips.Tool.bonusEfficiency));
-		tooltip.add(new TranslationTextComponent(Tooltips.Weapon.moreDamage));
+		tooltip.add(new TranslationTextComponent(Translatable.Tool.smelting));
+		tooltip.add(new TranslationTextComponent(Translatable.Tool.bonusEfficiency));
+		tooltip.add(new TranslationTextComponent(Translatable.Weapon.moreDamage));
 	}
 }

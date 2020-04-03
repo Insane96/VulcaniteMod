@@ -1,7 +1,7 @@
 package insane96mcp.vulcanite.block;
 
 import insane96mcp.vulcanite.setup.ModConfig;
-import insane96mcp.vulcanite.setup.Strings.Tooltips;
+import insane96mcp.vulcanite.setup.Strings.Translatable;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.SoundType;
@@ -50,7 +50,7 @@ public class VulcaniteBlock extends Block implements IForgeBlock {
     public void addInformation(ItemStack stack, IBlockReader worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
         if (ModConfig.COMMON.misc.vulcaniteBlockTimeOnFire.get() == 0)
             return;
-        tooltip.add(new TranslationTextComponent(Tooltips.VulcaniteBlock.setOnFire));
+        tooltip.add(new TranslationTextComponent(Translatable.VulcaniteBlock.setOnFire));
     }
 
     @Override

@@ -13,7 +13,7 @@ public class ModMaterial {
 
         @Override
         public Ingredient getRepairMaterial() {
-            Ingredient repairMaterial = Ingredient.fromItems(ModItems.vulcaniteIngot);
+            Ingredient repairMaterial = Ingredient.fromItems(ModItems.VULCANITE_INGOT.get());
             return repairMaterial;
         }
 
@@ -57,7 +57,7 @@ public class ModMaterial {
 
         @Override
         public Ingredient getRepairMaterial() {
-            Ingredient repairMaterial = Ingredient.fromItems(ModItems.vulcaniteIngot);
+            Ingredient repairMaterial = Ingredient.fromItems(ModItems.VULCANITE_INGOT.get());
             return repairMaterial;
         }
 

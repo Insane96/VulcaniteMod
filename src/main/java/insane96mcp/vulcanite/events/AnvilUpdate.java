@@ -41,7 +41,7 @@ public class AnvilUpdate {
         ItemStack left = event.getLeft();
         ItemStack right = event.getRight();
 
-        if (!right.getItem().equals(ModItems.vulcaniteNugget))
+        if (!right.getItem().equals(ModItems.VULCANITE_NUGGET.get()))
             return;
 
         for (EquipmentUpgrade validInput : validInputs) {

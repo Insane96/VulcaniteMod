@@ -1,10 +1,9 @@
 package insane96mcp.vulcanite.setup;
 
 public class Strings {
-    public static class Names {
+    public static class RegistryNames {
         public static final String VULCANITE_INGOT = "vulcanite_ingot";
         public static final String VULCANITE_BLOCK = "vulcanite_block";
-        public static final String VULCANITE_ORE = "vulcanite_ore";
         public static final String VULCANITE_PICKAXE = "vulcanite_pickaxe";
         public static final String VULCANITE_AXE = "vulcanite_axe";
         public static final String VULCANITE_SHOVEL = "vulcanite_shovel";
@@ -17,9 +16,11 @@ public class Strings {
         public static final String FLINT_AND_VULCANITE = "flint_and_vulcanite";
         public static final String NETHER_VULCANITE_ORE = "nether_vulcanite_ore";
         public static final String VULCANITE_NUGGET = "vulcanite_nugget";
+
+        public static final String SMELTING = "smelting";
     }
 
-    public static class Tooltips {
+    public static class Translatable {
 
         public static class FlintAndVulcanite {
             public static String setOnFire = "tooltip.flint_and_vulcanite.set_on_fire";

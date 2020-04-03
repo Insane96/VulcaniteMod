@@ -1,7 +1,7 @@
 package insane96mcp.vulcanite.item;
 
 import insane96mcp.vulcanite.item.materials.ModMaterial;
-import insane96mcp.vulcanite.setup.Strings.Tooltips;
+import insane96mcp.vulcanite.setup.Strings.Translatable;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -17,17 +17,15 @@ import net.minecraft.world.World;
 import java.util.List;
 import java.util.Map;
 
-public class ItemVulcaniteArmor extends ArmorItem {
+public class VulcaniteArmorItem extends ArmorItem {
 
-    public ItemVulcaniteArmor(EquipmentSlotType slot, String id) {
+    public VulcaniteArmorItem(EquipmentSlotType slot) {
         super(ModMaterial.ARMOR_VULCANITE, slot, new Properties().group(ItemGroup.COMBAT));
-
-        setRegistryName(id);
     }
 
     @Override
     public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-        tooltip.add(new TranslationTextComponent(Tooltips.Armor.damageReduction));
+        tooltip.add(new TranslationTextComponent(Translatable.Armor.damageReduction));
     }
 
     @Override

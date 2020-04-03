@@ -22,7 +22,7 @@ public class OreGenerator {
                         Feature.ORE.withConfiguration(
                                 new OreFeatureConfig(
                                         OreFeatureConfig.FillerBlockType.NETHERRACK,
-                                        ModBlocks.vulcaniteOre.getDefaultState(),
+                                        ModBlocks.NETHER_VULCANITE_ORE.get().getDefaultState(),
                                         VEIN_SIZE)
                         ).withPlacement(
                                 Placement.COUNT_RANGE.configure(DEPTH_COUNT_RANGE)
@@ -32,7 +32,7 @@ public class OreGenerator {
                         Feature.ORE.withConfiguration(
                                 new OreFeatureConfig(
                                         OreFeatureConfig.FillerBlockType.NETHERRACK,
-                                        ModBlocks.vulcaniteOre.getDefaultState(),
+                                        ModBlocks.NETHER_VULCANITE_ORE.get().getDefaultState(),
                                         VEIN_SIZE)
                         ).withPlacement(
                                 Placement.COUNT_RANGE.configure(ANY_HEIGHT_COUNT_RANGE)

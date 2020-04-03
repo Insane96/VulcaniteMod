@@ -1,7 +1,7 @@
 package insane96mcp.vulcanite.item;
 
 import insane96mcp.vulcanite.setup.ModConfig;
-import insane96mcp.vulcanite.setup.Strings.Tooltips;
+import insane96mcp.vulcanite.setup.Strings.Translatable;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.enchantment.Enchantment;
@@ -25,19 +25,17 @@ import net.minecraft.world.World;
 import java.util.List;
 import java.util.Map;
 
-public class ItemFlintAndVulcanite extends FlintAndSteelItem {
+public class FlintAndVulcaniteItem extends FlintAndSteelItem {
 
-    public static final int DURABILITY = 80;
+	public static final int DURABILITY = 80;
 
-    public ItemFlintAndVulcanite(String id) {
-        super(new Properties().group(ItemGroup.TOOLS).defaultMaxDamage(DURABILITY));
+	public FlintAndVulcaniteItem() {
+		super(new Properties().group(ItemGroup.TOOLS).defaultMaxDamage(DURABILITY));
+	}
 
-        setRegistryName(id);
-    }
-
-    @Override
-    public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-        tooltip.add(new TranslationTextComponent(Tooltips.FlintAndVulcanite.setOnFire));
+	@Override
+	public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
+		tooltip.add(new TranslationTextComponent(Translatable.FlintAndVulcanite.setOnFire));
     }
 
     @Override
