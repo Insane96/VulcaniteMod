@@ -1,29 +1,28 @@
 package insane96mcp.vulcanite.block;
 
-import insane96mcp.vulcanite.setup.ModConfig;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.OreBlock;
 import net.minecraft.block.material.Material;
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.common.extensions.IForgeBlock;
 
-public class BlockVulcaniteOre extends OreBlock implements IForgeBlock {
+public class VulcaniteOreBlock extends OreBlock implements IForgeBlock {
 
-    public BlockVulcaniteOre(String id) {
+    public VulcaniteOreBlock() {
         super(Properties.create(Material.ROCK).hardnessAndResistance(6.0f, 10));
-
-        setRegistryName(id);
     }
 
     @Override
     public void onEntityWalk(World worldIn, BlockPos pos, Entity entityIn) {
-        if (ModConfig.COMMON.misc.vulcaniteBlockTimeOnFire.get() == 0)
-            return;
-
-        entityIn.setFire(ModConfig.COMMON.misc.vulcaniteBlockTimeOnFire.get() / 2);
+        if (!entityIn.isImmuneToFire() && entityIn instanceof LivingEntity && !EnchantmentHelper.hasFrostWalker((LivingEntity) entityIn)) {
+            entityIn.attackEntityFrom(DamageSource.HOT_FLOOR, 1.0F);
+        }
     }
 
     @Override

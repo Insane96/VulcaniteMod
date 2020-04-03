@@ -22,12 +22,10 @@ import net.minecraftforge.common.extensions.IForgeBlock;
 
 import java.util.List;
 
-public class BlockVulcanite extends Block implements IForgeBlock {
+public class VulcaniteBlock extends Block implements IForgeBlock {
 
-    public BlockVulcanite(String id) {
+    public VulcaniteBlock() {
         super(Block.Properties.create(Material.IRON, MaterialColor.ORANGE_TERRACOTTA).hardnessAndResistance(6.25f, 7.5f).sound(SoundType.METAL));
-
-        setRegistryName(id);
     }
 
     @Override
@@ -49,12 +47,9 @@ public class BlockVulcanite extends Block implements IForgeBlock {
     }
 
     @Override
-    public void addInformation(ItemStack stack, IBlockReader worldIn, List<ITextComponent> tooltip,
-                               ITooltipFlag flagIn) {
+    public void addInformation(ItemStack stack, IBlockReader worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
         if (ModConfig.COMMON.misc.vulcaniteBlockTimeOnFire.get() == 0)
             return;
-
-
         tooltip.add(new TranslationTextComponent(Tooltips.VulcaniteBlock.setOnFire));
     }
 
