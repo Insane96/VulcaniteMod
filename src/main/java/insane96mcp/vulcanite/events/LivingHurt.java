@@ -11,7 +11,6 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Effects;
-import net.minecraft.util.DamageSource;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -20,64 +19,6 @@ import java.util.Map;
 
 @Mod.EventBusSubscriber(modid = Vulcanite.MOD_ID)
 public class LivingHurt {
-
-    @SubscribeEvent
-    public static void onPlayerHurt(LivingHurtEvent event) {
-        if (event.getEntityLiving().world.isRemote)
-            return;
-
-        if (!(event.getEntityLiving() instanceof ServerPlayerEntity))
-            return;
-
-        ServerPlayerEntity player = (ServerPlayerEntity) event.getEntityLiving();
-        DamageSource source = event.getSource();
-
-        float[] materialPerPiece = new float[]{5, 8, 7, 4};
-
-        DamageSource[] validSources = new DamageSource[]{
-                DamageSource.IN_FIRE,
-                DamageSource.ON_FIRE,
-                DamageSource.HOT_FLOOR,
-                DamageSource.LAVA
-        };
-
-        ItemStack[] armorList = new ItemStack[]{
-                new ItemStack(ModItems.vulcaniteHelmet),
-                new ItemStack(ModItems.vulcaniteChestplate),
-                new ItemStack(ModItems.vulcaniteLeggings),
-                new ItemStack(ModItems.vulcaniteBoots)
-        };
-
-        for (DamageSource damageSource : validSources) {
-            if (source != damageSource)
-                continue;
-
-            float amount = event.getAmount();
-
-            int materialsUsed = 0;
-            Iterable<ItemStack> playerArmor = player.getArmorInventoryList();
-            for (ItemStack armorPiece : playerArmor) {
-                for (int i = 0; i < armorList.length; i++) {
-                    if (ItemStack.areItemsEqualIgnoreDurability(armorPiece, armorList[i])) {
-                        materialsUsed += materialPerPiece[i];
-                        break;
-                    }
-                }
-            }
-
-            if (materialsUsed >= 1) {
-                float maxReduction;
-                if (player.dimension.getId() == -1)
-                    maxReduction = (float) (ModConfig.COMMON.armor.damageReductionNether.get() / 100f);
-                else
-                    maxReduction = (float) (ModConfig.COMMON.armor.damageReductionOther.get() / 100f);
-                float reductionPerMaterial = maxReduction / 24f;
-                float percentageReduction = reductionPerMaterial * materialsUsed;
-                amount = amount * (1f - percentageReduction);
-                event.setAmount(amount);
-            }
-        }
-    }
 
     @SubscribeEvent
     public static void onPlayerDamageEntity(LivingHurtEvent event) {
@@ -94,10 +35,10 @@ public class LivingHurt {
 
 
         ItemStack[] vulcaniteWeapons = {
-                new ItemStack(ModItems.vulcaniteSword),
-                new ItemStack(ModItems.vulcaniteAxe),
-                new ItemStack(ModItems.vulcanitePickaxe),
-                new ItemStack(ModItems.vulcaniteShovel)
+                new ItemStack(ModItems.VULCANITE_SWORD.get()),
+                new ItemStack(ModItems.VULCANITE_AXE.get()),
+                new ItemStack(ModItems.VULCANITE_PICKAXE.get()),
+                new ItemStack(ModItems.VULCANITE_SHOVEL.get())
 
         };
 

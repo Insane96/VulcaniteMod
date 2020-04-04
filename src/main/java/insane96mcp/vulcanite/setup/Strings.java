@@ -16,6 +16,8 @@ public class Strings {
         public static final String FLINT_AND_VULCANITE = "flint_and_vulcanite";
         public static final String NETHER_VULCANITE_ORE = "nether_vulcanite_ore";
         public static final String VULCANITE_NUGGET = "vulcanite_nugget";
+        public static final String SOLIDIFIED_LAVA = "solidified_lava";
+        public static final String SOLIDIFIED_FLOWING_LAVA = "solidified_flowing_lava";
 
         public static final String SMELTING = "smelting";
     }

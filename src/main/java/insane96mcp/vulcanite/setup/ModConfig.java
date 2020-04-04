@@ -99,13 +99,10 @@ public class ModConfig {
         public static class Armor {
             public static String name = "armor";
 
-            public static ConfigValue<Double> damageReduction;
 
             public Armor(ForgeConfigSpec.Builder builder) {
                 builder.push(name);
-                damageReduction = builder
-                        .comment("Percentage damage reduction from hot sources with full Vulcanite Armor in non-Nether dimensions")
-                        .defineInRange("damage_reduction", 25.0, 0, 100);
+                //TODO Add configuration for armor
                 builder.pop();
             }
         }
