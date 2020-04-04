@@ -1,0 +1,6 @@
+{
+	"parent": "block/cube_all",
+	"textures": {
+		"all": "vulcanite:block/solidified_lava_3"
+	}
+}

@@ -1,7 +1,7 @@
 package insane96mcp.vulcanite.setup;
 
 import insane96mcp.vulcanite.Vulcanite;
-import insane96mcp.vulcanite.item.ItemFlintAndVulcanite;
+import insane96mcp.vulcanite.item.FlintAndVulcaniteItem;
 import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.common.ForgeConfigSpec.ConfigValue;
 import net.minecraftforge.fml.common.Mod;
@@ -87,7 +87,7 @@ public class ModConfig {
                             .defineInRange("seconds_on_fire", 5, 0, Short.MAX_VALUE);
                     durabilityOnUse = builder
                             .comment("How much uses will be consumed on the flint and vulcanite when you set a mob on fire")
-                            .defineInRange("durability_on_use", 2, 1, ItemFlintAndVulcanite.DURABILITY);
+                            .defineInRange("durability_on_use", 2, 1, FlintAndVulcaniteItem.DURABILITY);
                     tntIgnitesFaster = builder
                             .comment("If true TNT will take half the time to explode when ignited with Flint and Vulcanite")
                             .define("tnt_ignites_faster", true);
@@ -99,17 +99,13 @@ public class ModConfig {
         public static class Armor {
             public static String name = "armor";
 
-            public static ConfigValue<Double> damageReductionNether;
-            public static ConfigValue<Double> damageReductionOther;
+            public static ConfigValue<Double> damageReduction;
 
             public Armor(ForgeConfigSpec.Builder builder) {
                 builder.push(name);
-                damageReductionNether = builder
-                        .comment("Percentage damage reduction from hot sources with full Vulcanite Armor in the Nether")
-                        .defineInRange("damage_reduction_nether", 75.0, 0, 100);
-                damageReductionOther = builder
+                damageReduction = builder
                         .comment("Percentage damage reduction from hot sources with full Vulcanite Armor in non-Nether dimensions")
-                        .defineInRange("damage_reduction_other", 40.0, 0, 100);
+                        .defineInRange("damage_reduction", 25.0, 0, 100);
                 builder.pop();
             }
         }
