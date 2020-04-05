@@ -97,10 +97,10 @@ public class ModMaterial {
 
             switch (arg0) {
                 case HEAD:
-                    return 2;
+                    return 3;
 
                 case CHEST:
-                    return 5;
+                    return 6;
 
                 case LEGS:
                     return 4;
