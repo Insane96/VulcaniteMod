@@ -38,8 +38,8 @@ public class LivingUpdate {
 		int armorPieces = 0;
 		Iterable<ItemStack> playerArmor = player.getArmorInventoryList();
 		for (ItemStack armorPiece : playerArmor) {
-			for (int i = 0; i < armorList.length; i++) {
-				if (ItemStack.areItemsEqualIgnoreDurability(armorPiece, armorList[i])) {
+			for (ItemStack itemStack : armorList) {
+				if (ItemStack.areItemsEqualIgnoreDurability(armorPiece, itemStack)) {
 					armorPieces++;
 					break;
 				}
@@ -55,7 +55,7 @@ public class LivingUpdate {
 			BlockState currentState = worldIn.getBlockState(blockPos);
 			boolean isFull = currentState.getBlock() == Blocks.LAVA && currentState.get(FlowingFluidBlock.LEVEL) == 0;
 			Block solidifiedLavaBlock = isFull ? ModBlocks.SOLIDIFIED_LAVA.get() : ModBlocks.SOLIDIFIED_FLOWING_LAVA.get();
-			BlockState solidifiedLavaState = solidifiedLavaBlock.getDefaultState().with(SolidifiedLavaBlock.AGE, Integer.valueOf(4 - armorPieces));
+			BlockState solidifiedLavaState = solidifiedLavaBlock.getDefaultState().with(SolidifiedLavaBlock.AGE, 4 - armorPieces);
 			if (currentState.getMaterial() == Material.LAVA && solidifiedLavaState.isValidPosition(worldIn, blockPos) && worldIn.func_226663_a_(solidifiedLavaState, blockPos, ISelectionContext.dummy()) && !net.minecraftforge.event.ForgeEventFactory.onBlockPlace(player, new net.minecraftforge.common.util.BlockSnapshot(worldIn, blockPos, currentState), net.minecraft.util.Direction.UP)) {
 				worldIn.setBlockState(blockPos, solidifiedLavaState);
 				if (isFull) {

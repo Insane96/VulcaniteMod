@@ -22,12 +22,12 @@ public class ModConfig {
     public static class CommonConfig {
 
         public final ToolsAndWeapons toolsAndWeapons;
-        public final Armor armor;
+        //public final Armor armor;
         public final Misc misc;
 
         public CommonConfig(final ForgeConfigSpec.Builder builder) {
             toolsAndWeapons = new ToolsAndWeapons(builder);
-            armor = new Armor(builder);
+            //armor = new Armor(builder);
             misc = new Misc(builder);
         }
 
@@ -49,10 +49,10 @@ public class ModConfig {
             public static class BonusStats {
                 public static String name = "bonus_stats";
 
-                public static ConfigValue<Double> damage;
-                public static ConfigValue<Double> damageFireAspect;
-                public static ConfigValue<Boolean> smeltingDropsExperience;
-                public static ConfigValue<Double> efficiency;
+                public ConfigValue<Double> damage;
+                public ConfigValue<Double> damageFireAspect;
+                public ConfigValue<Boolean> smeltingDropsExperience;
+                public ConfigValue<Double> efficiency;
 
                 public BonusStats(ForgeConfigSpec.Builder builder) {
                     builder.push(name);
@@ -75,10 +75,9 @@ public class ModConfig {
             public static class FlintAndVulcanite {
                 public static String name = "flint_and_vulcanite";
 
-                public static ConfigValue<Boolean> enabled;
-                public static ConfigValue<Integer> secondsOnFire;
-                public static ConfigValue<Integer> durabilityOnUse;
-                public static ConfigValue<Boolean> tntIgnitesFaster;
+                public ConfigValue<Integer> secondsOnFire;
+                public ConfigValue<Integer> durabilityOnUse;
+                public ConfigValue<Boolean> tntIgnitesFaster;
 
                 public FlintAndVulcanite(ForgeConfigSpec.Builder builder) {
                     builder.push(name);
@@ -96,21 +95,10 @@ public class ModConfig {
             }
         }
 
-        public static class Armor {
-            public static String name = "armor";
-
-
-            public Armor(ForgeConfigSpec.Builder builder) {
-                builder.push(name);
-                //TODO Add configuration for armor
-                builder.pop();
-            }
-        }
-
         public static class Misc {
             public static String name = "misc";
 
-            public static ConfigValue<Integer> vulcaniteBlockTimeOnFire;
+            public ConfigValue<Integer> vulcaniteBlockTimeOnFire;
 
             public Misc(ForgeConfigSpec.Builder builder) {
                 builder.push(name);
