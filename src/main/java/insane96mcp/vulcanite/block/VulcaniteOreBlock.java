@@ -15,7 +15,7 @@ import net.minecraftforge.common.extensions.IForgeBlock;
 public class VulcaniteOreBlock extends OreBlock implements IForgeBlock {
 
     public VulcaniteOreBlock() {
-        super(Properties.create(Material.ROCK).hardnessAndResistance(6.0f, 10));
+        super(Properties.create(Material.ROCK).hardnessAndResistance(3f, 3));
     }
 
     @Override

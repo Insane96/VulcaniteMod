@@ -26,7 +26,7 @@ public class SolidifiedLavaBlock extends Block {
 
 	public SolidifiedLavaBlock(boolean isFlowing) {
 		super(Block.Properties.create(Material.ROCK).tickRandomly().hardnessAndResistance(1.25f).sound(SoundType.STONE));
-		this.setDefaultState(this.stateContainer.getBaseState().with(AGE, Integer.valueOf(0)));
+		this.setDefaultState(this.stateContainer.getBaseState().with(AGE, 0));
 		this.flowing = isFlowing;
 	}
 
@@ -39,7 +39,7 @@ public class SolidifiedLavaBlock extends Block {
 	private boolean tryMelt(BlockState state, World worldIn, BlockPos pos) {
 		int i = state.get(AGE);
 		if (i < 3) {
-			worldIn.setBlockState(pos, state.with(AGE, Integer.valueOf(i + 1)), 2);
+			worldIn.setBlockState(pos, state.with(AGE, i + 1), 2);
 			return false;
 		}
 		else {
@@ -69,6 +69,7 @@ public class SolidifiedLavaBlock extends Block {
 	}
 
 	@Override
+	@SuppressWarnings("deprecation")
 	public VoxelShape getCollisionShape(BlockState p_220071_1_, IBlockReader p_220071_2_, BlockPos p_220071_3_, ISelectionContext p_220071_4_) {
 		return collisionShape;
 	}
