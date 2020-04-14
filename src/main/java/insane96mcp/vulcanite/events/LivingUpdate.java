@@ -49,7 +49,7 @@ public class LivingUpdate {
 			return;
 		BlockPos pos = player.getPosition();
 		World worldIn = player.world;
-		float extensionBelow = worldIn.getBlockState(pos.down()).getBlock() instanceof SolidifiedLavaBlock ? 1.0f : 1.5f;
+		float extensionBelow = worldIn.getBlockState(pos.down()).isSolid() ? 1.0f : 1.5f;
 		int blocksPlaced = 0;
 		for (BlockPos blockPos : BlockPos.getAllInBoxMutable(pos.add(-1, -extensionBelow, -1), pos.add(1, 2, 1))) {
 			BlockState currentState = worldIn.getBlockState(blockPos);

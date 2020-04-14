@@ -32,7 +32,7 @@ public class SolidifiedLavaBlock extends Block {
 
 	public void tick(BlockState state, ServerWorld worldIn, BlockPos pos, Random rand) {
 		if (!this.tryMelt(state, worldIn, pos)) {
-			worldIn.getPendingBlockTicks().scheduleTick(pos, this, MathHelper.nextInt(rand, 5, 10));
+			worldIn.getPendingBlockTicks().scheduleTick(pos, this, MathHelper.nextInt(rand, 6, 12));
 		}
 	}
 
@@ -57,13 +57,15 @@ public class SolidifiedLavaBlock extends Block {
 	}
 
 	@Override
-	public void onLanded(IBlockReader worldIn, Entity entityIn) {
-		entityIn.setFire(3);
+	public void onEntityWalk(World world, BlockPos pos, Entity entity) {
+		int age = world.getBlockState(pos).get(AGE);
+		entity.setFire(3 + age);
 	}
 
 	@Override
 	public void onEntityCollision(BlockState state, World world, BlockPos blockPos, Entity entity) {
-		entity.setFire(3);
+		int age = state.get(AGE);
+		entity.setFire(3 + age);
 	}
 
 	@Override

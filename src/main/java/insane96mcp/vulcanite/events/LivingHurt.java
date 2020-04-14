@@ -39,7 +39,6 @@ public class LivingHurt {
                 new ItemStack(ModItems.VULCANITE_AXE.get()),
                 new ItemStack(ModItems.VULCANITE_PICKAXE.get()),
                 new ItemStack(ModItems.VULCANITE_SHOVEL.get())
-
         };
 
         boolean hasVulcaniteWeapon = false;
