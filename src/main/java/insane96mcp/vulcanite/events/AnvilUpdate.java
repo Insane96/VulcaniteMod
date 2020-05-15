@@ -23,7 +23,7 @@ import java.util.Map;
 @Mod.EventBusSubscriber(modid = Vulcanite.MOD_ID)
 public class AnvilUpdate {
 
-    final static ArrayList<EquipmentUpgrade> validInputs = new ArrayList<>(Arrays.asList(
+    public final static ArrayList<EquipmentUpgrade> EQUIPMENT_UPGRADES = new ArrayList<>(Arrays.asList(
             new EquipmentUpgrade(Items.IRON_AXE, 3),
             new EquipmentUpgrade(Items.IRON_SHOVEL, 1),
             new EquipmentUpgrade(Items.IRON_PICKAXE, 3),
@@ -44,7 +44,7 @@ public class AnvilUpdate {
         if (!right.getItem().equals(ModItems.VULCANITE_NUGGET.get()))
             return;
 
-        for (EquipmentUpgrade validInput : validInputs) {
+        for (EquipmentUpgrade validInput : EQUIPMENT_UPGRADES) {
             if (!left.getItem().equals(validInput.item))
                 continue;
 
@@ -94,7 +94,7 @@ public class AnvilUpdate {
         }
     }
 
-    private static class EquipmentUpgrade {
+    public static class EquipmentUpgrade {
         public Item item;
         public int materialAmount;
 

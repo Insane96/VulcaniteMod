@@ -30,6 +30,7 @@ public class SolidifiedLavaBlock extends Block {
 		this.flowing = isFlowing;
 	}
 
+	@SuppressWarnings("deprecation")
 	public void tick(BlockState state, ServerWorld worldIn, BlockPos pos, Random rand) {
 		if (!this.tryMelt(state, worldIn, pos)) {
 			worldIn.getPendingBlockTicks().scheduleTick(pos, this, MathHelper.nextInt(rand, 6, 12));
@@ -63,6 +64,7 @@ public class SolidifiedLavaBlock extends Block {
 	}
 
 	@Override
+	@SuppressWarnings("deprecation")
 	public void onEntityCollision(BlockState state, World world, BlockPos blockPos, Entity entity) {
 		int age = state.get(AGE);
 		entity.setFire(3 + age);
