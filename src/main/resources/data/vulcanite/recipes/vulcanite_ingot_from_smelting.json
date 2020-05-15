@@ -4,6 +4,6 @@
     "item": "vulcanite:nether_vulcanite_ore"
   },
   "result": "vulcanite:vulcanite_ingot",
-  "experience": 0.8,
-  "cookingtime": 150
+  "experience": 0.75,
+  "cookingtime": 200
 }
