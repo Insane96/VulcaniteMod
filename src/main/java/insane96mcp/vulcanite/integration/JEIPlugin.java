@@ -43,7 +43,7 @@ public class JEIPlugin implements IModPlugin {
 			ResourceLocation vulcaniteName = new ResourceLocation(Vulcanite.MOD_ID, itemName.replace("iron", "vulcanite"));
 			if (upgrade.item.equals(Items.FLINT_AND_STEEL))
 				vulcaniteName = new ResourceLocation(Vulcanite.MOD_ID, "flint_and_vulcanite");
-			ItemStack output = new ItemStack(ForgeRegistries.ITEMS.getValue(vulcaniteName));
+			ItemStack output = new ItemStack(ForgeRegistries.ITEMS.getValue(vulcaniteName), upgrade.materialAmount);
 
 			recipes.add(factory.createAnvilRecipe(equipment,
 					Collections.singletonList(nuggets),

@@ -59,7 +59,10 @@ public class SolidifiedLavaBlock extends Block {
 
 	@Override
 	public void onEntityWalk(World world, BlockPos pos, Entity entity) {
-		int age = world.getBlockState(pos).get(AGE);
+		BlockState state = world.getBlockState(pos);
+		if (!(state.getBlock() instanceof SolidifiedLavaBlock))
+			return;
+		int age = state.get(AGE);
 		entity.setFire(3 + age);
 	}
 
