@@ -56,7 +56,7 @@ public class LivingUpdate {
 			boolean isFull = currentState.getBlock() == Blocks.LAVA && currentState.get(FlowingFluidBlock.LEVEL) == 0;
 			Block solidifiedLavaBlock = isFull ? ModBlocks.SOLIDIFIED_LAVA.get() : ModBlocks.SOLIDIFIED_FLOWING_LAVA.get();
 			BlockState solidifiedLavaState = solidifiedLavaBlock.getDefaultState().with(SolidifiedLavaBlock.AGE, 4 - armorPieces);
-			if (currentState.getMaterial() == Material.LAVA && solidifiedLavaState.isValidPosition(worldIn, blockPos) && worldIn.func_226663_a_(solidifiedLavaState, blockPos, ISelectionContext.dummy()) && !net.minecraftforge.event.ForgeEventFactory.onBlockPlace(player, new net.minecraftforge.common.util.BlockSnapshot(worldIn, blockPos, currentState), net.minecraft.util.Direction.UP)) {
+			if (currentState.getMaterial() == Material.LAVA && solidifiedLavaState.isValidPosition(worldIn, blockPos) && worldIn.placedBlockWouldCollide(solidifiedLavaState, blockPos, ISelectionContext.dummy()) && !net.minecraftforge.event.ForgeEventFactory.onBlockPlace(player, new net.minecraftforge.common.util.BlockSnapshot(worldIn, blockPos, currentState), net.minecraft.util.Direction.UP)) {
 				worldIn.setBlockState(blockPos, solidifiedLavaState);
 				if (isFull) {
 					worldIn.getPendingBlockTicks().scheduleTick(blockPos, ModBlocks.SOLIDIFIED_LAVA.get(), MathHelper.nextInt(worldIn.rand, 8, 15));

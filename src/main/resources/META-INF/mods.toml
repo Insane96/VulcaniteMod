@@ -26,11 +26,13 @@ displayURL="https://www.curseforge.com/minecraft/mc-mods/vulcanite" #optional
 # A text field displayed in the mod UI
 credits="Forge team for the huge work on rewriting Forge" #optional
 # A text field displayed in the mod UI
-authors="Insane96MCP" #optional
+authors="Insane96MCP & ZimonIsHim" #optional
 # The description text for the mod (multi line!) (#mandatory)
 description='''
 New Ore in the Nether, found below lava lakes.
-Tools and Armor made with this ore, have special properties related to Fire, Flames and Lava
+Tools and Armor made with this ore, have special properties related to Fire, Flames and Lava.
+Mod originally made by Insane96MCP.
+Mod maintained by ZimonIsHim.
 '''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
 [[dependencies.vulcanite]] #optional
