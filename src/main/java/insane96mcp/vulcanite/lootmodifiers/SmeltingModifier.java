@@ -15,9 +15,10 @@ import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.util.Hand;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.storage.loot.LootContext;
-import net.minecraft.world.storage.loot.LootParameters;
-import net.minecraft.world.storage.loot.conditions.ILootCondition;
+import net.minecraft.loot.LootContext;
+import net.minecraft.loot.LootParameters;
+import net.minecraft.loot.conditions.ILootCondition;
+import net.minecraft.world.World;
 import net.minecraftforge.common.loot.GlobalLootModifierSerializer;
 import net.minecraftforge.common.loot.LootModifier;
 import net.minecraftforge.fml.network.PacketDistributor;
@@ -50,7 +51,9 @@ public class SmeltingModifier extends LootModifier {
         ServerPlayerEntity player = (ServerPlayerEntity) entity;
         BlockPos pos = context.get(LootParameters.POSITION);
         PacketHandler.sendToClient(PacketDistributor.PLAYER.with(() -> player), new PacketBlockBreak(pos));
-        if (player.dimension.getId() != -1)
+
+        //REPLACED player.dimension.getId() != -1 WITH !player.getEntityWorld().getDimensionKey().equals(World.THE_NETHER)
+        if (!player.getEntityWorld().getDimensionKey().equals(World.THE_NETHER))
             player.getHeldItemMainhand().damageItem(1, player, playerEntity -> playerEntity.sendBreakAnimation(Hand.MAIN_HAND));
 
         if (ModConfig.COMMON.toolsAndWeapons.bonusStats.smeltingDropsExperience.get()) {

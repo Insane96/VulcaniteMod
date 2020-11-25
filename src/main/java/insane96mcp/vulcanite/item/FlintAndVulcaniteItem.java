@@ -52,16 +52,19 @@ public class FlintAndVulcaniteItem extends FlintAndSteelItem {
         return super.onItemUse(itemUseContext);
     }
 
+    //Changed this from a boolean to an ActionResultType. Compare this to the 1.15.2 version to see all changes.
     @Override
-    public boolean itemInteractionForEntity(ItemStack stack, PlayerEntity playerIn, LivingEntity target,
+    public ActionResultType itemInteractionForEntity(ItemStack stack, PlayerEntity playerIn, LivingEntity target,
                                             Hand hand) {
         if (target.isImmuneToFire())
-            return false;
+            //Changed return false to ActionResultType.FAIL
+            return ActionResultType.FAIL;
 
         if (target instanceof ServerPlayerEntity) {
             ServerPlayerEntity targetPlayer = (ServerPlayerEntity) target;
             if (!playerIn.canAttackPlayer(targetPlayer))
-                return false;
+                //Changed return false to ActionResultType.FAIL
+                return ActionResultType.FAIL;
         }
 
         int timeOnFire = ModConfig.COMMON.toolsAndWeapons.flintAndVulcanite.secondsOnFire.get();
@@ -82,7 +85,8 @@ public class FlintAndVulcaniteItem extends FlintAndSteelItem {
         stack.damageItem(ModConfig.COMMON.toolsAndWeapons.flintAndVulcanite.durabilityOnUse.get(), playerIn, playerEntity -> playerEntity.sendBreakAnimation(hand));
 
         playerIn.world.playSound(playerIn, target.getPosition(), SoundEvents.ITEM_FLINTANDSTEEL_USE, SoundCategory.PLAYERS, 1.0f, playerIn.world.rand.nextFloat() * 0.4F + 0.8F);
-        return true;
+        //Changed return true to ActionResultType.SUCCES
+        return ActionResultType.SUCCESS;
     }
 
     @Override

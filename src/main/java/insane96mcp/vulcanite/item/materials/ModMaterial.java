@@ -50,6 +50,12 @@ public class ModMaterial {
             return 0;
         }
 
+        //Had to implement this since the Interface IArmorMaterial uses this now. TODO: SET A VALUE TO getKnockbackResistance()
+        @Override
+        public float getKnockbackResistance() {
+            return 0;
+        }
+
         @Override
         public SoundEvent getSoundEvent() {
             return SoundEvents.ITEM_ARMOR_EQUIP_IRON;

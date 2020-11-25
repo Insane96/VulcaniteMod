@@ -11,14 +11,16 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
 public class ModItems {
-    public static final DeferredRegister<Item> ITEMS = new DeferredRegister<>(ForgeRegistries.ITEMS, Vulcanite.MOD_ID);
+
+    //REPLACED new Deferredregister<> WITH DeferredRegister.create()
+    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Vulcanite.MOD_ID);
 
     public static final RegistryObject<Item> VULCANITE_INGOT = ITEMS.register(RegistryNames.VULCANITE_INGOT, () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
     public static final RegistryObject<Item> VULCANITE_NUGGET = ITEMS.register(RegistryNames.VULCANITE_NUGGET, () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
     public static final RegistryObject<PickaxeItem> VULCANITE_PICKAXE = ITEMS.register(RegistryNames.VULCANITE_PICKAXE, () -> new PickaxeItem(ModMaterial.TOOL_VULCANITE, 1, -2.8f, new Item.Properties().group(ItemGroup.TOOLS)));
     public static final RegistryObject<AxeItem> VULCANITE_AXE = ITEMS.register(RegistryNames.VULCANITE_AXE, () -> new AxeItem(ModMaterial.TOOL_VULCANITE, 6f, -3.1f, new Item.Properties().group(ItemGroup.TOOLS)));
     public static final RegistryObject<ShovelItem> VULCANITE_SHOVEL = ITEMS.register(RegistryNames.VULCANITE_SHOVEL, () -> new ShovelItem(ModMaterial.TOOL_VULCANITE, 1.5f, -3f, new Item.Properties().group(ItemGroup.TOOLS)));
-    public static final RegistryObject<HoeItem> VULCANITE_HOE = ITEMS.register(RegistryNames.VULCANITE_HOE, () -> new HoeItem(ModMaterial.TOOL_VULCANITE, -1.0f, new Item.Properties().group(ItemGroup.TOOLS)));
+    public static final RegistryObject<HoeItem> VULCANITE_HOE = ITEMS.register(RegistryNames.VULCANITE_HOE, () -> new HoeItem(ModMaterial.TOOL_VULCANITE, 0,-1.0f, new Item.Properties().group(ItemGroup.TOOLS)));
     public static final RegistryObject<FlintAndVulcaniteItem> FLINT_AND_VULCANITE = ITEMS.register(RegistryNames.FLINT_AND_VULCANITE, FlintAndVulcaniteItem::new);
     public static final RegistryObject<SwordItem> VULCANITE_SWORD = ITEMS.register(RegistryNames.VULCANITE_SWORD, () -> new SwordItem(ModMaterial.TOOL_VULCANITE, 3, -2.4f, new Item.Properties().group(ItemGroup.COMBAT)));
 

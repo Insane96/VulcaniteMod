@@ -8,7 +8,9 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
 public class ModLootModifiers {
-	public static final DeferredRegister<GlobalLootModifierSerializer<?>> LOOT_MODIFIERS = new DeferredRegister<>(ForgeRegistries.LOOT_MODIFIER_SERIALIZERS, Vulcanite.MOD_ID);
+
+	//REPLACED new Deferredregister<> WITH DeferredRegister.create()
+	public static final DeferredRegister<GlobalLootModifierSerializer<?>> LOOT_MODIFIERS = DeferredRegister.create(ForgeRegistries.LOOT_MODIFIER_SERIALIZERS, Vulcanite.MOD_ID);
 
 	public static final RegistryObject<GlobalLootModifierSerializer<?>> SMELTING = LOOT_MODIFIERS.register(Strings.RegistryNames.SMELTING, () -> new SmeltingModifier.Serializer());
 }
