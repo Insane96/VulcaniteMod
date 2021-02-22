@@ -73,8 +73,10 @@ public class LivingUpdate {
 				worldIn.playSound(player, blockPos, SoundEvents.BLOCK_FIRE_EXTINGUISH, SoundCategory.BLOCKS, 0.11f, 0.6f);
 			}
 		}
-		for (ItemStack armorPiece : playerArmor) {
-			armorPiece.damageItem(blocksPlaced / 4, player, p -> p.sendBreakAnimation(MobEntity.getSlotForItemStack(armorPiece)));
-		}
+		if (blocksPlaced > 0)
+			for (ItemStack armorPiece : playerArmor)
+				for (ItemStack vulcaniteArmorPiece : armorList)
+					if (ItemStack.areItemsEqualIgnoreDurability(armorPiece, vulcaniteArmorPiece))
+						armorPiece.damageItem(Math.max(blocksPlaced / 4, 1), player, p -> p.sendBreakAnimation(MobEntity.getSlotForItemStack(armorPiece)));
 	}
 }
