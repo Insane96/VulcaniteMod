@@ -12,6 +12,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.entity.MobEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.Direction;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
@@ -19,6 +20,7 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.BlockSnapshot;
+import net.minecraftforge.event.ForgeEventFactory;
 import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -58,9 +60,8 @@ public class LivingUpdate {
 			Block solidifiedLavaBlock = isFull ? ModBlocks.SOLIDIFIED_LAVA.get() : ModBlocks.SOLIDIFIED_FLOWING_LAVA.get();
 			BlockState solidifiedLavaState = solidifiedLavaBlock.getDefaultState().with(SolidifiedLavaBlock.AGE, 4 - armorPieces);
 
-			//CHANGED worldIn.placedBlockWouldCollide to func_226663_a_
 			//CHANGED new net.minecraftforge.common.util.BlockSnapshot(worldIn, blockPos, currentState) to BlockSnapshot.create(worldIn, blockPos) TODO: FIGURE OUT WHY WE DON'T USE currentState ANYMORE AND FIND OUT THE CONSEQUENCES
-			if (currentState.getMaterial() == Material.LAVA && solidifiedLavaState.isValidPosition(worldIn, blockPos) && worldIn.func_226663_a_(solidifiedLavaState, blockPos, ISelectionContext.dummy()) && !net.minecraftforge.event.ForgeEventFactory.onBlockPlace(player, BlockSnapshot.create(worldIn, blockPos), net.minecraft.util.Direction.UP)) {
+			if (currentState.getMaterial() == Material.LAVA && solidifiedLavaState.isValidPosition(worldIn, blockPos) && worldIn.placedBlockCollides(solidifiedLavaState, blockPos, ISelectionContext.dummy()) && !ForgeEventFactory.onBlockPlace(player, BlockSnapshot.create(worldIn.getDimensionKey(), worldIn, blockPos), Direction.UP)) {
 				worldIn.setBlockState(blockPos, solidifiedLavaState);
 				if (isFull) {
 					worldIn.getPendingBlockTicks().scheduleTick(blockPos, ModBlocks.SOLIDIFIED_LAVA.get(), MathHelper.nextInt(worldIn.rand, 8, 15));

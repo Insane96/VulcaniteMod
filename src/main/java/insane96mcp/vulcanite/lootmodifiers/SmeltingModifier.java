@@ -49,7 +49,7 @@ public class SmeltingModifier extends LootModifier {
             throw new ClassCastException("Hope this isn't called other than the player breaking blocks " + entity.toString());
 
         ServerPlayerEntity player = (ServerPlayerEntity) entity;
-        BlockPos pos = context.get(LootParameters.POSITION);
+        BlockPos pos = new BlockPos(context.get(LootParameters.field_237457_g_));
         PacketHandler.sendToClient(PacketDistributor.PLAYER.with(() -> player), new PacketBlockBreak(pos));
 
         //REPLACED player.dimension.getId() != -1 WITH !player.getEntityWorld().getDimensionKey().equals(World.THE_NETHER)
@@ -101,6 +101,11 @@ public class SmeltingModifier extends LootModifier {
         @Override
         public SmeltingModifier read(ResourceLocation location, JsonObject object, ILootCondition[] lootConditions) {
             return new SmeltingModifier(lootConditions);
+        }
+
+        @Override
+        public JsonObject write(SmeltingModifier instance) {
+            return null;
         }
     }
 }
