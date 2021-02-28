@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import net.insane96mcp.vulcanite.Vulcanite;
 import net.insane96mcp.vulcanite.block.BlockVulcanite;
 import net.insane96mcp.vulcanite.block.BlockVulcaniteOre;
+import net.insane96mcp.vulcanite.block.SolidifiedLavaBlock;
 import net.insane96mcp.vulcanite.lib.Strings.Names;
 import net.insane96mcp.vulcanite.worldgen.NetherOreGeneration;
 import net.insane96mcp.vulcanite.worldgen.OverworldOreGeneration;
@@ -16,19 +17,22 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.OreDictionary;
 
 public class ModBlocks {
-	
+
 	public static BlockVulcanite vulcaniteBlock;
 	public static BlockVulcaniteOre vulcaniteOre;
 	public static Block netherVulcaniteOre;
-	
+
+	public static SolidifiedLavaBlock solidifiedLavaBlock;
+	public static SolidifiedLavaBlock solidifiedFlowingLavaBlock;
+
 	public static ArrayList<Block> BLOCKS = new ArrayList<Block>();
-	
+
 	public static void PreInit() {
 		ResourceLocation location = new ResourceLocation(Vulcanite.MOD_ID, Names.VULCANITE_BLOCK);
 		vulcaniteBlock = new BlockVulcanite();
 		vulcaniteBlock.setRegistryName(location);
 		vulcaniteBlock.setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
-		vulcaniteBlock.setHardness(10.0f);
+		vulcaniteBlock.setHardness(10.0f); //TODO: Check why these values are different then in the class itself.
 		vulcaniteBlock.setResistance(20f);
 		vulcaniteBlock.setHarvestLevel("pickaxe", 2);
 		BLOCKS.add(vulcaniteBlock);
@@ -53,13 +57,19 @@ public class ModBlocks {
 		netherVulcaniteOre.setHarvestLevel("pickaxe", 2);
 		BLOCKS.add(netherVulcaniteOre);
 
+		solidifiedLavaBlock = new SolidifiedLavaBlock(true);
+		solidifiedFlowingLavaBlock = new SolidifiedLavaBlock(false);
+
 		GameRegistry.registerWorldGenerator(new NetherOreGeneration(), 0);
 		GameRegistry.registerWorldGenerator(new OverworldOreGeneration(), 0);
 	}
-	
+
 	public static void Init() {
 		OreDictionary.registerOre("oreVulcanite", vulcaniteOre);
 		OreDictionary.registerOre("oreVulcanite", netherVulcaniteOre);
 		OreDictionary.registerOre("blockVulcanite", vulcaniteBlock);
+		//TODO: Sort out this mess.
+//		OreDictionary.registerOre("solidifiedLavaBlock", solidifiedLavaBlock);
+//		OreDictionary.registerOre("solidifiedFlowingLavaBlock", solidifiedFlowingLavaBlock);
 	}
 }

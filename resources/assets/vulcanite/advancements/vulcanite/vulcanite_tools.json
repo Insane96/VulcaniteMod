@@ -10,7 +10,7 @@
             "translate": "advancements.vulcanite.tools.description"
         }
     },
-    "parent": "vulcanite:vulcanite/vulcanite",
+    "parent": "vulcanite:vulcanite/vulcanite_block",
     "criteria": {
         "vulcanite_pickaxe": {
             "trigger": "minecraft:inventory_changed",

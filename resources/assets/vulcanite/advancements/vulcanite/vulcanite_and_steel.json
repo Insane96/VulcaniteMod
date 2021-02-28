@@ -10,7 +10,7 @@
             "translate": "advancements.vulcanite.flint.description"
         }
     },
-    "parent": "vulcanite:vulcanite/vulcanite",
+    "parent": "vulcanite:vulcanite/vulcanite_block",
     "criteria": {
         "vulcanite_flint": {
             "trigger": "minecraft:inventory_changed",

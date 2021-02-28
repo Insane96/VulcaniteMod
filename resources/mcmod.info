@@ -2,12 +2,15 @@
 {
   "modid": "vulcanite",
   "name": "Vulcanite",
-  "description": "New ore into the nether. Tools and Armor made with this ore, the Vulcanite, have special properties",
+  "description": "New Ore in the Nether, found below lava lakes.
+  Tools and Armor made with this ore, have special properties related to Fire, Flames and Lava.
+  Mod originally made by Insane96MCP.
+  Mod maintained by ZimonIsHim.",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "https://minecraft.curseforge.com/projects/vulcanite",
   "updateUrl": "",
-  "authorList": ["Insane96MCP"],
+  "authorList": ["Insane96MCP & ZimonIsHim"],
   "credits": "The Forge and Minecraft forum for help :P",
   "logoFile": "",
   "screenshots": [],

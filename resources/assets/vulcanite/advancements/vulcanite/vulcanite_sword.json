@@ -10,7 +10,7 @@
             "translate": "advancements.vulcanite.sword.description"
         }
     },
-    "parent": "vulcanite:vulcanite/vulcanite",
+    "parent": "vulcanite:vulcanite/vulcanite_block",
     "criteria": {
         "vulcanite_sword": {
             "trigger": "minecraft:inventory_changed",
