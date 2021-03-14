@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "vulcanite:solidified_flowing_lava",
+    "vulcanite:solidified_lava"
+  ]
+}
