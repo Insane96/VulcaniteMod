@@ -25,7 +25,7 @@ public class FlintAndVulcaniteItem extends FlintAndSteelItem {
 	public static final int DURABILITY = 80;
 
 	public FlintAndVulcaniteItem() {
-		super(new Properties().group(ItemGroup.TOOLS).defaultMaxDamage(DURABILITY));
+		super(new Properties().group(ItemGroup.TOOLS).defaultMaxDamage(DURABILITY).isImmuneToFire());
 	}
 
     @Override
