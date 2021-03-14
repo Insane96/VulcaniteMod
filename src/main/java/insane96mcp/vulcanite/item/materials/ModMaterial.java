@@ -47,10 +47,9 @@ public class ModMaterial {
 
         @Override
         public float getToughness() {
-            return 0;
+            return 1;
         }
-
-        //Had to implement this since the Interface IArmorMaterial uses this now. TODO: SET A VALUE TO getKnockbackResistance()
+        
         @Override
         public float getKnockbackResistance() {
             return 0;
