@@ -24,7 +24,8 @@ public class ModItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Vulcanite.MOD_ID);
 
     public static final RegistryObject<Item> VULCANITE_INGOT = ITEMS.register(RegistryNames.VULCANITE_INGOT, () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS).isImmuneToFire()));
-    public static final RegistryObject<Item> VULCANITE_NUGGET = ITEMS.register(RegistryNames.VULCANITE_NUGGET, () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS).isImmuneToFire()) {
+    public static final RegistryObject<Item> VULCANITE_NUGGET = ITEMS.register(RegistryNames.VULCANITE_NUGGET, () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS).isImmuneToFire()));
+    public static final RegistryObject<PickaxeItem> VULCANITE_PICKAXE = ITEMS.register(RegistryNames.VULCANITE_PICKAXE, () -> new PickaxeItem(ModMaterial.TOOL_VULCANITE, 1, -2.8f, new Item.Properties().group(ItemGroup.TOOLS).isImmuneToFire()) {
         @Override
         public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
             if (KeyboardUtil.isHoldingShift()){
@@ -36,7 +37,6 @@ public class ModItems {
             }
         }
     });
-    public static final RegistryObject<PickaxeItem> VULCANITE_PICKAXE = ITEMS.register(RegistryNames.VULCANITE_PICKAXE, () -> new PickaxeItem(ModMaterial.TOOL_VULCANITE, 1, -2.8f, new Item.Properties().group(ItemGroup.TOOLS).isImmuneToFire()));
     public static final RegistryObject<AxeItem> VULCANITE_AXE = ITEMS.register(RegistryNames.VULCANITE_AXE, () -> new AxeItem(ModMaterial.TOOL_VULCANITE, 6f, -3.1f, new Item.Properties().group(ItemGroup.TOOLS).isImmuneToFire()) {
         @Override
         public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
