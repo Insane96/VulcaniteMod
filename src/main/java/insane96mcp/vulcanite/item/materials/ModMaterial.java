@@ -47,7 +47,7 @@ public class ModMaterial {
 
         @Override
         public float getToughness() {
-            return 0;
+            return 1;
         }
 
         @Override
