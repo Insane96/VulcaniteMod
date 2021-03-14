@@ -21,6 +21,7 @@
   "tooltip.armor.damage_reduction": "§6Riduce il danno dalle fonti di calore. Ogni pezzo protegge una quantità. Nel Nether la riduzione del danno è più efficace.",
   "tooltip.flint_and_vulcanite.set_on_fire": "§6Utilizzalo su un mob per dargli fuoco",
   "tooltip.vulcanite_block.set_on_fire": "§6Da fuoco ai mob che ci sono sopra",
+  "tooltip.hold_shift_for_more_info.hold_shift": "Tieni premuto MAIUSC per info più dettagliate.",
   "advancements.vulcanite.root.title": "Vulcanite Mod",
   "advancements.vulcanite.root.description": "L'inizio dell'anti-calore",
   "advancements.vulcanite.vulcanite_ingot.title": "Leggermente Caldo",

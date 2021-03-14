@@ -21,6 +21,7 @@
   "tooltip.armor.damage_reduction": "§6Reduceert schade van hittebronnen. Ieder stuk van het harnas beschermt op zich zelf. In de Nether reduceert het effectiever.",
   "tooltip.flint_and_vulcanite.set_on_fire": "§6Gebruik het op een mob om het in vuur en vlam te zetten!",
   "tooltip.vulcanite_block.set_on_fire": "§6Zet mobs die er op staan in vuur en vlam",
+  "tooltip.hold_shift_for_more_info.hold_shift": "Houd de shift-toets ingedrukt voor meer informatie.",
   "advancements.vulcanite.root.title": "Vulcaniet Mod",
   "advancements.vulcanite.root.description": "Het begin van anti-hitte",
   "advancements.vulcanite.vulcanite_ingot.title": "Beetje heet",

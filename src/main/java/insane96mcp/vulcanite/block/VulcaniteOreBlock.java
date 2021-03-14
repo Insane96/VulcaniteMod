@@ -2,6 +2,7 @@ package insane96mcp.vulcanite.block;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.OreBlock;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
@@ -15,7 +16,7 @@ import net.minecraftforge.common.extensions.IForgeBlock;
 public class VulcaniteOreBlock extends OreBlock implements IForgeBlock {
 
     public VulcaniteOreBlock() {
-        super(Properties.create(Material.ROCK).hardnessAndResistance(3f, 3));
+        super(Properties.create(Material.ROCK).hardnessAndResistance(3f, 3).sound(SoundType.NETHER_ORE));
     }
 
     @Override

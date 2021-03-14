@@ -21,6 +21,7 @@
   "tooltip.armor.damage_reduction": "§6Reduces damage from hot sources. Every piece protects on it's own. In the Nether the damage reduction is more effective.",
   "tooltip.flint_and_vulcanite.set_on_fire": "§6Use on a mob to set it on fire",
   "tooltip.vulcanite_block.set_on_fire": "§6Sets mobs standing on it on fire!",
+  "tooltip.hold_shift_for_more_info.hold_shift": "Hold shift for more info.",
   "advancements.vulcanite.root.title": "Vulcanite Mod",
   "advancements.vulcanite.root.description": "The beginning of anti-hotness",
   "advancements.vulcanite.vulcanite_ingot.title": "Slightly Hot",

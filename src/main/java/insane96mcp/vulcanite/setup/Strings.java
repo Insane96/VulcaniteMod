@@ -21,4 +21,33 @@ public class Strings {
 
         public static final String SMELTING = "smelting";
     }
+
+    public static class Tooltips {
+
+        public static class HoldShiftForMoreInfo{
+            public static String holdShiftForMoreInfo = "tooltip.hold_shift_for_more_info.hold_shift";
+        }
+
+        public static class FlintAndVulcanite{
+            public static String setOnFire = "tooltip.flint_and_vulcanite.set_on_fire";
+        }
+
+        public static class Weapon{
+            public static String moreDamage = "tooltip.weapon.more_damage";
+            public static String moreDamageFireAspect = "tooltip.weapon.more_damage_fire_aspect";
+        }
+
+        public static class Armor{
+            public static String damageReduction = "tooltip.armor.damage_reduction";
+        }
+
+        public static class Tool{
+            public static String bonusEfficiency = "tooltip.tool.bonus_efficiency";
+            public static String smelting = "tooltip.tool.smelting";
+        }
+
+        public static class VulcaniteBlock{
+            public static String setOnFire = "tooltip.vulcanite_block.set_on_fire";
+        }
+    }
 }
