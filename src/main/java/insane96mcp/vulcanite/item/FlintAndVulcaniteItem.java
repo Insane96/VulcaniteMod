@@ -1,7 +1,11 @@
 package insane96mcp.vulcanite.item;
 
 import insane96mcp.vulcanite.setup.ModConfig;
+import insane96mcp.vulcanite.setup.Strings;
+import insane96mcp.vulcanite.util.KeyboardUtil;
 import net.minecraft.block.Blocks;
+import net.minecraft.client.resources.I18n;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
@@ -16,8 +20,12 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUseContext;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.world.World;
 
+import javax.annotation.Nullable;
+import java.util.List;
 import java.util.Map;
 
 public class FlintAndVulcaniteItem extends FlintAndSteelItem {
@@ -100,5 +108,14 @@ public class FlintAndVulcaniteItem extends FlintAndSteelItem {
             return true;
 
         return super.isBookEnchantable(stack, book);
+    }
+
+    @Override
+    public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
+        if (KeyboardUtil.isHoldingShift()){
+            tooltip.add(new StringTextComponent(I18n.format(Strings.Tooltips.FlintAndVulcanite.setOnFire)));
+        } else {
+            tooltip.add(new StringTextComponent(I18n.format(Strings.Tooltips.HoldShiftForMoreInfo.holdShiftForMoreInfo)));
+        }
     }
 }
