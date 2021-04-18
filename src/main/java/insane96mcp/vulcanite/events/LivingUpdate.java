@@ -71,19 +71,25 @@ public class LivingUpdate {
 			BlockState solidifiedLavaState = solidifiedLavaBlock.getDefaultState().with(SolidifiedLavaBlock.AGE, 4 - armorPieces);
 
 			//CHANGED new net.minecraftforge.common.util.BlockSnapshot(world, blockPos, currentState) to BlockSnapshot.create(world, blockPos) TODO: FIGURE OUT WHY WE DON'T USE currentState ANYMORE AND FIND OUT THE CONSEQUENCES
-			if (currentState.getMaterial() == Material.LAVA && solidifiedLavaState.isValidPosition(world, blockPos) && world.placedBlockCollides(solidifiedLavaState, blockPos, ISelectionContext.dummy()) && !ForgeEventFactory.onBlockPlace(player, BlockSnapshot.create(world.getDimensionKey(), world, blockPos), Direction.UP)) {
+			if (currentState.getMaterial() == Material.LAVA &&
+					solidifiedLavaState.isValidPosition(world, blockPos) &&
+					world.placedBlockCollides(solidifiedLavaState, blockPos, ISelectionContext.dummy()) &&
+					!ForgeEventFactory.onBlockPlace(player, BlockSnapshot.create(world.getDimensionKey(), world, blockPos), Direction.UP) &&
+					player.abilities.allowEdit //Spectator mode check - Checks whether the player is allowed to edit the world.
+			) {
+
 				world.setBlockState(blockPos, solidifiedLavaState);
+
 				if (isFull) {
 					world.getPendingBlockTicks().scheduleTick(blockPos, ModBlocks.SOLIDIFIED_LAVA.get(), MathHelper.nextInt(world.rand, 8, 15));
-				}
-				else {
+				} else {
 					world.getPendingBlockTicks().scheduleTick(blockPos, ModBlocks.SOLIDIFIED_FLOWING_LAVA.get(), MathHelper.nextInt(world.rand, 8, 15));
 				}
+
 				blocksPlaced++;
 				world.playSound(player, blockPos, SoundEvents.BLOCK_FIRE_EXTINGUISH, SoundCategory.BLOCKS, 0.11f, 0.6f);
 			}
 		}
-
 
 		List<ItemStack> damageableArmorPiece = new ArrayList<>();
 		for (ItemStack armorPiece : playerArmor) {
