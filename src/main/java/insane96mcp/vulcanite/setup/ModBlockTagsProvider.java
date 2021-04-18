@@ -12,7 +12,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
 
     @Override
     protected void registerTags(){
-        getOrCreateBuilder(BlockTags.STRIDER_WARM_BLOCKS).addItemEntry(ModBlocks.SOLIDIFIED_FLOWING_LAVA.get());
-        getOrCreateBuilder(BlockTags.STRIDER_WARM_BLOCKS).addItemEntry(ModBlocks.SOLIDIFIED_LAVA.get());
+//        getOrCreateBuilder(BlockTags.STRIDER_WARM_BLOCKS).addItemEntry(ModBlocks.SOLIDIFIED_FLOWING_LAVA.get());
+//        getOrCreateBuilder(BlockTags.STRIDER_WARM_BLOCKS).addItemEntry(ModBlocks.SOLIDIFIED_LAVA.get());
     }
 }
