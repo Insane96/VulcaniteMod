@@ -1,7 +1,10 @@
 package insane96mcp.vulcanite;
 
 import insane96mcp.vulcanite.network.PacketHandler;
-import insane96mcp.vulcanite.setup.*;
+import insane96mcp.vulcanite.setup.ModBlocks;
+import insane96mcp.vulcanite.setup.ModItems;
+import insane96mcp.vulcanite.setup.ModLootModifiers;
+import insane96mcp.vulcanite.setup.ModSoundEvents;
 import insane96mcp.vulcanite.worldgen.OreGenerator;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModLoadingContext;

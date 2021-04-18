@@ -1,7 +1,5 @@
 package insane96mcp.vulcanite.setup;
 
-import insane96mcp.vulcanite.block.SolidifiedLavaBlock;
-import insane96mcp.vulcanite.block.VulcaniteBlock;
 import net.minecraft.data.BlockTagsProvider;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.tags.BlockTags;
