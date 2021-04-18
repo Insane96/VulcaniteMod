@@ -37,5 +37,8 @@
   "advancements.vulcanite.armor.title": "Анти-тепло",
   "advancements.vulcanite.armor.description": "Получите полный набор брони из вулканита. Лава будет остерегаться вас.",
   "advancements.vulcanite.block.title": "Из живого в сожженного",
-  "advancements.vulcanite.block.description": "Получите вулканитовый блок и встаньте на него (нет)"
+  "advancements.vulcanite.block.description": "Получите вулканитовый блок и встаньте на него (нет)",
+  "block.vulcanite_ore_break": "вулканита ore sounds",
+  "block.vulcanite_ore_break.sub": "вулканита ore break",
+  "block.vulcanite_block_step.sub": "вулканита block step"
 }

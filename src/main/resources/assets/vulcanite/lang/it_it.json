@@ -37,5 +37,8 @@
   "advancements.vulcanite.armor.title": "Anti-Calore",
   "advancements.vulcanite.armor.description": "Ottieni un set di Armatura di Vulcanite. Terrà lontano la lava.",
   "advancements.vulcanite.block.title": "Meglio non avvicinarsi",
-  "advancements.vulcanite.block.description": "Ottieni un blocco di Vulcanite e (non) camminarci sopra"
+  "advancements.vulcanite.block.description": "Ottieni un blocco di Vulcanite e (non) camminarci sopra",
+  "block.vulcanite_ore_break": "Vulcanite ore sounds",
+  "block.vulcanite_ore_break.sub": "Vulcanite ore break",
+  "block.vulcanite_block_step.sub": "Vulcanite block step"
 }

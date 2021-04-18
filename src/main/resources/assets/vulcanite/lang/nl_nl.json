@@ -37,5 +37,8 @@
   "advancements.vulcanite.armor.title": "Anti-hitte",
   "advancements.vulcanite.armor.description": "Verkrijg een volledig Vulcanieten harnas. Dit zal de lava weghouden.",
   "advancements.vulcanite.block.title": "Van levend naar in vuur en vlam",
-  "advancements.vulcanite.block.description": "Verkrijg een Vulcanietblok en sta er (niet) op."
+  "advancements.vulcanite.block.description": "Verkrijg een Vulcanietblok en sta er (niet) op.",
+  "block.vulcanite_ore_break": "Vulcaniet erts geluiden",
+  "block.vulcanite_ore_break.sub": "Vulcanite ore breek",
+  "block.vulcanite_block_step.sub": "Vulcanite block stap"
 }

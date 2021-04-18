@@ -37,5 +37,8 @@
   "advancements.vulcanite.armor.title": "Anti-Hotness",
   "advancements.vulcanite.armor.description": "Obtain a full set of Vulcanite Armor. This will keep Lava away.",
   "advancements.vulcanite.block.title": "From alive to on fire",
-  "advancements.vulcanite.block.description": "Obtain a Vulcanite Block and (don't) stand on top of it"
+  "advancements.vulcanite.block.description": "Obtain a Vulcanite Block and (don't) stand on top of it",
+  "block.vulcanite_ore_break": "Vulcanite ore sounds",
+  "block.vulcanite_ore_break.sub": "Vulcanite ore break",
+  "block.vulcanite_block_step.sub": "Vulcanite block step"
 }

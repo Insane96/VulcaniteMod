@@ -1,0 +1,22 @@
+{
+  "block.vulcanite_ore_break": {
+    "category": "block",
+    "subtitle": "block.vulcanite_ore_break.sub",
+    "sounds": [
+      {
+        "name": "vulcanite:block/vulcanite_ore_break",
+        "stream": true
+      }
+    ]
+  },
+  "block.vulcanite_block_step": {
+    "category": "block",
+    "subtitle": "block.vulcanite_block_step.sub",
+    "sounds": [
+      {
+        "name": "vulcanite:block/vulcanite_block_step",
+        "stream": true
+      }
+    ]
+  }
+}

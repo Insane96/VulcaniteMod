@@ -1,9 +1,9 @@
 package insane96mcp.vulcanite.block;
 
 import insane96mcp.vulcanite.setup.ModConfig;
+import insane96mcp.vulcanite.setup.ModSoundTypes;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
 import net.minecraft.entity.Entity;
@@ -18,7 +18,7 @@ import net.minecraftforge.common.extensions.IForgeBlock;
 public class VulcaniteBlock extends Block implements IForgeBlock {
 
     public VulcaniteBlock() {
-        super(Block.Properties.create(Material.IRON, MaterialColor.ORANGE_TERRACOTTA).hardnessAndResistance(5f, 6f).sound(SoundType.METAL));
+        super(Block.Properties.create(Material.IRON, MaterialColor.ORANGE_TERRACOTTA).hardnessAndResistance(5f, 6f).sound(ModSoundTypes.VULCANITE_BLOCK));
     }
 
     //COMMENTED OUT @OVERRIDE BECAUSE IT GAVE AN ERROR. THIS HASN'T BEEN TESTED!
