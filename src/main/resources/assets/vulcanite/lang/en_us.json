@@ -40,5 +40,6 @@
   "advancements.vulcanite.block.description": "Obtain a Vulcanite Block and (don't) stand on top of it",
   "block.vulcanite_ore_break": "Vulcanite ore sounds",
   "block.vulcanite_ore_break.sub": "Vulcanite ore break",
+  "block.vulcanite_ore_place.sub": "Vulcanite ore place",
   "block.vulcanite_block_step.sub": "Vulcanite block step"
 }

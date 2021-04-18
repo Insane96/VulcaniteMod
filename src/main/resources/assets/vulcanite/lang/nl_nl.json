@@ -40,5 +40,6 @@
   "advancements.vulcanite.block.description": "Verkrijg een Vulcanietblok en sta er (niet) op.",
   "block.vulcanite_ore_break": "Vulcaniet erts geluiden",
   "block.vulcanite_ore_break.sub": "Vulcanite ore breek",
+  "block.vulcanite_ore_place.sub": "Vulcanite ore plaats",
   "block.vulcanite_block_step.sub": "Vulcanite block stap"
 }

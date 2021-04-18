@@ -40,5 +40,6 @@
   "advancements.vulcanite.block.description": "Erhalt eine Vulkanitblock und steh (nicht) drauf",
   "block.vulcanite_ore_break": "Vulkaniterz Klangen",
   "block.vulcanite_ore_break.sub": "Vulkaniterz brechen",
+  "block.vulcanite_ore_place.sub": "Vulcaniterz legen",
   "block.vulcanite_block_step.sub": "Vulkanitblock Schritt"
 }

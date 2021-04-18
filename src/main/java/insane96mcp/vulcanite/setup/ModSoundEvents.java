@@ -15,6 +15,9 @@ public class ModSoundEvents {
     public static final RegistryObject<SoundEvent> VULCANITE_ORE_BREAK = SOUNDS.register(
             "block.vulcanite_ore_break", () -> new SoundEvent(new ResourceLocation(Vulcanite.MOD_ID, "block.vulcanite_ore_break")));
 
+    public static final RegistryObject<SoundEvent> VULCANITE_ORE_PLACE = SOUNDS.register(
+            "block.vulcanite_ore_place", () -> new SoundEvent(new ResourceLocation(Vulcanite.MOD_ID, "block.vulcanite_ore_place")));
+
 
     //Vulcanite Block
     public static final RegistryObject<SoundEvent> VULCANITE_BLOCK_STEP = SOUNDS.register(
