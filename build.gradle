@@ -96,6 +96,10 @@ repositories {
         name = "ModMaven"
         url = "https://modmaven.k-4u.nl"
     }
+    maven {
+        name = "ZIHMaven"
+        url = "https://zimonishim.github.io/Forge-Maven/"
+    }
 }
 
 dependencies {
@@ -109,6 +113,10 @@ dependencies {
     compileOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}:api")
     // at runtime, use the full JEI jar
     runtimeOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}")
+
+    compileOnly fg.deobf("com.zimonishim.ziheasymodding:ZIHEasyModding:1.0.0")
+    // at runtime, use the full JEI jar
+    runtimeOnly fg.deobf("com.zimonishim.ziheasymodding:ZIHEasyModding:1.0.0")
 
 }
 
