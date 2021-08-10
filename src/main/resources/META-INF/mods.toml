@@ -19,13 +19,20 @@ Mod maintained by ZimonIsHim.
 [[dependencies.vulcanite]]
     modId="forge"
     mandatory=true
-    versionRange="[33,)"
+    versionRange="[36,)"
     ordering="NONE"
     side="BOTH"
 
 [[dependencies.vulcanite]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.16.2,)"
+    versionRange="[1.16.5,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.vulcanite]]
+    modId="ziheasymodding"
+    mandatory=true
+    versionRange="[1.0.0,)"
     ordering="NONE"
     side="BOTH"
