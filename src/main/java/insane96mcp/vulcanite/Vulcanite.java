@@ -4,7 +4,6 @@ import insane96mcp.vulcanite.network.PacketHandler;
 import insane96mcp.vulcanite.setup.ModBlocks;
 import insane96mcp.vulcanite.setup.ModItems;
 import insane96mcp.vulcanite.setup.ModLootModifiers;
-import insane96mcp.vulcanite.setup.ModSoundEvents;
 import insane96mcp.vulcanite.worldgen.OreGenerator;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModLoadingContext;
@@ -27,7 +26,6 @@ public class Vulcanite {
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
         final ModLoadingContext modLoadingContext = ModLoadingContext.get();
         final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-        ModSoundEvents.SOUNDS.register(modEventBus);
         ModBlocks.BLOCKS.register(modEventBus);
         ModItems.ITEMS.register(modEventBus);
         ModLootModifiers.LOOT_MODIFIERS.register(modEventBus);

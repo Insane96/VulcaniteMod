@@ -1,8 +1,8 @@
 package insane96mcp.vulcanite.item;
 
+import com.zimonishim.ziheasymodding.util.KeyBoardHandler;
 import insane96mcp.vulcanite.setup.ModConfig;
 import insane96mcp.vulcanite.setup.Strings;
-import insane96mcp.vulcanite.util.KeyboardUtil;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
@@ -117,7 +117,7 @@ public class FlintAndVulcaniteItem extends FlintAndSteelItem {
 
     @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-	    if (KeyboardUtil.isHoldingShift()){
+	    if (KeyBoardHandler.isHoldingShift()){
             tooltip.add(new StringTextComponent(I18n.format(Strings.Tooltips.FlintAndVulcanite.setOnFire)));
         } else {
 	        tooltip.add(new StringTextComponent(I18n.format(Strings.Tooltips.HoldShiftForMoreInfo.holdShiftForMoreInfo)));

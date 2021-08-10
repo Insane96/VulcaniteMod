@@ -1,10 +1,10 @@
 package insane96mcp.vulcanite.setup;
 
+import com.zimonishim.ziheasymodding.util.KeyBoardHandler;
 import insane96mcp.vulcanite.Vulcanite;
 import insane96mcp.vulcanite.item.FlintAndVulcaniteItem;
 import insane96mcp.vulcanite.item.materials.ModMaterial;
 import insane96mcp.vulcanite.setup.Strings.RegistryNames;
-import insane96mcp.vulcanite.util.KeyboardUtil;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.inventory.EquipmentSlotType;
@@ -27,7 +27,7 @@ public class ModItems {
     public static final RegistryObject<PickaxeItem> VULCANITE_PICKAXE = ITEMS.register(RegistryNames.VULCANITE_PICKAXE, () -> new PickaxeItem(ModMaterial.TOOL_VULCANITE, 1, -2.8f, new Item.Properties().group(ItemGroup.TOOLS).isImmuneToFire()) {
         @Override
         public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-            if (KeyboardUtil.isHoldingShift()){
+            if (KeyBoardHandler.isHoldingShift()){
                 tooltip.add(new StringTextComponent(I18n.format(Strings.Tooltips.Tool.smelting)));
                 tooltip.add(new StringTextComponent(I18n.format(Strings.Tooltips.Tool.bonusEfficiency)));
                 tooltip.add(new StringTextComponent(I18n.format(Strings.Tooltips.Weapon.moreDamage)));
@@ -39,7 +39,7 @@ public class ModItems {
     public static final RegistryObject<AxeItem> VULCANITE_AXE = ITEMS.register(RegistryNames.VULCANITE_AXE, () -> new AxeItem(ModMaterial.TOOL_VULCANITE, 6f, -3.1f, new Item.Properties().group(ItemGroup.TOOLS).isImmuneToFire()) {
         @Override
         public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-            if (KeyboardUtil.isHoldingShift()){
+            if (KeyBoardHandler.isHoldingShift()){
                 tooltip.add(new StringTextComponent(I18n.format(Strings.Tooltips.Tool.smelting)));
                 tooltip.add(new StringTextComponent(I18n.format(Strings.Tooltips.Tool.bonusEfficiency)));
                 tooltip.add(new StringTextComponent(I18n.format(Strings.Tooltips.Weapon.moreDamage)));
@@ -51,7 +51,7 @@ public class ModItems {
     public static final RegistryObject<ShovelItem> VULCANITE_SHOVEL = ITEMS.register(RegistryNames.VULCANITE_SHOVEL, () -> new ShovelItem(ModMaterial.TOOL_VULCANITE, 1.5f, -3f, new Item.Properties().group(ItemGroup.TOOLS).isImmuneToFire()) {
         @Override
         public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-            if (KeyboardUtil.isHoldingShift()){
+            if (KeyBoardHandler.isHoldingShift()){
                 tooltip.add(new StringTextComponent(I18n.format(Strings.Tooltips.Tool.smelting)));
                 tooltip.add(new StringTextComponent(I18n.format(Strings.Tooltips.Tool.bonusEfficiency)));
                 tooltip.add(new StringTextComponent(I18n.format(Strings.Tooltips.Weapon.moreDamage)));
@@ -65,7 +65,7 @@ public class ModItems {
     public static final RegistryObject<SwordItem> VULCANITE_SWORD = ITEMS.register(RegistryNames.VULCANITE_SWORD, () -> new SwordItem(ModMaterial.TOOL_VULCANITE, 3, -2.4f, new Item.Properties().group(ItemGroup.COMBAT).isImmuneToFire()) {
         @Override
         public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-            if (KeyboardUtil.isHoldingShift()){
+            if (KeyBoardHandler.isHoldingShift()){
                 tooltip.add(new StringTextComponent(I18n.format(Strings.Tooltips.Weapon.moreDamage)));
                 tooltip.add(new StringTextComponent(I18n.format(Strings.Tooltips.Weapon.moreDamageFireAspect)));
             } else {
@@ -77,7 +77,7 @@ public class ModItems {
     public static final RegistryObject<ArmorItem> VULCANITE_HELMET = ITEMS.register(RegistryNames.VULCANITE_HELMET, () -> new ArmorItem(ModMaterial.ARMOR_VULCANITE, EquipmentSlotType.HEAD, new Item.Properties().group(ItemGroup.COMBAT).isImmuneToFire()) {
         @Override
         public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-            if (KeyboardUtil.isHoldingShift()){
+            if (KeyBoardHandler.isHoldingShift()){
                 tooltip.add(new StringTextComponent(I18n.format(Strings.Tooltips.Armor.damageReduction)));
             } else {
                 tooltip.add(new StringTextComponent(I18n.format(Strings.Tooltips.HoldShiftForMoreInfo.holdShiftForMoreInfo)));
@@ -87,7 +87,7 @@ public class ModItems {
     public static final RegistryObject<ArmorItem> VULCANITE_CHESTPLATE = ITEMS.register(RegistryNames.VULCANITE_CHESTPLATE, () -> new ArmorItem(ModMaterial.ARMOR_VULCANITE, EquipmentSlotType.CHEST, new Item.Properties().group(ItemGroup.COMBAT).isImmuneToFire()) {
         @Override
         public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-            if (KeyboardUtil.isHoldingShift()){
+            if (KeyBoardHandler.isHoldingShift()){
                 tooltip.add(new StringTextComponent(I18n.format(Strings.Tooltips.Armor.damageReduction)));
             } else {
                 tooltip.add(new StringTextComponent(I18n.format(Strings.Tooltips.HoldShiftForMoreInfo.holdShiftForMoreInfo)));
@@ -97,7 +97,7 @@ public class ModItems {
     public static final RegistryObject<ArmorItem> VULCANITE_LEGGINGS = ITEMS.register(RegistryNames.VULCANITE_LEGGINGS, () -> new ArmorItem(ModMaterial.ARMOR_VULCANITE, EquipmentSlotType.LEGS, new Item.Properties().group(ItemGroup.COMBAT).isImmuneToFire()) {
         @Override
         public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-            if (KeyboardUtil.isHoldingShift()){
+            if (KeyBoardHandler.isHoldingShift()){
                 tooltip.add(new StringTextComponent(I18n.format(Strings.Tooltips.Armor.damageReduction)));
             } else {
                 tooltip.add(new StringTextComponent(I18n.format(Strings.Tooltips.HoldShiftForMoreInfo.holdShiftForMoreInfo)));
@@ -107,7 +107,7 @@ public class ModItems {
     public static final RegistryObject<ArmorItem> VULCANITE_BOOTS = ITEMS.register(RegistryNames.VULCANITE_BOOTS, () -> new ArmorItem(ModMaterial.ARMOR_VULCANITE, EquipmentSlotType.FEET, new Item.Properties().group(ItemGroup.COMBAT).isImmuneToFire()) {
         @Override
         public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-            if (KeyboardUtil.isHoldingShift()){
+            if (KeyBoardHandler.isHoldingShift()){
                 tooltip.add(new StringTextComponent(I18n.format(Strings.Tooltips.Armor.damageReduction)));
             } else {
                 tooltip.add(new StringTextComponent(I18n.format(Strings.Tooltips.HoldShiftForMoreInfo.holdShiftForMoreInfo)));
@@ -119,7 +119,7 @@ public class ModItems {
     public static final RegistryObject<BlockItem> VULCANITE_BLOCK = ITEMS.register(RegistryNames.VULCANITE_BLOCK, () -> new BlockItem(ModBlocks.VULCANITE_BLOCK.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS).isImmuneToFire()) {
         @Override
         public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-            if (KeyboardUtil.isHoldingShift()){
+            if (KeyBoardHandler.isHoldingShift()){
                 tooltip.add(new StringTextComponent(I18n.format(Strings.Tooltips.VulcaniteBlock.setOnFire)));
             } else {
                 tooltip.add(new StringTextComponent(I18n.format(Strings.Tooltips.HoldShiftForMoreInfo.holdShiftForMoreInfo)));
