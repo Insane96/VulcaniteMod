@@ -1,6 +1,5 @@
 package insane96mcp.vulcanite.item;
 
-import com.zimonishim.ziheasymodding.setup.ModItems;
 import insane96mcp.vulcanite.setup.ModConfig;
 import insane96mcp.vulcanite.setup.Strings;
 import insane96mcp.vulcanite.util.KeyboardUtil;
@@ -58,8 +57,6 @@ public class FlintAndVulcaniteItem extends FlintAndSteelItem {
 
             return ActionResultType.SUCCESS;
         }
-
-        new ModItems().registerItem();
 
         return super.onItemUse(itemUseContext);
     }

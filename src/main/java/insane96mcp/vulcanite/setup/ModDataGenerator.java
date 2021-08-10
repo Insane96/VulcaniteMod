@@ -16,5 +16,4 @@ public class ModDataGenerator {
             generator.addProvider(new ModBlockTagsProvider(generator, Vulcanite.MOD_ID, event.getExistingFileHelper()));
         }
     }
-
 }

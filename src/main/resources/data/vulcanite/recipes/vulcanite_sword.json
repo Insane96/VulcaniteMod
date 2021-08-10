@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "minecraft:iron_sword"
+  },
+  "addition": {
+    "item": "vulcanite:vulcanite_ingot"
+  },
+  "result": {
+    "item": "vulcanite:vulcanite_sword"
+  }
+}

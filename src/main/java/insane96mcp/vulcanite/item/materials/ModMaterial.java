@@ -81,16 +81,12 @@ public class ModMaterial {
             switch (arg0) {
                 case HEAD:
                     return 206;
-
                 case CHEST:
                     return 300;
-
                 case LEGS:
                     return 281;
-
                 case FEET:
                     return 244;
-
                 default:
                     break;
             }
@@ -99,20 +95,15 @@ public class ModMaterial {
 
         @Override
         public int getDamageReductionAmount(EquipmentSlotType arg0) {
-
             switch (arg0) {
                 case HEAD:
                     return 3;
-
                 case CHEST:
                     return 6;
-
                 case LEGS:
                     return 4;
-
                 case FEET:
                     return 2;
-
                 default:
                     break;
             }
