@@ -32,7 +32,7 @@ public class OreGenerator {
 						new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NETHERRACK, ModBlocks.NETHER_VULCANITE_ORE.get().getDefaultState(), VEIN_SIZE)
 				)
 						.range(32).square()
-						.func_242731_b(4)
+						.count(4)
 		));
 		ores.add(register(
 				"any_height_vulcanite",
@@ -40,7 +40,7 @@ public class OreGenerator {
 						new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NETHERRACK, ModBlocks.NETHER_VULCANITE_ORE.get().getDefaultState(), VEIN_SIZE)
 				)
 						.range(128).square()
-						.func_242731_b(4)
+						.count(4)
 		));
 	}
 
