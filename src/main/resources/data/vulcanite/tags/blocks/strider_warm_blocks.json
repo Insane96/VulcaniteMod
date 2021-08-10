@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "vulcanite:vulcanite_block",
+    "vulcanite:solidified_flowing_lava",
+    "vulcanite:solidified_lava"
+  ]
+}

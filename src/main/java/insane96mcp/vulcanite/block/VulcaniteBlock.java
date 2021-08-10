@@ -9,7 +9,6 @@ import net.minecraft.block.material.MaterialColor;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ToolType;
@@ -21,15 +20,8 @@ public class VulcaniteBlock extends Block implements IForgeBlock {
         super(Block.Properties.create(Material.IRON, MaterialColor.ORANGE_TERRACOTTA).hardnessAndResistance(5f, 6f).sound(ModSoundTypes.VULCANITE_BLOCK));
     }
 
-    //COMMENTED OUT @OVERRIDE BECAUSE IT GAVE AN ERROR. THIS HASN'T BEEN TESTED!
-   // @Override
-    public boolean isBeaconBase(BlockState state, IWorldReader world, BlockPos pos, BlockPos beacon) {
-        return true;
-    }
-
-    //COMMENTED OUT @OVERRIDE BECAUSE IT GAVE AN ERROR. THIS HASN'T BEEN TESTED!
-    //  @Override
-    public boolean isFireSource(BlockState state, IBlockReader world, BlockPos pos, Direction side) {
+    @Override
+    public boolean isFireSource(BlockState state, IWorldReader world, BlockPos pos, Direction side) {
         return true;
     }
 
