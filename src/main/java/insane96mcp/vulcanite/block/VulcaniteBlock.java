@@ -11,7 +11,6 @@ import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
-import net.minecraftforge.common.ToolType;
 import net.minecraftforge.common.extensions.IForgeBlock;
 
 public class VulcaniteBlock extends Block implements IForgeBlock {
@@ -31,10 +30,5 @@ public class VulcaniteBlock extends Block implements IForgeBlock {
             return;
 
         entityIn.setSecondsOnFire(ModConfig.COMMON.misc.vulcaniteBlockTimeOnFire.get());
-    }
-
-    @Override
-    public int getHarvestLevel(BlockState state) {
-        return 2;
     }
 }

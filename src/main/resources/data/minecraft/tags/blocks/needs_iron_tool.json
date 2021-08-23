@@ -1,0 +1,7 @@
+{
+  "replace": "false",
+  "values": [
+    "vulcanite:vulcanite_block",
+    "vulcanite:vulcanite_ore"
+  ]
+}
