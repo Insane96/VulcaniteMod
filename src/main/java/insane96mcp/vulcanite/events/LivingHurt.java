@@ -3,14 +3,14 @@ package insane96mcp.vulcanite.events;
 import insane96mcp.vulcanite.Vulcanite;
 import insane96mcp.vulcanite.setup.ModConfig;
 import insane96mcp.vulcanite.setup.ModItems;
-import net.minecraft.enchantment.Enchantment;
-import net.minecraft.enchantment.EnchantmentHelper;
-import net.minecraft.enchantment.Enchantments;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.potion.Effects;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.enchantment.Enchantment;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
+import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -22,16 +22,16 @@ public class LivingHurt {
 
     @SubscribeEvent
     public static void onPlayerDamageEntity(LivingHurtEvent event) {
-        if (event.getEntityLiving().world.isRemote)
+        if (event.getEntityLiving().level.isClientSide)
             return;
 
         //Check if is not player attacking an entity
-        if (!(event.getSource().getTrueSource() instanceof ServerPlayerEntity))
+        if (!(event.getSource().getEntity() instanceof ServerPlayer))
             return;
 
         //Check if player is holding a vulcanite weapon
-        ServerPlayerEntity player = (ServerPlayerEntity) event.getSource().getTrueSource();
-        ItemStack heldItem = player.getHeldItemMainhand();
+        ServerPlayer player = (ServerPlayer) event.getSource().getEntity();
+        ItemStack heldItem = player.getMainHandItem();
 
 
         ItemStack[] vulcaniteWeapons = {
@@ -43,7 +43,7 @@ public class LivingHurt {
 
         boolean hasVulcaniteWeapon = false;
         for (ItemStack weapon : vulcaniteWeapons) {
-            if (ItemStack.areItemsEqualIgnoreDurability(heldItem, weapon)) {
+            if (ItemStack.isSameIgnoreDurability(heldItem, weapon)) {
                 hasVulcaniteWeapon = true;
                 break;
             }
@@ -56,7 +56,7 @@ public class LivingHurt {
             return;
         //Check if entity is fire immune or if has fire restistance
         LivingEntity entity = (LivingEntity) target;
-        if (!entity.isImmuneToFire() && !entity.isPotionActive(Effects.FIRE_RESISTANCE))
+        if (!entity.fireImmune() && !entity.hasEffect(MobEffects.FIRE_RESISTANCE))
             return;
 
         //Define bonus damage

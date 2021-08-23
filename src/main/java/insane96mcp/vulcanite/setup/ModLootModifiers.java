@@ -3,7 +3,7 @@ package insane96mcp.vulcanite.setup;
 import insane96mcp.vulcanite.Vulcanite;
 import insane96mcp.vulcanite.lootmodifiers.SmeltingModifier;
 import net.minecraftforge.common.loot.GlobalLootModifierSerializer;
-import net.minecraftforge.fml.RegistryObject;
+import net.minecraftforge.fmllegacy.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 

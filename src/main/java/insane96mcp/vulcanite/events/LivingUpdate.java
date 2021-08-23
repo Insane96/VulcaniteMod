@@ -4,21 +4,21 @@ import insane96mcp.vulcanite.Vulcanite;
 import insane96mcp.vulcanite.block.SolidifiedLavaBlock;
 import insane96mcp.vulcanite.setup.ModBlocks;
 import insane96mcp.vulcanite.setup.ModItems;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.FlowingFluidBlock;
-import net.minecraft.block.material.Material;
-import net.minecraft.entity.MobEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.Direction;
-import net.minecraft.util.SoundCategory;
-import net.minecraft.util.SoundEvents;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.math.shapes.ISelectionContext;
-import net.minecraft.world.World;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.util.Mth;
+import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.LiquidBlock;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.material.Material;
+import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraftforge.common.util.BlockSnapshot;
 import net.minecraftforge.event.ForgeEventFactory;
 import net.minecraftforge.event.entity.living.LivingEvent;
@@ -33,9 +33,9 @@ import java.util.Random;
 public class LivingUpdate {
 	@SubscribeEvent
 	public static void onPlayerTick(LivingEvent.LivingUpdateEvent event) {
-		if (!(event.getEntity() instanceof PlayerEntity))
+		if (!(event.getEntity() instanceof Player))
 			return;
-		PlayerEntity player = (PlayerEntity) event.getEntity();
+		Player player = (Player) event.getEntity();
 		ItemStack[] armorList = new ItemStack[]{
 				new ItemStack(ModItems.VULCANITE_HELMET.get()),
 				new ItemStack(ModItems.VULCANITE_CHESTPLATE.get()),
@@ -43,10 +43,10 @@ public class LivingUpdate {
 				new ItemStack(ModItems.VULCANITE_BOOTS.get())
 		};
 		int armorPieces = 0;
-		Iterable<ItemStack> playerArmor = player.getArmorInventoryList();
+		Iterable<ItemStack> playerArmor = player.getArmorSlots();
 		for (ItemStack armorPiece : playerArmor) {
 			for (ItemStack itemStack : armorList) {
-				if (ItemStack.areItemsEqualIgnoreDurability(armorPiece, itemStack)) {
+				if (ItemStack.isSameIgnoreDurability(armorPiece, itemStack)) {
 					armorPieces++;
 					break;
 				}
@@ -54,54 +54,54 @@ public class LivingUpdate {
 		}
 		if (armorPieces < 1)
 			return;
-		BlockPos pos = player.getPosition();
-		World world = player.world;
-		Random rand = world.rand;
+		BlockPos pos = player.blockPosition();
+		Level world = player.level;
+		Random rand = world.random;
 		float extensionBelow = 1.0f;
-		if (world.getBlockState(pos).isSolid())
+		if (world.getBlockState(pos).canOcclude())
 			extensionBelow = 0.0f;
-		else if (!world.getBlockState(pos.down()).isSolid())
+		else if (!world.getBlockState(pos.below()).canOcclude())
 			extensionBelow = 1.5f;
 		//float extensionBelow = world.getBlockState(pos.down()).isSolid() || world.getBlockState(pos).isSolid() ? 1.0f : 1.5f;
 		int blocksPlaced = 0;
-		for (BlockPos blockPos : BlockPos.getAllInBoxMutable(pos.add(-1, -extensionBelow, -1), pos.add(1, 2, 1))) {
+		for (BlockPos blockPos : BlockPos.betweenClosed(pos.offset(-1, -extensionBelow, -1), pos.offset(1, 2, 1))) {
 			BlockState currentState = world.getBlockState(blockPos);
-			boolean isFull = currentState.getBlock() == Blocks.LAVA && currentState.get(FlowingFluidBlock.LEVEL) == 0;
+			boolean isFull = currentState.getBlock() == Blocks.LAVA && currentState.getValue(LiquidBlock.LEVEL) == 0;
 			Block solidifiedLavaBlock = isFull ? ModBlocks.SOLIDIFIED_LAVA.get() : ModBlocks.SOLIDIFIED_FLOWING_LAVA.get();
-			BlockState solidifiedLavaState = solidifiedLavaBlock.getDefaultState().with(SolidifiedLavaBlock.AGE, 4 - armorPieces);
+			BlockState solidifiedLavaState = solidifiedLavaBlock.defaultBlockState().setValue(SolidifiedLavaBlock.AGE, 4 - armorPieces);
 
 			//CHANGED new net.minecraftforge.common.util.BlockSnapshot(world, blockPos, currentState) to BlockSnapshot.create(world, blockPos) TODO: FIGURE OUT WHY WE DON'T USE currentState ANYMORE AND FIND OUT THE CONSEQUENCES
 			if (currentState.getMaterial() == Material.LAVA &&
-					solidifiedLavaState.isValidPosition(world, blockPos) &&
-					world.placedBlockCollides(solidifiedLavaState, blockPos, ISelectionContext.dummy()) &&
-					!ForgeEventFactory.onBlockPlace(player, BlockSnapshot.create(world.getDimensionKey(), world, blockPos), Direction.UP) &&
-					player.abilities.allowEdit //Spectator mode check - Checks whether the player is allowed to edit the world.
+					solidifiedLavaState.canSurvive(world, blockPos) &&
+					world.isUnobstructed(solidifiedLavaState, blockPos, CollisionContext.empty()) &&
+					!ForgeEventFactory.onBlockPlace(player, BlockSnapshot.create(world.dimension(), world, blockPos), Direction.UP) &&
+					player.getAbilities().mayBuild //Spectator mode check - Checks whether the player is allowed to edit the world.
 			) {
 
-				world.setBlockState(blockPos, solidifiedLavaState);
+				world.setBlockAndUpdate(blockPos, solidifiedLavaState);
 
 				if (isFull) {
-					world.getPendingBlockTicks().scheduleTick(blockPos, ModBlocks.SOLIDIFIED_LAVA.get(), MathHelper.nextInt(world.rand, 8, 15));
+					world.getBlockTicks().scheduleTick(blockPos, ModBlocks.SOLIDIFIED_LAVA.get(), Mth.nextInt(world.random, 8, 15));
 				} else {
-					world.getPendingBlockTicks().scheduleTick(blockPos, ModBlocks.SOLIDIFIED_FLOWING_LAVA.get(), MathHelper.nextInt(world.rand, 8, 15));
+					world.getBlockTicks().scheduleTick(blockPos, ModBlocks.SOLIDIFIED_FLOWING_LAVA.get(), Mth.nextInt(world.random, 8, 15));
 				}
 
 				blocksPlaced++;
-				world.playSound(player, blockPos, SoundEvents.BLOCK_FIRE_EXTINGUISH, SoundCategory.BLOCKS, 0.11f, 0.6f);
+				world.playSound(player, blockPos, SoundEvents.FIRE_EXTINGUISH, SoundSource.BLOCKS, 0.11f, 0.6f);
 			}
 		}
 
 		List<ItemStack> damageableArmorPiece = new ArrayList<>();
 		for (ItemStack armorPiece : playerArmor) {
 			for (ItemStack vulcaniteArmorPiece : armorList) {
-				if (ItemStack.areItemsEqualIgnoreDurability(armorPiece, vulcaniteArmorPiece)) {
+				if (ItemStack.isSameIgnoreDurability(armorPiece, vulcaniteArmorPiece)) {
 					damageableArmorPiece.add(armorPiece);
 				}
 			}
 		}
 		for (int b = 0; b < blocksPlaced; b++) {
 			ItemStack armorToDamage = damageableArmorPiece.get(rand.nextInt(damageableArmorPiece.size()));
-			armorToDamage.damageItem(1, player, p -> p.sendBreakAnimation(MobEntity.getSlotForItemStack(armorToDamage)));
+			armorToDamage.hurtAndBreak(1, player, p -> p.broadcastBreakEvent(Mob.getEquipmentSlotForItem(armorToDamage)));
 		}
 	}
 }

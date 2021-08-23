@@ -2,14 +2,14 @@ package insane96mcp.vulcanite.worldgen;
 
 import insane96mcp.vulcanite.Vulcanite;
 import insane96mcp.vulcanite.setup.ModBlocks;
-import net.minecraft.util.registry.Registry;
-import net.minecraft.util.registry.WorldGenRegistries;
-import net.minecraft.world.biome.Biome;
-import net.minecraft.world.gen.GenerationStage;
-import net.minecraft.world.gen.feature.ConfiguredFeature;
-import net.minecraft.world.gen.feature.Feature;
-import net.minecraft.world.gen.feature.IFeatureConfig;
-import net.minecraft.world.gen.feature.OreFeatureConfig;
+import net.minecraft.core.Registry;
+import net.minecraft.data.BuiltinRegistries;
+import net.minecraft.world.level.biome.Biome;
+import net.minecraft.world.level.levelgen.GenerationStep;
+import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
+import net.minecraft.world.level.levelgen.feature.Feature;
+import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
 import net.minecraftforge.common.world.BiomeGenerationSettingsBuilder;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
@@ -28,18 +28,18 @@ public class OreGenerator {
 
 		ores.add(register(
 				"deep_vulcanite",
-				Feature.ORE.withConfiguration(
-						new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NETHERRACK, ModBlocks.NETHER_VULCANITE_ORE.get().getDefaultState(), VEIN_SIZE)
+				Feature.ORE.configured(
+						new OreConfiguration(OreConfiguration.Predicates.NETHERRACK, ModBlocks.NETHER_VULCANITE_ORE.get().defaultBlockState(), VEIN_SIZE)
 				)
-						.range(32).square()
+						.range(32).squared()
 						.count(4)
 		));
 		ores.add(register(
 				"any_height_vulcanite",
-				Feature.ORE.withConfiguration(
-						new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NETHERRACK, ModBlocks.NETHER_VULCANITE_ORE.get().getDefaultState(), VEIN_SIZE)
+				Feature.ORE.configured(
+						new OreConfiguration(OreConfiguration.Predicates.NETHERRACK, ModBlocks.NETHER_VULCANITE_ORE.get().defaultBlockState(), VEIN_SIZE)
 				)
-						.range(128).square()
+						.range(128).squared()
 						.count(4)
 		));
 	}
@@ -47,15 +47,15 @@ public class OreGenerator {
 	@SubscribeEvent(priority = EventPriority.HIGHEST)
 	public static void gen(BiomeLoadingEvent event) {
 		BiomeGenerationSettingsBuilder generation = event.getGeneration();
-		if (event.getCategory().equals(Biome.Category.NETHER)) {
+		if (event.getCategory().equals(Biome.BiomeCategory.NETHER)) {
 			for (ConfiguredFeature<?, ?> ore : ores) {
 				if (ore != null)
-					generation.withFeature(GenerationStage.Decoration.UNDERGROUND_ORES, ore);
+					generation.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ore);
 			}
 		}
 	}
 
-	private static <FC extends IFeatureConfig> ConfiguredFeature<FC, ?> register(String name, ConfiguredFeature<FC, ?> configuredFeature) {
-		return Registry.register(WorldGenRegistries.CONFIGURED_FEATURE, Vulcanite.RESOURCE_PREFIX + name, configuredFeature);
+	private static <FC extends FeatureConfiguration> ConfiguredFeature<FC, ?> register(String name, ConfiguredFeature<FC, ?> configuredFeature) {
+		return Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, Vulcanite.RESOURCE_PREFIX + name, configuredFeature);
 	}
 }
