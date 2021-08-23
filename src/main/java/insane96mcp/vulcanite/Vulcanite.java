@@ -1,5 +1,6 @@
 package insane96mcp.vulcanite;
 
+import com.zimonishim.ziheasymodding.modInit.IModID;
 import insane96mcp.vulcanite.network.PacketHandler;
 import insane96mcp.vulcanite.setup.ModBlocks;
 import insane96mcp.vulcanite.setup.ModItems;
@@ -15,7 +16,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 @Mod(Vulcanite.MOD_ID)
-public class Vulcanite {
+public class Vulcanite implements IModID {
     public static final String MOD_ID = "vulcanite";
     public static final String RESOURCE_PREFIX = MOD_ID + ":";
 
@@ -34,5 +35,10 @@ public class Vulcanite {
     private void setup(final FMLCommonSetupEvent event) {
         PacketHandler.init();
         OreGenerator.init();
+    }
+
+    @Override
+    public String getModID() {
+        return MOD_ID;
     }
 }

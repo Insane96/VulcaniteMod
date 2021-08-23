@@ -1,5 +1,6 @@
 package insane96mcp.vulcanite.setup;
 
+import com.zimonishim.ziheasymodding.modItems.item.ZIHItem;
 import com.zimonishim.ziheasymodding.util.KeyBoardHandler;
 import insane96mcp.vulcanite.Vulcanite;
 import insane96mcp.vulcanite.item.FlintAndVulcaniteItem;
@@ -22,8 +23,8 @@ public class ModItems {
 
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Vulcanite.MOD_ID);
 
-    public static final RegistryObject<Item> VULCANITE_INGOT = ITEMS.register(RegistryNames.VULCANITE_INGOT, () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS).isImmuneToFire()));
-    public static final RegistryObject<Item> VULCANITE_NUGGET = ITEMS.register(RegistryNames.VULCANITE_NUGGET, () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS).isImmuneToFire()));
+    public static final RegistryObject<Item> VULCANITE_INGOT = ITEMS.register(RegistryNames.VULCANITE_INGOT, () -> new ZIHItem(new Item.Properties().group(ItemGroup.MATERIALS).isImmuneToFire()));
+    public static final RegistryObject<Item> VULCANITE_NUGGET = ITEMS.register(RegistryNames.VULCANITE_NUGGET, () -> new ZIHItem(new Item.Properties().group(ItemGroup.MATERIALS).isImmuneToFire()));
     public static final RegistryObject<PickaxeItem> VULCANITE_PICKAXE = ITEMS.register(RegistryNames.VULCANITE_PICKAXE, () -> new PickaxeItem(ModMaterial.TOOL_VULCANITE, 1, -2.8f, new Item.Properties().group(ItemGroup.TOOLS).isImmuneToFire()) {
         @Override
         public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
