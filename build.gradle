@@ -111,8 +111,8 @@ dependencies {
     // at runtime, use the full JEI jar
     runtimeOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}")
 
-    compileOnly fg.deobf("com.zimonishim.ziheasymodding:ZIHEasyModding:1.0.0")
-    runtimeOnly fg.deobf("com.zimonishim.ziheasymodding:ZIHEasyModding:1.0.0")
+    compileOnly fg.deobf("com.zimonishim.ziheasymodding:ZIHEasyModding:${ziheasymodding_version}")
+    runtimeOnly fg.deobf("com.zimonishim.ziheasymodding:ZIHEasyModding:${ziheasymodding_version}")
 }
 
 // Example for how to get properties into the manifest for reading by the runtime..

@@ -1,5 +1,5 @@
 modLoader="javafml"
-loaderVersion="[33,)"
+loaderVersion="[36,)"
 issueTrackerURL="https://github.com/Insane96/VulcaniteMod/issues"
 license="MIT License"
 [[mods]]
@@ -33,6 +33,6 @@ Mod maintained by ZimonIsHim.
 [[dependencies.vulcanite]]
     modId="ziheasymodding"
     mandatory=true
-    versionRange="[1.0.0,)"
+    versionRange="[1.0.1,)"
     ordering="NONE"
     side="BOTH"

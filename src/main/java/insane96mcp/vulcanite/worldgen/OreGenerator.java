@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @Mod.EventBusSubscriber
 public class OreGenerator {
 
-	private static final ArrayList<ConfiguredFeature<?, ?>> ores = new ArrayList<ConfiguredFeature<?, ?>>();
+	private static final ArrayList<ConfiguredFeature<?, ?>> ores = new ArrayList<>();
 
 	public static void init() {
 		final int VEIN_SIZE = 4;
