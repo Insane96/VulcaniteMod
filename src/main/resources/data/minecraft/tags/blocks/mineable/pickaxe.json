@@ -2,6 +2,6 @@
   "replace": false,
   "values": [
     "vulcanite:vulcanite_block",
-    "vulcanite:vulcanite_ore"
+    "vulcanite:nether_vulcanite_ore"
   ]
 }

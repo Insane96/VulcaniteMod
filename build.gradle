@@ -12,7 +12,7 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
-apply from: 'https://raw.githubusercontent.com/SizableShrimp/Forge-Class-Remapper/main/classremapper.gradle'
+//apply from: 'https://raw.githubusercontent.com/SizableShrimp/Forge-Class-Remapper/main/classremapper.gradle'
 
 version = "${mod_version}-mc${mc_version}"
 group = 'insane96mcp.vulcanite' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
@@ -73,7 +73,7 @@ minecraft {
             // Recommended logging level for the console
             property 'forge.logging.console.level', 'debug'
 
-            args '--mod', 'vulcanite', '--all', '--output', file('src/generated/resources/')
+            args '--mod', 'vulcanite', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
 
             mods {
                 vulcanite {
@@ -85,16 +85,6 @@ minecraft {
 }
 
 repositories {
-//    maven {
-//        // location of the maven that hosts JEI files
-//        name = "Progwml6 maven"
-//        url = "https://dvs1.progwml6.com/files/maven/"
-//    }
-//    maven {
-//        // location of a maven mirror for JEI files, as a fallback
-//        name = "ModMaven"
-//        url = "https://modmaven.k-4u.nl"
-//    }
     maven {
         name = "ZIHMaven"
         url = "https://zimonishim.github.io/Forge-Maven/"
@@ -106,12 +96,6 @@ dependencies {
     // that the dep is a ForgeGradle 'patcher' dependency. And it's patches will be applied.
     // The userdev artifact is a special name and will get all sorts of transformations applied to it.
 	minecraft 'net.minecraftforge:forge:1.17.1-37.0.43'
-
-    //Commented out all the JEI related lines
-    // compile against the JEI API but do not include it at runtime
-//    compileOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}:api")
-    // at runtime, use the full JEI jar
-//    runtimeOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}")
 
     compileOnly fg.deobf("com.zimonishim.ziheasymodding:ziheasymodding-${mc_version}:${ziheasymodding_version}")
     runtimeOnly fg.deobf("com.zimonishim.ziheasymodding:ziheasymodding-${mc_version}:${ziheasymodding_version}")

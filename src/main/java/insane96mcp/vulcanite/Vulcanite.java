@@ -17,6 +17,9 @@ import org.apache.logging.log4j.Logger;
 
 @Mod(Vulcanite.MOD_ID)
 public class Vulcanite implements IModID {
+
+    //TODO: Advancements are broken. Fix this.
+
     public static final String MOD_ID = "vulcanite";
     public static final String RESOURCE_PREFIX = MOD_ID + ":";
 
