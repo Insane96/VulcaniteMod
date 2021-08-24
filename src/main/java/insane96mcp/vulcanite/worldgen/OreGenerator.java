@@ -11,8 +11,6 @@ import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.RangeDecoratorConfiguration;
-import net.minecraft.world.level.levelgen.heightproviders.BiasedToBottomHeight;
 import net.minecraftforge.common.world.BiomeGenerationSettingsBuilder;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
@@ -33,18 +31,20 @@ public class OreGenerator {
 				"deep_vulcanite",
 				Feature.ORE.configured(
 						new OreConfiguration(OreConfiguration.Predicates.NETHERRACK, ModBlocks.NETHER_VULCANITE_ORE.get().defaultBlockState(), VEIN_SIZE)
-				)
-						.range(new RangeDecoratorConfiguration(BiasedToBottomHeight.of(VerticalAnchor.bottom(), VerticalAnchor.top(), 32)))).squared()
+				)).rangeUniform(VerticalAnchor.bottom(), VerticalAnchor.absolute(32)).squared()
 						.count(4)
 		);
-		ores.add(register(
-				"any_height_vulcanite",
-				Feature.ORE.configured(
-						new OreConfiguration(OreConfiguration.Predicates.NETHERRACK, ModBlocks.NETHER_VULCANITE_ORE.get().defaultBlockState(), VEIN_SIZE)
-				)
-						.range(new RangeDecoratorConfiguration(BiasedToBottomHeight.of(VerticalAnchor.bottom(), VerticalAnchor.top(), 128)))).squared()
-						.count(4)
-		);
+
+
+		//Doesn't make it rare enough. Should we remove this?
+//		ores.add(register(
+//				"any_height_vulcanite",
+//				Feature.ORE.configured(
+//						new OreConfiguration(OreConfiguration.Predicates.NETHERRACK, ModBlocks.NETHER_VULCANITE_ORE.get().defaultBlockState(), VEIN_SIZE)
+//				)).rangeUniform(VerticalAnchor.bottom(), VerticalAnchor.absolute(128))
+//						.squared()
+//						.count(4)
+//		);
 	}
 
 	@SubscribeEvent(priority = EventPriority.HIGHEST)

@@ -7,7 +7,7 @@ import net.minecraft.world.item.Tier;
 
 public class ModMaterial {
 
-    public static ZIHMaterial vulcaniteMaterial = new ZIHMaterial("vulcanite", ModItems.VULCANITE_INGOT.get());
+    public static ZIHMaterial vulcaniteMaterial = new ZIHMaterial("vulcanite:vulcanite", ModItems.VULCANITE_INGOT.get());
     public static Tier TOOL_VULCANITE = vulcaniteMaterial.getItemTier();
     public static ArmorMaterial ARMOR_VULCANITE = vulcaniteMaterial.getArmorMaterial();
 }
