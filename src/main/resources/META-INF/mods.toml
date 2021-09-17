@@ -33,6 +33,6 @@ Mod maintained by ZimonIsHim.
 [[dependencies.vulcanite]]
     modId="ziheasymodding"
     mandatory=true
-    versionRange="[1.2.2,)"
+    versionRange="[1.2.3,)"
     ordering="NONE"
     side="BOTH"

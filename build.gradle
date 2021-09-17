@@ -95,7 +95,7 @@ dependencies {
     // Specify the version of Minecraft to use, If this is any group other then 'net.minecraft' it is assumed
     // that the dep is a ForgeGradle 'patcher' dependency. And it's patches will be applied.
     // The userdev artifact is a special name and will get all sorts of transformations applied to it.
-	minecraft 'net.minecraftforge:forge:1.17.1-37.0.43'
+	minecraft 'net.minecraftforge:forge:1.17.1-37.0.65'
 
     compileOnly fg.deobf("com.zimonishim.ziheasymodding:ziheasymodding-${mc_version}:${ziheasymodding_version}")
     runtimeOnly fg.deobf("com.zimonishim.ziheasymodding:ziheasymodding-${mc_version}:${ziheasymodding_version}")
